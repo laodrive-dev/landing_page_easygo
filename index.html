@@ -150,10 +150,12 @@ a{color:inherit}
 .hero-copy{flex:1 1 340px;min-width:0}
 .hero h1{font-size:clamp(2.1rem,5.5vw,3.5rem);font-weight:800;letter-spacing:-.02em}
 .hero h1 .under{box-shadow:inset 0 -.18em 0 #fff}
-.hero p.lede{margin-top:18px;max-width:30em;font-size:1.08rem;color:#4a4430}
+.hero h1 .go{color:#fff}
+.hero p.lede{margin-top:18px;max-width:30em;font-size:1.08rem;color:#3a3523}
 .hero-cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}
-.hero .btn-dark{background:#1c1a12;color:#FEC200}
-.hero .btn-line{border-color:#1c1a12;color:#1c1a12;background:transparent}
+.hero .btn-dark{background:#1c1a12;color:#fff}
+.hero .btn-dark svg{stroke:#FEC200}
+.hero .btn-line{border-color:#1c1a12;color:#1c1a12;background:var(--brand)}
 .hero-stats{margin-top:34px;display:flex;flex-wrap:wrap;gap:28px;font-family:var(--display)}
 .hero-stats > div{display:flex;align-items:flex-start;gap:9px}
 .hero-stats svg{width:21px;height:21px;flex:none;margin-top:5px;fill:#1c1a12;stroke:none}
@@ -346,7 +348,7 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
 <header class="hero" id="top">
   <div class="wrap hero-in">
     <div class="hero-copy">
-      <h1 data-i18n="hero_h1">จะไปไหน<br>ก็ <span class="under">Easy</span> แค่กด EasyGO</h1>
+      <h1 data-i18n="hero_h1">จะไปไหน<br>ก็ Easy แค่กด Easy<span class="go">GO</span></h1>
       <p class="lede" data-i18n="hero_lede">เรียกรถได้ไวใน 3 นาที เดินทางสะดวก ปลอดภัย ครอบคลุมทั่วไทย ไม่ว่าจะไปทำงาน เที่ยว หรือธุระสำคัญ EasyGO พร้อมพาคุณไปถึงอย่างมั่นใจ</p>
       <div class="hero-cta">
         <a class="btn btn-dark" href="#download"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span data-i18n="hero_cta1">ดาวน์โหลดแอป</span></a>
@@ -583,7 +585,7 @@ const I18N = {
     help1_h:"โทรหาเรา", help1_p:"สายด่วนตลอด 24 ชั่วโมง ทุกวัน",
     help2_h:"อีเมลหาเรา", help2_p:"ตอบกลับภายใน 24 ชั่วโมง",
     help3_h:"แชทและปุ่ม SOS ในแอป", help3_big:'เมนู "ช่วยเหลือ" ในแอป', help3_p:"แชทกับทีมงาน หรือกด SOS ระหว่างเดินทางเพื่อขอความช่วยเหลือฉุกเฉิน",
-    hero_h1:'จะไปไหน<br>ก็ <span class="under">Easy</span> แค่กด EasyGO',
+    hero_h1:'จะไปไหน<br>ก็ Easy แค่กด Easy<span class="go">GO</span>',
     hero_lede:"เรียกรถได้ไวใน 3 นาที เดินทางสะดวก ปลอดภัย ครอบคลุมทั่วไทย ไม่ว่าจะไปทำงาน เที่ยว หรือธุระสำคัญ EasyGO พร้อมพาคุณไปถึงอย่างมั่นใจ",
     hero_cta1:"ดาวน์โหลดแอป", hero_cta2:"ดูวิธีใช้งาน",
     stat1_v:"3 นาที", stat1_l:"เฉลี่ยรอรถเพียง", stat2_l:"คนขับที่ได้รับการตรวจสอบ", stat3_l:"คะแนนความพึงพอใจ",
@@ -636,7 +638,7 @@ const I18N = {
     help1_h:"ໂທຫາເຮົາ", help1_p:"ສາຍດ່ວນຕະຫຼອດ 24 ຊົ່ວໂມງ ທຸກວັນ",
     help2_h:"ອີເມວຫາເຮົາ", help2_p:"ຕອບກັບພາຍໃນ 24 ຊົ່ວໂມງ",
     help3_h:"ແຊັດ ແລະ ປຸ່ມ SOS ໃນແອັບ", help3_big:'ເມນູ "ຊ່ວຍເຫຼືອ" ໃນແອັບ', help3_p:"ແຊັດກັບທີມງານ ຫຼື ກົດ SOS ລະຫວ່າງເດີນທາງເພື່ອຂໍຄວາມຊ່ວຍເຫຼືອສຸກເສີນ",
-    hero_h1:'ຈະໄປໃສ<br>ກໍ <span class="under">Easy</span> ພຽງກົດ EasyGO',
+    hero_h1:'ຈະໄປໃສ<br>ກໍ Easy ພຽງກົດ Easy<span class="go">GO</span>',
     hero_lede:"ເອີ້ນລົດໄດ້ໄວໃນ 3 ນາທີ ເດີນທາງສະດວກ ປອດໄພ ຄອບຄຸມທົ່ວລາວ ແລະ ໄທ ບໍ່ວ່າຈະໄປວຽກ ທ່ຽວ ຫຼື ທຸລະສຳຄັນ EasyGO ພ້ອມພາທ່ານໄປຮອດຢ່າງໝັ້ນໃຈ",
     hero_cta1:"ດາວໂຫຼດແອັບ", hero_cta2:"ເບິ່ງວິທີໃຊ້ງານ",
     stat1_v:"3 ນາທີ", stat1_l:"ສະເລ່ຍລໍຖ້າພຽງ", stat2_l:"ຄົນຂັບທີ່ຜ່ານການກວດສອບ", stat3_l:"ຄະແນນຄວາມພໍໃຈ",
@@ -689,7 +691,7 @@ const I18N = {
     help1_h:"Call us", help1_p:"Hotline open 24 hours, every day",
     help2_h:"Email us", help2_p:"We reply within 24 hours",
     help3_h:"In-app chat & SOS", help3_big:'"Help" menu in the app', help3_p:"Chat with our team, or press SOS during a trip for emergency assistance.",
-    hero_h1:'Going anywhere<br>is <span class="under">Easy</span> — just tap EasyGO',
+    hero_h1:'Going anywhere<br>is Easy — just tap Easy<span class="go">GO</span>',
     hero_lede:"Get a ride in 3 minutes — convenient, safe, and ready nationwide. Work, travel, or errands, EasyGO gets you there with confidence.",
     hero_cta1:"Download the app", hero_cta2:"See how it works",
     stat1_v:"3 min", stat1_l:"average wait only", stat2_l:"verified drivers", stat3_l:"satisfaction score",
