@@ -261,6 +261,8 @@ section{padding-block:72px}
 
 .feat b{display:block;font-family:var(--display);font-weight:700;font-size:.93rem}
 .feat small{color:var(--muted);font-size:.8rem}
+.about-img{flex:1 1 360px;min-height:340px;align-self:stretch;border-radius:24px;background:url("assets/hero-banner.jpg") 82% center/cover no-repeat;box-shadow:0 18px 44px rgba(28,26,18,.16)}
+@media (max-width:640px){.about-img{min-height:220px}}
 .chips{flex:1 1 320px;display:grid;gap:16px;align-content:start}
 .chip{display:flex;align-items:center;gap:14px;background:var(--ct,var(--tint-yellow));border-radius:18px;padding:18px 20px}
 .chip::before{content:"";width:14px;height:14px;border-radius:50%;background:var(--c,var(--brand));flex:none;box-shadow:0 0 0 5px #fff}
@@ -544,11 +546,7 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
         <div class="feat"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.4"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0zM16.5 11l1.8 1.8 3.2-3.6"/></svg></span><div><b data-i18n="af3_h">คนขับมืออาชีพ</b><small data-i18n="af3_s">ผ่านการตรวจสอบ</small></div></div>
       </div>
     </div>
-    <div class="chips">
-      <div class="chip"><div class="chip-txt"><b data-i18n="about_c1">ให้บริการทั่ว สปป.ลาว</b><span data-i18n="about_c1s">เชื่อมต่อทุกเส้นทาง เดินทางสบาย</span></div></div>
-      <div class="chip"><div class="chip-txt"><b data-i18n="about_c2">เตรียมเปิดให้บริการในประเทศไทย</b><span data-i18n="about_c2s">เชื่อมเส้นทางลาว–ไทย เร็ว ๆ นี้</span></div></div>
-      <div class="chip"><div class="chip-txt"><b data-i18n="about_c3">เตรียมขยายทั่วอาเซียน</b><span data-i18n="about_c3s">กำลังเตรียมเปิดให้บริการเร็ว ๆ นี้</span></div></div>
-    </div>
+    <div class="about-img" role="img" aria-label="รถ EasyGO ให้บริการในเมือง"></div>
   </div>
 </section>
 
