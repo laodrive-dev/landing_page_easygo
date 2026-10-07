@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<!-- SEO -->
+<meta name="description" content="EasyGO แอปเรียกรถที่คุณไว้ใจ เรียกรถใน 3 นาที รู้ราคาก่อนขึ้นทุกเที่ยว คนขับตรวจประวัติ 100% มีทั้งมอเตอร์ไซค์ รถยนต์ รถพรีเมียม และส่งของด่วน ครอบคลุมกรุงเทพฯ และ 12 จังหวัด">
+<meta name="keywords" content="เรียกรถ, แอปเรียกรถ, เรียกแท็กซี่, เรียกมอเตอร์ไซค์, ส่งของด่วน, EasyGO, อีซี่โก, ride hailing app, ແອັບເອີ້ນລົດ">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#FEC200">
+<link rel="canonical" href="https://www.easygo.co.th/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EasyGO">
+<meta property="og:title" content="EasyGO — จะไปไหนก็อีซี่ แค่กด GO">
+<meta property="og:description" content="เรียกรถใน 3 นาที รู้ราคาก่อนขึ้นทุกเที่ยว คนขับตรวจประวัติ 100% ดาวน์โหลดฟรีวันนี้ รับส่วนลด 50% สำหรับ 3 เที่ยวแรก">
+<meta property="og:url" content="https://www.easygo.co.th/">
+<meta property="og:image" content="https://www.easygo.co.th/og-image.png">
+<meta property="og:locale" content="th_TH">
+<meta property="og:locale:alternate" content="lo_LA">
+<meta property="og:locale:alternate" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EasyGO — จะไปไหนก็อีซี่ แค่กด GO">
+<meta name="twitter:description" content="เรียกรถใน 3 นาที รู้ราคาก่อนขึ้นทุกเที่ยว คนขับตรวจประวัติ 100%">
+<meta name="twitter:image" content="https://www.easygo.co.th/og-image.png">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "EasyGO",
+  "operatingSystem": "iOS, Android",
+  "applicationCategory": "TravelApplication",
+  "description": "แอปเรียกรถ เรียกมอเตอร์ไซค์ และส่งของด่วน รู้ราคาก่อนขึ้นทุกเที่ยว",
+  "inLanguage": ["th", "lo", "en"],
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "THB" },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "52000" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "EasyGO Thailand",
+    "url": "https://www.easygo.co.th",
+    "contactPoint": { "@type": "ContactPoint", "telephone": "1499", "contactType": "customer service", "availableLanguage": ["Thai", "Lao", "English"] }
+  }
+}
+</script>
+<!--ART-HEAD-->
+<title>EasyGO</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;600;700;800&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Sans+Lao+Looped:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: white canvas + yellow #FEC200 bands; Prompt display, IBM Plex Sans Thai body, Noto Sans Lao Looped covers Lao glyphs */
+:root{
+  --bg:#ffffff;
+  --surface:#fffdf4;
+  --ink:#1c1a12;
+  --muted:#6b6553;
+  --brand:#FEC200;
+  --brand-ink:#1c1a12;
+  --line:#efe9d6;
+  --card:#ffffff;
+  --display:'Prompt','Noto Sans Lao Looped',system-ui,sans-serif;
+  --body:'IBM Plex Sans Thai','Noto Sans Lao Looped','Prompt',system-ui,sans-serif;
+  /* สีเสริมเพิ่มชีวิตชีวา ใช้เป็นจุดเล็ก ๆ รอบสีหลักเหลือง-ขาว */
+  --orange:#FF8A3D; --violet:#8B5CF6; --teal:#14B8A6;
+  --tint-yellow:#FFF6D6; --tint-orange:#FFEFE2; --tint-violet:#F1EBFF; --tint-teal:#E2F8F3;
+}
+/* หน้านี้ล็อกธีมสว่าง: ขาว + เหลือง #FEC200 เท่านั้น */
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7}
+h1,h2,h3{font-family:var(--display);line-height:1.25;text-wrap:balance;margin:0}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1080px;margin-inline:auto;padding-inline:20px}
+.eyebrow{font-family:var(--display);font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E08900}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:14px}
+.logo{font-family:var(--display);font-weight:800;font-size:1.3rem;letter-spacing:-.01em;text-decoration:none}
+.logo b{color:var(--brand)}
+.nav-links{display:flex;gap:22px;font-size:.92rem;font-weight:500}
+.nav-links a{text-decoration:none;color:var(--muted)}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--ink)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:.95rem;text-decoration:none;border-radius:999px;padding:11px 24px;border:2px solid transparent;cursor:pointer}
+.btn-brand{background:var(--brand);color:var(--brand-ink)}
+.btn-brand:hover{filter:brightness(1.05)}
+.btn:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+
+/* language switcher */
+.lang{display:flex;gap:2px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px}
+.lang button{font-family:var(--display);font-weight:600;font-size:.8rem;border:0;background:transparent;color:var(--muted);border-radius:999px;padding:5px 12px;cursor:pointer}
+.lang button:hover{color:var(--ink)}
+.lang button[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink)}
+.lang button:focus-visible{outline:3px solid var(--brand);outline-offset:1px}
+@media (max-width:760px){.nav-links{display:none}}
+@media (max-width:480px){.nav .btn-brand{display:none}}
+
+/* hero — ไล่เฉดเหลืองทอง + วงแสงขาวนุ่ม ๆ */
+.hero{background:linear-gradient(135deg,#FFDB55 0%,#FEC200 55%,#F3A900 100%);color:var(--brand-ink);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:
+  radial-gradient(circle at 86% 16%,rgba(255,255,255,.4),transparent 38%),
+  radial-gradient(circle at 6% 92%,rgba(255,255,255,.28),transparent 32%),
+  radial-gradient(circle at 60% 110%,rgba(255,138,61,.22),transparent 40%)}
+.hero-in{display:flex;flex-wrap:wrap;align-items:center;gap:40px;padding-block:64px 56px;position:relative;z-index:1}
+.hero-copy{flex:1 1 340px;min-width:0}
+.hero h1{font-size:clamp(2.1rem,5.5vw,3.5rem);font-weight:800;letter-spacing:-.02em}
+.hero h1 .under{box-shadow:inset 0 -.18em 0 #fff}
+.hero p.lede{margin-top:18px;max-width:30em;font-size:1.08rem;color:#4a4430}
+.hero-cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px}
+.hero .btn-dark{background:#1c1a12;color:#FEC200}
+.hero .btn-line{border-color:#1c1a12;color:#1c1a12;background:transparent}
+.hero-stats{margin-top:34px;display:flex;flex-wrap:wrap;gap:28px;font-family:var(--display)}
+.hero-stats div b{display:block;font-size:1.5rem;font-weight:800;font-variant-numeric:tabular-nums}
+.hero-stats div span{font-size:.85rem;font-weight:500;opacity:.75}
+
+/* phone mockup */
+.phone{flex:0 1 300px;margin-inline:auto;width:290px;max-width:100%;background:#1c1a12;border-radius:36px;padding:10px;box-shadow:0 24px 60px rgba(28,26,18,.35)}
+.screen{background:#f3f1ea;border-radius:28px;overflow:hidden;font-size:.78rem;color:#1c1a12}
+.map{position:relative;height:200px;background:
+  linear-gradient(90deg,transparent 48%,#dcd8c8 48%,#dcd8c8 52%,transparent 52%),
+  linear-gradient(0deg,transparent 62%,#dcd8c8 62%,#dcd8c8 66%,transparent 66%),
+  linear-gradient(35deg,transparent 46%,#e6e2d2 46%,#e6e2d2 49%,transparent 49%),
+  #eceae0}
+.pin{position:absolute;width:14px;height:14px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#FEC200;border:3px solid #1c1a12}
+.pin.a{left:24%;top:30%}
+.pin.b{left:66%;top:62%;background:#fff}
+.route{position:absolute;inset:0}
+.sheet{background:#fff;padding:14px 16px;display:grid;gap:10px}
+.sheet .row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.sheet .tag{font-family:var(--display);font-weight:600;background:#FEC200;border-radius:999px;padding:3px 10px;font-size:.72rem}
+.sheet .fare{font-family:var(--display);font-weight:800;font-size:1.05rem;font-variant-numeric:tabular-nums}
+.sheet .go{font-family:var(--display);font-weight:700;text-align:center;background:#1c1a12;color:#FEC200;border-radius:12px;padding:10px}
+.sheet small{color:#6b6553}
+
+/* sections */
+section{padding-block:72px}
+.sec-head{max-width:34em;margin-bottom:40px}
+.sec-head h2{font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:700;margin-top:10px}
+.sec-head p{margin-top:12px;color:var(--muted)}
+
+/* services — การ์ดละสี: เหลือง ส้ม ม่วง เขียวมินต์ */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.svc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--c,var(--brand));border-radius:18px;padding:24px;display:grid;gap:10px;align-content:start;transition:transform .2s ease,box-shadow .2s ease}
+.svc:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(28,26,18,.12)}
+.svc:nth-child(1){--c:var(--brand);--ct:var(--tint-yellow)}
+.svc:nth-child(2){--c:var(--orange);--ct:var(--tint-orange)}
+.svc:nth-child(3){--c:var(--violet);--ct:var(--tint-violet)}
+.svc:nth-child(4){--c:var(--teal);--ct:var(--tint-teal)}
+.svc .ic{width:46px;height:46px;border-radius:14px;background:var(--c,var(--brand));display:grid;place-items:center}
+.svc:nth-child(3) .ic svg,.svc:nth-child(4) .ic svg{stroke:#fff}
+.svc .ic svg{width:26px;height:26px;stroke:#1c1a12;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.svc h3{font-size:1.08rem;font-weight:700}
+.svc p{font-size:.93rem;color:var(--muted)}
+.svc .price{font-family:var(--display);font-weight:600;font-size:.85rem;color:var(--ink);background:var(--ct,var(--tint-yellow));border-radius:999px;padding:4px 14px;justify-self:start}
+.svc .price b{font-variant-numeric:tabular-nums}
+
+/* steps — เลขวงกลมคนละสีตามลำดับ */
+.steps{background:linear-gradient(180deg,var(--tint-yellow),var(--surface));border-block:1px solid var(--line)}
+.step-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
+.step{display:grid;gap:10px;align-content:start}
+.step .no{font-family:var(--display);font-weight:800;font-size:1.25rem;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--c,var(--brand));color:#1c1a12;box-shadow:0 6px 14px rgba(28,26,18,.14);font-variant-numeric:tabular-nums}
+.step:nth-child(1) .no{--c:var(--brand)}
+.step:nth-child(2) .no{--c:var(--orange)}
+.step:nth-child(3) .no{--c:var(--violet);color:#fff}
+.step:nth-child(4) .no{--c:var(--teal);color:#fff}
+.step h3{font-size:1.05rem;font-weight:700}
+.step p{font-size:.93rem;color:var(--muted)}
+
+/* why — การ์ดพื้นสีอ่อนคนละโทน */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.why{border-left:4px solid var(--c,var(--brand));background:var(--ct,var(--tint-yellow));border-radius:0 16px 16px 0;padding:18px 20px;display:grid;gap:6px;align-content:start}
+.why:nth-child(1){--c:var(--brand);--ct:var(--tint-yellow)}
+.why:nth-child(2){--c:var(--orange);--ct:var(--tint-orange)}
+.why:nth-child(3){--c:var(--violet);--ct:var(--tint-violet)}
+.why:nth-child(4){--c:var(--teal);--ct:var(--tint-teal)}
+.why h3{font-size:1.02rem;font-weight:700}
+.why p{font-size:.93rem;color:#5d5743}
+
+/* driver band — พื้นเหลืองไล่เฉด + วงแสง */
+.driver{background:linear-gradient(120deg,#FFD84E,#FEC200 60%,#F5AD00);color:#1c1a12;position:relative;overflow:hidden}
+.driver::after{content:"";position:absolute;inset:0;pointer-events:none;background:
+  radial-gradient(circle at 92% 80%,rgba(255,255,255,.35),transparent 36%),
+  radial-gradient(circle at 70% -10%,rgba(255,138,61,.25),transparent 42%)}
+.driver .wrap{position:relative;z-index:1}
+.driver-in{display:flex;flex-wrap:wrap;align-items:center;gap:32px;padding-block:64px}
+.driver-copy{flex:1 1 340px;min-width:0}
+.driver h2{font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:700}
+.driver h2 em{font-style:normal;box-shadow:inset 0 -.18em 0 #fff}
+.driver p{margin-top:12px;color:#4a4430;max-width:34em}
+.driver ul{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:10px;font-size:.95rem}
+.driver li{padding-left:26px;position:relative}
+.driver li::before{content:"";position:absolute;left:0;top:.45em;width:14px;height:14px;border-radius:4px;background:#fff}
+.driver .btn-brand{margin-top:26px;background:#1c1a12;color:#FEC200}
+
+/* download */
+.dl{text-align:center;background:radial-gradient(ellipse at 50% 0%,var(--tint-yellow),var(--bg) 70%)}
+.dl h2{font-size:clamp(1.7rem,3.8vw,2.4rem);font-weight:800}
+.dl p{margin-top:12px;color:var(--muted)}
+.dl p b{background:var(--brand);border-radius:8px;padding:2px 10px;font-family:var(--display)}
+.stores{margin-top:28px;display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+.store{display:flex;align-items:center;gap:10px;background:var(--brand);color:#1c1a12;text-decoration:none;border-radius:14px;padding:10px 20px;font-family:var(--display);text-align:left}
+.store:hover{filter:brightness(1.05)}
+.store:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.store small{display:block;font-size:.68rem;opacity:.75;font-weight:400}
+.store b{font-size:1rem;font-weight:700}
+.store svg{width:24px;height:24px;fill:currentColor;flex:none}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding-block:32px;font-size:.88rem;color:var(--muted)}
+.foot-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+@media (prefers-reduced-motion:no-preference){
+  .hero-copy{animation:rise .6s ease both}
+  .phone{animation:rise .6s ease .12s both,float 5s ease-in-out 1.2s infinite alternate}
+  @keyframes rise{from{opacity:.001;transform:translateY(14px)}to{opacity:1;transform:none}}
+  @keyframes float{from{transform:translateY(0)}to{transform:translateY(-10px)}}
+}
+</style>
+<!--/ART-HEAD-->
+</head>
+<body>
+<!--ART-BODY-->
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#top">Easy<b>GO</b></a>
+    <div class="nav-links">
+      <a href="#services" data-i18n="nav_services">บริการ</a>
+      <a href="#how" data-i18n="nav_how">วิธีใช้งาน</a>
+      <a href="#why" data-i18n="nav_why">ทำไมต้อง EasyGO</a>
+      <a href="#driver" data-i18n="nav_driver">ร่วมขับกับเรา</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="เลือกภาษา / Select language">
+        <button type="button" id="lang-th" data-lang="th" aria-pressed="true">ไทย</button>
+        <button type="button" id="lang-lo" data-lang="lo" aria-pressed="false">ລາວ</button>
+        <button type="button" id="lang-en" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn btn-brand" href="#download" data-i18n="nav_download">ดาวน์โหลดแอป</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <h1 data-i18n="hero_h1">จะไปไหน<br>ก็<span class="under">อีซี่</span> แค่กด GO</h1>
+      <p class="lede" data-i18n="hero_lede">เรียกรถได้ใน 3 นาที รู้ราคาก่อนขึ้นทุกเที่ยว ไม่มีบวกเพิ่มตอนฝนตก คนขับผ่านการตรวจประวัติทุกคน พร้อมรับคุณทั่วกรุงเทพฯ และอีก 12 จังหวัด</p>
+      <div class="hero-cta">
+        <a class="btn btn-dark" href="#download" data-i18n="hero_cta1">ดาวน์โหลดฟรี</a>
+        <a class="btn btn-line" href="#how" data-i18n="hero_cta2">ดูวิธีใช้งาน</a>
+      </div>
+      <div class="hero-stats">
+        <div><b data-i18n="stat1_v">3 นาที</b><span data-i18n="stat1_l">เวลารอรถเฉลี่ย</span></div>
+        <div><b>50,000+</b><span data-i18n="stat2_l">คนขับที่ตรวจประวัติแล้ว</span></div>
+        <div><b>4.9/5</b><span data-i18n="stat3_l">คะแนนจากผู้ใช้</span></div>
+      </div>
+    </div>
+    <div class="phone" aria-hidden="true">
+      <div class="screen">
+        <div class="map">
+          <svg class="route" viewBox="0 0 290 200" width="100%" height="100%">
+            <path d="M76 68 C 120 90, 150 95, 196 130" stroke="#1c1a12" stroke-width="3" stroke-dasharray="7 6" fill="none"/>
+          </svg>
+          <span class="pin a"></span>
+          <span class="pin b"></span>
+        </div>
+        <div class="sheet">
+          <div class="row"><span class="tag">EasyCar</span><small data-i18n="ph_eta">ถึงใน 3 นาที</small></div>
+          <div class="row"><small data-i18n="ph_route">สยาม → อารีย์ · 6.4 กม.</small><span class="fare">฿89</span></div>
+          <div class="go" data-i18n="ph_go">เรียกรถเลย</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="svc_eyebrow">บริการของเรา</span>
+      <h2 data-i18n="svc_h2">เลือกให้เหมาะกับทริปของคุณ</h2>
+      <p data-i18n="svc_p">ทุกบริการแสดงราคาก่อนยืนยันเสมอ จ่ายได้ทั้งเงินสด บัตร และ EasyWallet</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17h7l-3-8h-3M13 9h3l2 8M10 6h4"/></svg></div>
+        <h3>EasyBike</h3>
+        <p data-i18n="svc1_p">มอเตอร์ไซค์ซอกแซกทันใจ เหมาะกับระยะสั้นและชั่วโมงเร่งด่วน</p>
+        <span class="price"><span data-i18n="price_from">เริ่มต้น</span> <b>฿20</b></span>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 16v-4l2-5h12l2 5v4M4 12h16M7 16v2M17 16v2"/><circle cx="8" cy="16" r="1"/><circle cx="16" cy="16" r="1"/></svg></div>
+        <h3>EasyCar</h3>
+        <p data-i18n="svc2_p">รถยนต์ 4 ที่นั่ง สะอาด แอร์เย็น สำหรับเดินทางในเมืองทุกวัน</p>
+        <span class="price"><span data-i18n="price_from">เริ่มต้น</span> <b>฿45</b></span>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l2.4 5 5.6.7-4 3.9.9 5.4-4.9-2.6L7.1 18l.9-5.4-4-3.9L9.6 8z"/></svg></div>
+        <h3>EasyPremium</h3>
+        <p data-i18n="svc3_p">รถใหญ่พร้อมคนขับมืออาชีพ รับส่งสนามบินหรือประชุมสำคัญ</p>
+        <span class="price"><span data-i18n="price_from">เริ่มต้น</span> <b>฿150</b></span>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 8l8-4 8 4v8l-8 4-8-4zM4 8l8 4 8-4M12 12v8"/></svg></div>
+        <h3>EasySend</h3>
+        <p data-i18n="svc4_p">ส่งของด่วนถึงมือใน 1 ชั่วโมง ติดตามพัสดุแบบเรียลไทม์</p>
+        <span class="price"><span data-i18n="price_from">เริ่มต้น</span> <b>฿35</b></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps" id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="how_eyebrow">วิธีใช้งาน</span>
+      <h2 data-i18n="how_h2">เรียกรถครั้งแรกใน 4 ขั้นตอน</h2>
+    </div>
+    <div class="step-grid">
+      <div class="step"><span class="no">1</span><h3 data-i18n="how1_h">ปักหมุดปลายทาง</h3><p data-i18n="how1_p">พิมพ์ชื่อสถานที่หรือเลื่อนหมุดบนแผนที่ ระบบจำที่ที่ไปบ่อยให้อัตโนมัติ</p></div>
+      <div class="step"><span class="no">2</span><h3 data-i18n="how2_h">เลือกบริการและดูราคา</h3><p data-i18n="how2_p">เทียบราคา EasyBike, EasyCar และ Premium ได้ในหน้าจอเดียว ราคานี้คือราคาจริงที่จ่าย</p></div>
+      <div class="step"><span class="no">3</span><h3 data-i18n="how3_h">กด GO แล้วรอรับ</h3><p data-i18n="how3_p">เห็นตำแหน่งรถ ชื่อ และทะเบียนคนขับทันที พร้อมเวลาถึงโดยประมาณ</p></div>
+      <div class="step"><span class="no">4</span><h3 data-i18n="how4_h">ถึงที่หมาย จ่ายตามสะดวก</h3><p data-i18n="how4_p">เงินสด บัตรเครดิต หรือ EasyWallet แล้วให้คะแนนการเดินทางได้เลย</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="why_eyebrow">ทำไมต้อง EasyGO</span>
+      <h2 data-i18n="why_h2">ปลอดภัยทุกเที่ยว โปร่งใสทุกบาท</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why"><h3 data-i18n="why1_h">ราคาล็อกก่อนขึ้นรถ</h3><p data-i18n="why1_p">ราคาที่เห็นตอนกดเรียกคือราคาที่จ่ายจริง ไม่มี surge ซ่อน ไม่มีบวกเพิ่มกลางทาง</p></div>
+      <div class="why"><h3 data-i18n="why2_h">คนขับตรวจประวัติ 100%</h3><p data-i18n="why2_p">ตรวจประวัติอาชญากรรมและใบขับขี่สาธารณะทุกคน พร้อมอบรมความปลอดภัยก่อนรับงานแรก</p></div>
+      <div class="why"><h3 data-i18n="why3_h">ปุ่ม SOS ในแอป</h3><p data-i18n="why3_p">แชร์ตำแหน่งเรียลไทม์ให้คนที่ไว้ใจ และติดต่อศูนย์ช่วยเหลือได้ตลอด 24 ชั่วโมง</p></div>
+      <div class="why"><h3 data-i18n="why4_h">ประกันทุกการเดินทาง</h3><p data-i18n="why4_p">ผู้โดยสารทุกคนได้รับความคุ้มครองอุบัติเหตุวงเงินสูงสุด 200,000 บาท โดยไม่ต้องสมัครเพิ่ม</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="driver" id="driver" style="padding-block:0">
+  <div class="wrap driver-in">
+    <div class="driver-copy">
+      <h2 data-i18n="drv_h2">ขับกับ EasyGO <em>รายได้ชัดเจน ไม่หักเกินจริง</em></h2>
+      <p data-i18n="drv_p">ค่าคอมมิชชันต่ำสุดในตลาดเพียง 15% โอนรายได้เข้าบัญชีทุกวัน เลือกเวลาขับเองได้ 100%</p>
+      <ul>
+        <li data-i18n="drv_li1">รับงานได้ทั้งมอเตอร์ไซค์และรถยนต์</li>
+        <li data-i18n="drv_li2">โบนัสพิเศษช่วงชั่วโมงเร่งด่วน</li>
+        <li data-i18n="drv_li3">ประกันอุบัติเหตุคุ้มครองระหว่างรับงาน</li>
+      </ul>
+      <a class="btn btn-brand" href="#download" data-i18n="drv_btn">สมัครเป็นคนขับ</a>
+    </div>
+  </div>
+</section>
+
+<section class="dl" id="download">
+  <div class="wrap">
+    <h2 data-i18n="dl_h2">พร้อมออกเดินทางหรือยัง?</h2>
+    <p data-i18n="dl_p">ดาวน์โหลด EasyGO ฟรี แล้วรับส่วนลด 50% สำหรับ 3 เที่ยวแรก ด้วยโค้ด <b>GOFIRST</b></p>
+    <div class="stores">
+      <a class="store" href="#download"><svg viewBox="0 0 24 24"><path d="M17.05 12.54c-.03-2.9 2.37-4.3 2.48-4.37-1.35-1.98-3.46-2.25-4.2-2.28-1.79-.18-3.5 1.05-4.4 1.05-.9 0-2.3-1.03-3.79-1-1.95.03-3.75 1.13-4.75 2.88-2.03 3.52-.52 8.72 1.46 11.57.97 1.4 2.12 2.96 3.63 2.9 1.46-.06 2.01-.94 3.77-.94s2.26.94 3.8.91c1.57-.03 2.57-1.42 3.53-2.82 1.11-1.62 1.57-3.19 1.6-3.27-.04-.02-3.07-1.18-3.13-4.63zM14.16 4c.8-.97 1.34-2.32 1.19-3.66-1.15.05-2.55.77-3.38 1.74-.74.86-1.39 2.23-1.22 3.55 1.29.1 2.6-.65 3.41-1.63z"/></svg><span><small data-i18n="store_on">ดาวน์โหลดบน</small><b>App Store</b></span></a>
+      <a class="store" href="#download"><svg viewBox="0 0 24 24"><path d="M3.6 1.8c-.3.3-.5.8-.5 1.4v17.6c0 .6.2 1.1.5 1.4l.1.1 9.9-9.9v-.2L3.7 1.7l-.1.1zm13.2 13.3l-3.3-3.3v-.2l3.3-3.3.1 0 3.9 2.2c1.1.6 1.1 1.7 0 2.3l-3.9 2.2-.1.1zm-.1.1l-3.4-3.4-9.8 9.9c.4.4 1 .4 1.7 0l11.5-6.5zM3.5 1.6c-.7-.4-1.3-.3-1.7 0l9.9 9.9 3.4-3.4L3.5 1.6z"/></svg><span><small data-i18n="store_on">ดาวน์โหลดบน</small><b>Google Play</b></span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-in">
+    <span data-i18n="foot_l">© 2026 EasyGO Thailand · แอปเรียกรถที่คุณไว้ใจ</span>
+    <span data-i18n="foot_r">ศูนย์ช่วยเหลือ 24 ชม. โทร 1499 · support@easygo.co.th</span>
+  </div>
+</footer>
+
+<script>
+const I18N = {
+  th: {
+    nav_services:"บริการ", nav_how:"วิธีใช้งาน", nav_why:"ทำไมต้อง EasyGO", nav_driver:"ร่วมขับกับเรา", nav_download:"ดาวน์โหลดแอป",
+    hero_h1:'จะไปไหน<br>ก็<span class="under">อีซี่</span> แค่กด GO',
+    hero_lede:"เรียกรถได้ใน 3 นาที รู้ราคาก่อนขึ้นทุกเที่ยว ไม่มีบวกเพิ่มตอนฝนตก คนขับผ่านการตรวจประวัติทุกคน พร้อมรับคุณทั่วกรุงเทพฯ และอีก 12 จังหวัด",
+    hero_cta1:"ดาวน์โหลดฟรี", hero_cta2:"ดูวิธีใช้งาน",
+    stat1_v:"3 นาที", stat1_l:"เวลารอรถเฉลี่ย", stat2_l:"คนขับที่ตรวจประวัติแล้ว", stat3_l:"คะแนนจากผู้ใช้",
+    ph_eta:"ถึงใน 3 นาที", ph_route:"สยาม → อารีย์ · 6.4 กม.", ph_go:"เรียกรถเลย",
+    svc_eyebrow:"บริการของเรา", svc_h2:"เลือกให้เหมาะกับทริปของคุณ",
+    svc_p:"ทุกบริการแสดงราคาก่อนยืนยันเสมอ จ่ายได้ทั้งเงินสด บัตร และ EasyWallet",
+    svc1_p:"มอเตอร์ไซค์ซอกแซกทันใจ เหมาะกับระยะสั้นและชั่วโมงเร่งด่วน",
+    svc2_p:"รถยนต์ 4 ที่นั่ง สะอาด แอร์เย็น สำหรับเดินทางในเมืองทุกวัน",
+    svc3_p:"รถใหญ่พร้อมคนขับมืออาชีพ รับส่งสนามบินหรือประชุมสำคัญ",
+    svc4_p:"ส่งของด่วนถึงมือใน 1 ชั่วโมง ติดตามพัสดุแบบเรียลไทม์",
+    price_from:"เริ่มต้น",
+    how_eyebrow:"วิธีใช้งาน", how_h2:"เรียกรถครั้งแรกใน 4 ขั้นตอน",
+    how1_h:"ปักหมุดปลายทาง", how1_p:"พิมพ์ชื่อสถานที่หรือเลื่อนหมุดบนแผนที่ ระบบจำที่ที่ไปบ่อยให้อัตโนมัติ",
+    how2_h:"เลือกบริการและดูราคา", how2_p:"เทียบราคา EasyBike, EasyCar และ Premium ได้ในหน้าจอเดียว ราคานี้คือราคาจริงที่จ่าย",
+    how3_h:"กด GO แล้วรอรับ", how3_p:"เห็นตำแหน่งรถ ชื่อ และทะเบียนคนขับทันที พร้อมเวลาถึงโดยประมาณ",
+    how4_h:"ถึงที่หมาย จ่ายตามสะดวก", how4_p:"เงินสด บัตรเครดิต หรือ EasyWallet แล้วให้คะแนนการเดินทางได้เลย",
+    why_eyebrow:"ทำไมต้อง EasyGO", why_h2:"ปลอดภัยทุกเที่ยว โปร่งใสทุกบาท",
+    why1_h:"ราคาล็อกก่อนขึ้นรถ", why1_p:"ราคาที่เห็นตอนกดเรียกคือราคาที่จ่ายจริง ไม่มี surge ซ่อน ไม่มีบวกเพิ่มกลางทาง",
+    why2_h:"คนขับตรวจประวัติ 100%", why2_p:"ตรวจประวัติอาชญากรรมและใบขับขี่สาธารณะทุกคน พร้อมอบรมความปลอดภัยก่อนรับงานแรก",
+    why3_h:"ปุ่ม SOS ในแอป", why3_p:"แชร์ตำแหน่งเรียลไทม์ให้คนที่ไว้ใจ และติดต่อศูนย์ช่วยเหลือได้ตลอด 24 ชั่วโมง",
+    why4_h:"ประกันทุกการเดินทาง", why4_p:"ผู้โดยสารทุกคนได้รับความคุ้มครองอุบัติเหตุวงเงินสูงสุด 200,000 บาท โดยไม่ต้องสมัครเพิ่ม",
+    drv_h2:'ขับกับ EasyGO <em>รายได้ชัดเจน ไม่หักเกินจริง</em>',
+    drv_p:"ค่าคอมมิชชันต่ำสุดในตลาดเพียง 15% โอนรายได้เข้าบัญชีทุกวัน เลือกเวลาขับเองได้ 100%",
+    drv_li1:"รับงานได้ทั้งมอเตอร์ไซค์และรถยนต์", drv_li2:"โบนัสพิเศษช่วงชั่วโมงเร่งด่วน", drv_li3:"ประกันอุบัติเหตุคุ้มครองระหว่างรับงาน",
+    drv_btn:"สมัครเป็นคนขับ",
+    dl_h2:"พร้อมออกเดินทางหรือยัง?",
+    dl_p:'ดาวน์โหลด EasyGO ฟรี แล้วรับส่วนลด 50% สำหรับ 3 เที่ยวแรก ด้วยโค้ด <b>GOFIRST</b>',
+    store_on:"ดาวน์โหลดบน",
+    foot_l:"© 2026 EasyGO Thailand · แอปเรียกรถที่คุณไว้ใจ",
+    foot_r:"ศูนย์ช่วยเหลือ 24 ชม. โทร 1499 · support@easygo.co.th"
+  },
+  lo: {
+    nav_services:"ບໍລິການ", nav_how:"ວິທີໃຊ້ງານ", nav_why:"ເປັນຫຍັງຕ້ອງ EasyGO", nav_driver:"ຂັບກັບພວກເຮົາ", nav_download:"ດາວໂຫຼດແອັບ",
+    hero_h1:'ຈະໄປໃສ<br>ກໍ<span class="under">ງ່າຍ</span> ພຽງກົດ GO',
+    hero_lede:"ເອີ້ນລົດໄດ້ພາຍໃນ 3 ນາທີ ຮູ້ລາຄາກ່ອນຂຶ້ນທຸກຖ້ຽວ ບໍ່ມີບວກເພີ່ມຕອນຝົນຕົກ ຄົນຂັບຜ່ານການກວດປະຫວັດທຸກຄົນ ພ້ອມຮັບທ່ານທົ່ວນະຄອນຫຼວງ ແລະ ອີກ 12 ແຂວງ",
+    hero_cta1:"ດາວໂຫຼດຟຣີ", hero_cta2:"ເບິ່ງວິທີໃຊ້ງານ",
+    stat1_v:"3 ນາທີ", stat1_l:"ເວລາລໍຖ້າລົດສະເລ່ຍ", stat2_l:"ຄົນຂັບທີ່ກວດປະຫວັດແລ້ວ", stat3_l:"ຄະແນນຈາກຜູ້ໃຊ້",
+    ph_eta:"ຮອດໃນ 3 ນາທີ", ph_route:"ຕະຫຼາດເຊົ້າ → ທາດຫຼວງ · 6.4 ກມ.", ph_go:"ເອີ້ນລົດເລີຍ",
+    svc_eyebrow:"ບໍລິການຂອງເຮົາ", svc_h2:"ເລືອກໃຫ້ເໝາະກັບການເດີນທາງຂອງທ່ານ",
+    svc_p:"ທຸກບໍລິການສະແດງລາຄາກ່ອນຢືນຢັນສະເໝີ ຈ່າຍໄດ້ທັງເງິນສົດ ບັດ ແລະ EasyWallet",
+    svc1_p:"ລົດຈັກວ່ອງໄວ ເໝາະກັບໄລຍະສັ້ນ ແລະ ຊົ່ວໂມງເລັ່ງດ່ວນ",
+    svc2_p:"ລົດເກັງ 4 ບ່ອນນັ່ງ ສະອາດ ແອເຢັນ ສຳລັບເດີນທາງໃນເມືອງທຸກວັນ",
+    svc3_p:"ລົດໃຫຍ່ພ້ອມຄົນຂັບມືອາຊີບ ຮັບສົ່ງສະໜາມບິນ ຫຼື ປະຊຸມສຳຄັນ",
+    svc4_p:"ສົ່ງເຄື່ອງດ່ວນຮອດມືພາຍໃນ 1 ຊົ່ວໂມງ ຕິດຕາມພັດສະດຸແບບສົດ",
+    price_from:"ເລີ່ມຕົ້ນ",
+    how_eyebrow:"ວິທີໃຊ້ງານ", how_h2:"ເອີ້ນລົດຄັ້ງທຳອິດໃນ 4 ຂັ້ນຕອນ",
+    how1_h:"ປັກໝຸດປາຍທາງ", how1_p:"ພິມຊື່ສະຖານທີ່ ຫຼື ເລື່ອນໝຸດເທິງແຜນທີ່ ລະບົບຈື່ບ່ອນທີ່ໄປເລື້ອຍໆໃຫ້ອັດຕະໂນມັດ",
+    how2_h:"ເລືອກບໍລິການ ແລະ ເບິ່ງລາຄາ", how2_p:"ປຽບທຽບລາຄາ EasyBike, EasyCar ແລະ Premium ໄດ້ໃນໜ້າຈໍດຽວ ລາຄານີ້ຄືລາຄາແທ້ທີ່ຈ່າຍ",
+    how3_h:"ກົດ GO ແລ້ວລໍຖ້າຮັບ", how3_p:"ເຫັນຕຳແໜ່ງລົດ ຊື່ ແລະ ທະບຽນຄົນຂັບທັນທີ ພ້ອມເວລາຮອດໂດຍປະມານ",
+    how4_h:"ຮອດຈຸດໝາຍ ຈ່າຍຕາມສະດວກ", how4_p:"ເງິນສົດ ບັດເຄຣດິດ ຫຼື EasyWallet ແລ້ວໃຫ້ຄະແນນການເດີນທາງໄດ້ເລີຍ",
+    why_eyebrow:"ເປັນຫຍັງຕ້ອງ EasyGO", why_h2:"ປອດໄພທຸກຖ້ຽວ ໂປ່ງໃສທຸກກີບ",
+    why1_h:"ລາຄາລັອກກ່ອນຂຶ້ນລົດ", why1_p:"ລາຄາທີ່ເຫັນຕອນກົດເອີ້ນຄືລາຄາທີ່ຈ່າຍແທ້ ບໍ່ມີບວກເພີ່ມກາງທາງ",
+    why2_h:"ຄົນຂັບກວດປະຫວັດ 100%", why2_p:"ກວດປະຫວັດອາດຊະຍາກຳ ແລະ ໃບຂັບຂີ່ທຸກຄົນ ພ້ອມອົບຮົມຄວາມປອດໄພກ່ອນຮັບວຽກທຳອິດ",
+    why3_h:"ປຸ່ມ SOS ໃນແອັບ", why3_p:"ແຊຣ໌ຕຳແໜ່ງແບບສົດໃຫ້ຄົນທີ່ໄວ້ໃຈ ແລະ ຕິດຕໍ່ສູນຊ່ວຍເຫຼືອໄດ້ຕະຫຼອດ 24 ຊົ່ວໂມງ",
+    why4_h:"ປະກັນທຸກການເດີນທາງ", why4_p:"ຜູ້ໂດຍສານທຸກຄົນໄດ້ຮັບຄວາມຄຸ້ມຄອງອຸບັດຕິເຫດ ໂດຍບໍ່ຕ້ອງສະໝັກເພີ່ມ",
+    drv_h2:'ຂັບກັບ EasyGO <em>ລາຍຮັບຊັດເຈນ ບໍ່ຫັກເກີນຈິງ</em>',
+    drv_p:"ຄ່າຄອມມິດຊັນຕ່ຳສຸດໃນຕະຫຼາດພຽງ 15% ໂອນລາຍຮັບເຂົ້າບັນຊີທຸກວັນ ເລືອກເວລາຂັບເອງໄດ້ 100%",
+    drv_li1:"ຮັບວຽກໄດ້ທັງລົດຈັກ ແລະ ລົດເກັງ", drv_li2:"ໂບນັດພິເສດຊ່ວງຊົ່ວໂມງເລັ່ງດ່ວນ", drv_li3:"ປະກັນອຸບັດຕິເຫດຄຸ້ມຄອງລະຫວ່າງຮັບວຽກ",
+    drv_btn:"ສະໝັກເປັນຄົນຂັບ",
+    dl_h2:"ພ້ອມອອກເດີນທາງແລ້ວບໍ?",
+    dl_p:'ດາວໂຫຼດ EasyGO ຟຣີ ແລ້ວຮັບສ່ວນຫຼຸດ 50% ສຳລັບ 3 ຖ້ຽວທຳອິດ ດ້ວຍລະຫັດ <b>GOFIRST</b>',
+    store_on:"ດາວໂຫຼດຢູ່",
+    foot_l:"© 2026 EasyGO · ແອັບເອີ້ນລົດທີ່ທ່ານໄວ້ໃຈ",
+    foot_r:"ສູນຊ່ວຍເຫຼືອ 24 ຊມ. ໂທ 1499 · support@easygo.co.th"
+  },
+  en: {
+    nav_services:"Services", nav_how:"How it works", nav_why:"Why EasyGO", nav_driver:"Drive with us", nav_download:"Get the app",
+    hero_h1:'Going anywhere<br>is <span class="under">easy</span> — just tap GO',
+    hero_lede:"Get a ride in 3 minutes. See the exact fare before you hop in — no rain surcharges, ever. Every driver is background-checked. Serving Bangkok and 12 more provinces.",
+    hero_cta1:"Download free", hero_cta2:"See how it works",
+    stat1_v:"3 min", stat1_l:"average pickup time", stat2_l:"background-checked drivers", stat3_l:"user rating",
+    ph_eta:"Arriving in 3 min", ph_route:"Siam → Ari · 6.4 km", ph_go:"Book now",
+    svc_eyebrow:"Our services", svc_h2:"Pick the ride that fits your trip",
+    svc_p:"Every service shows the fare before you confirm. Pay with cash, card, or EasyWallet.",
+    svc1_p:"Nimble motorbikes for short hops and rush-hour traffic.",
+    svc2_p:"Clean, air-conditioned 4-seaters for everyday city trips.",
+    svc3_p:"Spacious cars with professional drivers for airports and big meetings.",
+    svc4_p:"Same-hour delivery with real-time package tracking.",
+    price_from:"from",
+    how_eyebrow:"How it works", how_h2:"Your first ride in 4 steps",
+    how1_h:"Drop a pin", how1_p:"Type a place or drag the pin on the map. Frequent spots are saved automatically.",
+    how2_h:"Compare and choose", how2_p:"See EasyBike, EasyCar, and Premium fares on one screen. The price you see is the price you pay.",
+    how3_h:"Tap GO and wait", how3_p:"Instantly see your driver's location, name, and plate number with an ETA.",
+    how4_h:"Arrive and pay your way", how4_p:"Cash, credit card, or EasyWallet — then rate your trip.",
+    why_eyebrow:"Why EasyGO", why_h2:"Safe on every trip, transparent on every baht",
+    why1_h:"Fare locked before you ride", why1_p:"The fare shown at booking is what you pay. No hidden surge, no mid-trip extras.",
+    why2_h:"100% background-checked drivers", why2_p:"Criminal-record and public-license checks for every driver, plus safety training before their first job.",
+    why3_h:"In-app SOS button", why3_p:"Share your live location with people you trust and reach our help center 24/7.",
+    why4_h:"Insurance on every ride", why4_p:"Every passenger is covered for accidents up to ฿200,000 — no sign-up needed.",
+    drv_h2:'Drive with EasyGO — <em>clear earnings, fair fees</em>',
+    drv_p:"The lowest commission in the market at just 15%. Daily payouts to your bank account. Set your own hours, 100%.",
+    drv_li1:"Take jobs on a motorbike or a car", drv_li2:"Bonus pay during rush hours", drv_li3:"Accident insurance while on the job",
+    drv_btn:"Become a driver",
+    dl_h2:"Ready to go?",
+    dl_p:'Download EasyGO free and get 50% off your first 3 rides with code <b>GOFIRST</b>',
+    store_on:"Download on",
+    foot_l:"© 2026 EasyGO Thailand · the ride-hailing app you can trust",
+    foot_r:"24-hr help center: call 1499 · support@easygo.co.th"
+  }
+};
+
+function setLang(lang){
+  const dict = I18N[lang] || I18N.th;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const t = dict[el.dataset.i18n];
+    if (t !== undefined) el.innerHTML = t;
+  });
+  document.querySelectorAll('.lang button').forEach(b => {
+    b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+  });
+  try { localStorage.setItem('easygo-lang', lang); } catch (e) {}
+}
+
+document.querySelectorAll('.lang button').forEach(b => {
+  b.addEventListener('click', () => setLang(b.dataset.lang));
+});
+
+let saved = 'th';
+try { saved = localStorage.getItem('easygo-lang') || 'th'; } catch (e) {}
+if (saved !== 'th' && I18N[saved]) setLang(saved);
+</script>
+<!--/ART-BODY-->
+</body>
+</html>
