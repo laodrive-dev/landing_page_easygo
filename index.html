@@ -99,7 +99,7 @@ a{color:inherit}
 
 /* nav */
 .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 2px 14px rgba(28,26,18,.06)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:14px}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:14px;padding-inline:clamp(16px,3vw,40px)}
 .logo{font-family:var(--display);font-weight:800;font-size:1.3rem;letter-spacing:-.01em;text-decoration:none;display:inline-flex;align-items:center}
 .logo b{color:var(--brand)}
 .logo::before{content:"";width:12px;height:12px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--brand);border:3px solid var(--ink);margin-right:9px;flex:none}
@@ -311,7 +311,7 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
 <body>
 <!--ART-BODY-->
 <nav class="nav">
-  <div class="wrap nav-in">
+  <div class="nav-in">
     <a class="logo" href="#top">Easy<b>GO</b></a>
     <div class="nav-links">
       <a href="#about" data-i18n="nav_about">เกี่ยวกับเรา</a>
