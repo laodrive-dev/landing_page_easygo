@@ -474,7 +474,7 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
     <div class="nav-links">
       <a href="#about" data-i18n="nav_about">เกี่ยวกับเรา</a>
       <a href="#services" data-i18n="nav_services">บริการ</a>
-      <a href="#news" data-i18n="nav_news">ข่าวสาร</a>
+      <a href="news.html" data-i18n="nav_news">ข่าวสาร</a>
       <a href="#driver" data-i18n="nav_driver">ร่วมขับกับเรา</a>
     </div>
     <div class="nav-right">
@@ -764,14 +764,17 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
 
 <section id="news">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow" data-i18n="news_eyebrow">ข่าวสาร</span>
-      <h2 style="font-weight:800" data-i18n="news_h2">ข่าวสารและ<span class="hl-y">โปรโมชัน</span></h2>
+    <div class="sec-head" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:14px;max-width:none">
+      <div>
+        <span class="eyebrow" data-i18n="news_eyebrow">ข่าวสาร</span>
+        <h2 style="font-weight:800" data-i18n="news_h2">ข่าวสารและ<span class="hl-y">โปรโมชัน</span></h2>
+      </div>
+      <a class="btn btn-brand" href="news.html" data-i18n="news_all">ดูข่าวทั้งหมด</a>
     </div>
     <div class="news-grid">
-      <a class="news-card" href="#download"><span class="tag t1" data-i18n="n1_tag">โปรโมชัน</span><h3 data-i18n="n1_h">ลด 50% สำหรับ 3 เที่ยวแรก</h3><p data-i18n="n1_p">ผู้ใช้ใหม่ดาวน์โหลดแอปแล้วใช้โค้ด GOFIRST ได้ทันที</p></a>
-      <a class="news-card" href="#about"><span class="tag t2" data-i18n="n2_tag">ประกาศ</span><h3 data-i18n="n2_h">เปิดให้บริการทั่วลาวและไทยแล้ว</h3><p data-i18n="n2_p">พร้อมเตรียมขยายสู่อีกหลายประเทศในอาเซียนเร็ว ๆ นี้</p></a>
-      <a class="news-card" href="#driver"><span class="tag t3" data-i18n="n3_tag">รับสมัคร</span><h3 data-i18n="n3_h">เปิดรับคนขับทั่วประเทศ</h3><p data-i18n="n3_p">คอมมิชชันต่ำสุด 15% โอนรายได้เข้าบัญชีทุกวัน</p></a>
+      <a class="news-card" href="news.html"><span class="tag t1" data-i18n="n1_tag">โปรโมชัน</span><h3 data-i18n="n1_h">ลด 50% สำหรับ 3 เที่ยวแรก</h3><p data-i18n="n1_p">ผู้ใช้ใหม่ดาวน์โหลดแอปแล้วใช้โค้ด GOFIRST ได้ทันที</p></a>
+      <a class="news-card" href="news.html"><span class="tag t2" data-i18n="n2_tag">ประกาศ</span><h3 data-i18n="n2_h">เปิดให้บริการทั่วลาวและไทยแล้ว</h3><p data-i18n="n2_p">พร้อมเตรียมขยายสู่อีกหลายประเทศในอาเซียนเร็ว ๆ นี้</p></a>
+      <a class="news-card" href="news.html"><span class="tag t3" data-i18n="n3_tag">รับสมัคร</span><h3 data-i18n="n3_h">เปิดรับคนขับทั่วประเทศ</h3><p data-i18n="n3_p">คอมมิชชันต่ำสุด 15% โอนรายได้เข้าบัญชีทุกวัน</p></a>
     </div>
   </div>
 </section>
@@ -817,7 +820,7 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
 const I18N = {
   th: {
     nav_about:"เกี่ยวกับเรา", nav_services:"บริการ", nav_news:"ข่าวสาร", nav_driver:"ร่วมขับกับเรา", nav_download:"ดาวน์โหลดแอป",
-    news_eyebrow:"ข่าวสาร", news_h2:'ข่าวสารและ<span class="hl-y">โปรโมชัน</span>',
+    news_eyebrow:"ข่าวสาร", news_all:"ดูข่าวทั้งหมด", news_h2:'ข่าวสารและ<span class="hl-y">โปรโมชัน</span>',
     n1_tag:"โปรโมชัน", n1_h:"ลด 50% สำหรับ 3 เที่ยวแรก", n1_p:"ผู้ใช้ใหม่ดาวน์โหลดแอปแล้วใช้โค้ด GOFIRST ได้ทันที",
     n2_tag:"ประกาศ", n2_h:"เปิดให้บริการทั่วลาวและไทยแล้ว", n2_p:"พร้อมเตรียมขยายสู่อีกหลายประเทศในอาเซียนเร็ว ๆ นี้",
     n3_tag:"รับสมัคร", n3_h:"เปิดรับคนขับทั่วประเทศ", n3_p:"คอมมิชชันต่ำสุด 15% โอนรายได้เข้าบัญชีทุกวัน",
@@ -892,7 +895,7 @@ const I18N = {
   },
   lo: {
     nav_about:"ກ່ຽວກັບເຮົາ", nav_services:"ບໍລິການ", nav_news:"ຂ່າວສານ", nav_driver:"ຂັບກັບພວກເຮົາ", nav_download:"ດາວໂຫຼດແອັບ",
-    news_eyebrow:"ຂ່າວສານ", news_h2:'ຂ່າວສານ ແລະ <span class="hl-y">ໂປຣໂມຊັນ</span>',
+    news_eyebrow:"ຂ່າວສານ", news_all:"ເບິ່ງຂ່າວທັງໝົດ", news_h2:'ຂ່າວສານ ແລະ <span class="hl-y">ໂປຣໂມຊັນ</span>',
     n1_tag:"ໂປຣໂມຊັນ", n1_h:"ຫຼຸດ 50% ສຳລັບ 3 ຖ້ຽວທຳອິດ", n1_p:"ຜູ້ໃຊ້ໃໝ່ດາວໂຫຼດແອັບແລ້ວໃຊ້ລະຫັດ GOFIRST ໄດ້ທັນທີ",
     n2_tag:"ປະກາດ", n2_h:"ເປີດໃຫ້ບໍລິການທົ່ວລາວ ແລະ ໄທແລ້ວ", n2_p:"ພ້ອມກຽມຂະຫຍາຍສູ່ອີກຫຼາຍປະເທດໃນອາຊຽນໄວໆນີ້",
     n3_tag:"ຮັບສະໝັກ", n3_h:"ເປີດຮັບຄົນຂັບທົ່ວປະເທດ", n3_p:"ຄອມມິດຊັນຕ່ຳສຸດ 15% ໂອນລາຍຮັບເຂົ້າບັນຊີທຸກວັນ",
@@ -967,7 +970,7 @@ const I18N = {
   },
   en: {
     nav_about:"About us", nav_services:"Services", nav_news:"News", nav_driver:"Drive with us", nav_download:"Get the app",
-    news_eyebrow:"News", news_h2:'News and <span class="hl-y">promotions</span>',
+    news_eyebrow:"News", news_all:"View all news", news_h2:'News and <span class="hl-y">promotions</span>',
     n1_tag:"Promotion", n1_h:"50% off your first 3 rides", n1_p:"New users: download the app and use code GOFIRST right away.",
     n2_tag:"Announcement", n2_h:"Now serving Laos and Thailand", n2_p:"Preparing to expand to more ASEAN countries soon.",
     n3_tag:"Hiring", n3_h:"Recruiting drivers nationwide", n3_p:"Commission as low as 15%, with daily payouts.",

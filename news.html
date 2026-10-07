@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="กระดานข่าวและโปรโมชันจาก EasyGO แอปเรียกรถของคนลาว">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#FEC200">
+<link rel="canonical" href="https://www.easygo.la/news.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EasyGO">
+<meta property="og:title" content="ข่าวสาร EasyGO">
+<meta property="og:description" content="ข่าวสาร ประกาศ และโปรโมชันล่าสุดจาก EasyGO">
+<meta property="og:url" content="https://www.easygo.la/news.html">
+<title>ข่าวสาร EasyGO</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;600;700;800&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Sans+Lao+Looped:wght@400;500;600;700;800&display=swap">
+<style>
+:root{
+  --bg:#ffffff; --surface:#fffdf4; --ink:#1c1a12; --muted:#6b6553;
+  --brand:#FEC200; --brand-ink:#1c1a12; --line:#efe9d6; --card:#ffffff;
+  --display:'Prompt','Noto Sans Lao Looped',system-ui,sans-serif;
+  --body:'IBM Plex Sans Thai','Noto Sans Lao Looped','Prompt',system-ui,sans-serif;
+  --orange:#FF8A3D; --violet:#8B5CF6; --teal:#14B8A6;
+  --tint-yellow:#FFF6D6; --tint-orange:#FFEFE2; --tint-violet:#F1EBFF; --tint-teal:#E2F8F3;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7}
+h1,h2,h3{font-family:var(--display);line-height:1.25;text-wrap:balance;margin:0}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1240px;margin-inline:auto;padding-inline:20px}
+.hl-y{color:var(--brand)}
+.eyebrow{font-family:var(--display);font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E08900;display:inline-flex;align-items:center;gap:12px}
+.eyebrow::after{content:"";width:34px;height:2px;background:var(--brand);border-radius:2px}
+
+.nav{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 2px 14px rgba(28,26,18,.06)}
+.nav-in{display:flex;align-items:center;gap:clamp(24px,4vw,56px);padding-block:14px;padding-inline:clamp(16px,3vw,40px)}
+.logo{font-family:var(--display);font-weight:800;font-size:1.3rem;letter-spacing:-.01em;text-decoration:none;display:inline-flex;align-items:center}
+.logo b{color:var(--brand)}
+.logo::before{content:"";width:12px;height:12px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--brand);border:3px solid var(--ink);margin-right:9px;flex:none}
+.nav-links{display:flex;gap:24px;font-size:.92rem;font-weight:500}
+.nav-links a{text-decoration:none;color:var(--muted);padding-block:4px;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.nav-links a:hover,.nav-links a:focus-visible,.nav-links a.active{color:var(--ink);border-bottom-color:var(--brand)}
+.nav-right{display:flex;align-items:center;gap:12px;margin-left:auto}
+.btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:.95rem;text-decoration:none;border-radius:999px;padding:11px 24px;border:2px solid transparent;cursor:pointer}
+.btn-brand{background:var(--brand);color:var(--brand-ink)}
+.btn-brand:hover{filter:brightness(1.05)}
+.btn:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
+@media (max-width:760px){.nav-links{display:none}}
+@media (max-width:480px){.nav .btn-brand{display:none}}
+
+.lang{position:relative}
+.lang-btn{display:flex;align-items:center;gap:7px;font-family:var(--display);font-weight:600;font-size:.85rem;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 14px;color:var(--ink);cursor:pointer}
+.lang-btn svg{width:16px;height:16px;stroke:var(--ink);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.lang-btn .caret{width:11px;height:11px;transition:transform .15s}
+.lang[data-open] .lang-btn .caret{transform:rotate(180deg)}
+.lang-btn:hover{border-color:var(--brand)}
+.lang-menu{position:absolute;top:calc(100% + 8px);right:0;min-width:150px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 30px rgba(28,26,18,.14);padding:6px;display:grid;gap:2px;z-index:30}
+.lang-menu[hidden]{display:none !important}
+.lang-menu button{font-family:var(--display);font-weight:600;font-size:.88rem;text-align:left;border:0;background:transparent;color:var(--ink);border-radius:9px;padding:9px 12px;cursor:pointer}
+.lang-menu button:hover{background:var(--tint-yellow)}
+.lang-menu button[aria-selected="true"]{background:var(--brand);color:var(--brand-ink)}
+
+.board-hero{background:linear-gradient(135deg,#FFDB55,#FEC200 70%);padding-block:48px}
+.board-hero h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800}
+.board-hero p{margin-top:8px;color:#4a4430}
+
+.board{padding-block:48px 72px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.filters button{font-family:var(--display);font-weight:700;font-size:.82rem;border:1px solid var(--line);background:var(--card);color:var(--muted);border-radius:999px;padding:7px 16px;cursor:pointer}
+.filters button:hover{border-color:var(--brand);color:var(--ink)}
+.filters button[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
+.post-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;align-items:stretch}
+.post{display:flex;flex-direction:column;gap:8px;height:100%;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;transition:transform .2s,box-shadow .2s}
+.post:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(28,26,18,.1)}
+.post .tag{align-self:flex-start;font-family:var(--display);font-weight:700;font-size:.72rem;border-radius:999px;padding:3px 11px}
+.post .t-promo{background:var(--tint-yellow);color:#8a6400}
+.post .t-announce{background:var(--tint-teal);color:#0b7a6d}
+.post .t-hiring{background:var(--tint-orange);color:#c05e14}
+.post h3{font-size:1.05rem;font-weight:800;margin-top:4px}
+.post p{font-size:.88rem;color:var(--muted)}
+.post .more{margin-top:auto;padding-top:8px;font-family:var(--display);font-weight:700;font-size:.84rem;color:#E08900;text-decoration:none}
+.post .more:hover{text-decoration:underline}
+.post[hidden]{display:none}
+.empty{color:var(--muted);padding-block:30px;text-align:center}
+
+footer{border-top:1px solid var(--line);background:var(--surface);padding-block:24px;font-size:.88rem;color:var(--muted)}
+.foot-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="nav-in">
+    <a class="logo" href="index.html">Easy<b>GO</b></a>
+    <div class="nav-links">
+      <a href="index.html#about" data-i18n="nav_about">เกี่ยวกับเรา</a>
+      <a href="index.html#services" data-i18n="nav_services">บริการ</a>
+      <a class="active" href="news.html" data-i18n="nav_news">ข่าวสาร</a>
+      <a href="index.html#driver" data-i18n="nav_driver">ร่วมขับกับเรา</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang" id="lang-dd">
+        <button type="button" class="lang-btn" id="lang-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="เลือกภาษา / Select language">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          <span id="lang-cur">ไทย</span>
+          <svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="lang-menu" id="lang-menu" role="listbox" hidden>
+          <button type="button" data-lang="th" role="option" aria-selected="true">ไทย</button>
+          <button type="button" data-lang="lo" role="option" aria-selected="false">ລາວ</button>
+          <button type="button" data-lang="en" role="option" aria-selected="false">English</button>
+        </div>
+      </div>
+      <a class="btn btn-brand" href="index.html#download" data-i18n="nav_download">ดาวน์โหลดแอป</a>
+    </div>
+  </div>
+</nav>
+
+<header class="board-hero">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="b_eyebrow">กระดานข่าว</span>
+    <h1 data-i18n="b_h1">ข่าวสารและประกาศจาก EasyGO</h1>
+    <p data-i18n="b_p">อัปเดตโปรโมชัน ประกาศบริการ และการรับสมัครคนขับ ทั้งหมดในที่เดียว</p>
+  </div>
+</header>
+
+<main class="board">
+  <div class="wrap">
+    <div class="filters" role="group" aria-label="กรองหมวดข่าว">
+      <button type="button" data-filter="all" aria-pressed="true" data-i18n="f_all">ทั้งหมด</button>
+      <button type="button" data-filter="promo" aria-pressed="false" data-i18n="f_promo">โปรโมชัน</button>
+      <button type="button" data-filter="announce" aria-pressed="false" data-i18n="f_announce">ประกาศ</button>
+      <button type="button" data-filter="hiring" aria-pressed="false" data-i18n="f_hiring">รับสมัคร</button>
+    </div>
+    <div class="post-grid" id="post-grid">
+      <article class="post" data-cat="promo">
+        <span class="tag t-promo" data-i18n="n1_tag">โปรโมชัน</span>
+        <h3 data-i18n="n1_h">ลด 50% สำหรับ 3 เที่ยวแรก</h3>
+        <p data-i18n="n1_p">ผู้ใช้ใหม่ดาวน์โหลดแอป EasyGO แล้วกรอกโค้ด GOFIRST ก่อนเรียกรถ รับส่วนลด 50% ได้ทันที 3 เที่ยวแรก ใช้ได้กับทุกบริการ ทั้ง EasyBike, EasyCar และ EasyPremium</p>
+        <a class="more" href="index.html#download" data-i18n="n_more1">ดาวน์โหลดแอป →</a>
+      </article>
+      <article class="post" data-cat="announce">
+        <span class="tag t-announce" data-i18n="n2_tag">ประกาศ</span>
+        <h3 data-i18n="n2_h">EasyGO ให้บริการทั่ว สปป.ลาว แล้ว</h3>
+        <p data-i18n="n2_p">เปิดให้บริการเรียกรถ ส่งของ และบริการพรีเมียมทั่ว สปป.ลาว พร้อมเตรียมขยายสู่ประเทศไทยและอีกหลายประเทศในอาเซียนเร็ว ๆ นี้</p>
+        <a class="more" href="index.html#about" data-i18n="n_more2">อ่านเกี่ยวกับเรา →</a>
+      </article>
+      <article class="post" data-cat="hiring">
+        <span class="tag t-hiring" data-i18n="n3_tag">รับสมัคร</span>
+        <h3 data-i18n="n3_h">เปิดรับคนขับทั่วประเทศ</h3>
+        <p data-i18n="n3_p">รับทั้งมอเตอร์ไซค์และรถยนต์ ค่าคอมมิชชันต่ำสุดเพียง 15% โอนรายได้เข้าบัญชีทุกวัน เลือกเวลาขับเองได้ 100% สมัครผ่านแอปได้เลย</p>
+        <a class="more" href="index.html#driver" data-i18n="n_more3">สมัครเป็นคนขับ →</a>
+      </article>
+    </div>
+    <p class="empty" id="empty" hidden data-i18n="b_empty">ยังไม่มีข่าวในหมวดนี้</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <span data-i18n="foot_l">© 2026 EasyGO · สงวนลิขสิทธิ์</span>
+    <a href="index.html" style="color:var(--muted)" data-i18n="foot_back">← กลับหน้าหลัก</a>
+  </div>
+</footer>
+
+<script>
+const I18N = {
+  th: {
+    nav_about:"เกี่ยวกับเรา", nav_services:"บริการ", nav_news:"ข่าวสาร", nav_driver:"ร่วมขับกับเรา", nav_download:"ดาวน์โหลดแอป",
+    b_eyebrow:"กระดานข่าว", b_h1:"ข่าวสารและประกาศจาก EasyGO", b_p:"อัปเดตโปรโมชัน ประกาศบริการ และการรับสมัครคนขับ ทั้งหมดในที่เดียว",
+    f_all:"ทั้งหมด", f_promo:"โปรโมชัน", f_announce:"ประกาศ", f_hiring:"รับสมัคร", b_empty:"ยังไม่มีข่าวในหมวดนี้",
+    n1_tag:"โปรโมชัน", n1_h:"ลด 50% สำหรับ 3 เที่ยวแรก",
+    n1_p:"ผู้ใช้ใหม่ดาวน์โหลดแอป EasyGO แล้วกรอกโค้ด GOFIRST ก่อนเรียกรถ รับส่วนลด 50% ได้ทันที 3 เที่ยวแรก ใช้ได้กับทุกบริการ ทั้ง EasyBike, EasyCar และ EasyPremium",
+    n_more1:"ดาวน์โหลดแอป →",
+    n2_tag:"ประกาศ", n2_h:"EasyGO ให้บริการทั่ว สปป.ลาว แล้ว",
+    n2_p:"เปิดให้บริการเรียกรถ ส่งของ และบริการพรีเมียมทั่ว สปป.ลาว พร้อมเตรียมขยายสู่ประเทศไทยและอีกหลายประเทศในอาเซียนเร็ว ๆ นี้",
+    n_more2:"อ่านเกี่ยวกับเรา →",
+    n3_tag:"รับสมัคร", n3_h:"เปิดรับคนขับทั่วประเทศ",
+    n3_p:"รับทั้งมอเตอร์ไซค์และรถยนต์ ค่าคอมมิชชันต่ำสุดเพียง 15% โอนรายได้เข้าบัญชีทุกวัน เลือกเวลาขับเองได้ 100% สมัครผ่านแอปได้เลย",
+    n_more3:"สมัครเป็นคนขับ →",
+    foot_l:"© 2026 EasyGO · สงวนลิขสิทธิ์", foot_back:"← กลับหน้าหลัก"
+  },
+  lo: {
+    nav_about:"ກ່ຽວກັບເຮົາ", nav_services:"ບໍລິການ", nav_news:"ຂ່າວສານ", nav_driver:"ຂັບກັບພວກເຮົາ", nav_download:"ດາວໂຫຼດແອັບ",
+    b_eyebrow:"ກະດານຂ່າວ", b_h1:"ຂ່າວສານ ແລະ ປະກາດຈາກ EasyGO", b_p:"ອັບເດດໂປຣໂມຊັນ ປະກາດບໍລິການ ແລະ ການຮັບສະໝັກຄົນຂັບ ທັງໝົດຢູ່ບ່ອນດຽວ",
+    f_all:"ທັງໝົດ", f_promo:"ໂປຣໂມຊັນ", f_announce:"ປະກາດ", f_hiring:"ຮັບສະໝັກ", b_empty:"ຍັງບໍ່ມີຂ່າວໃນໝວດນີ້",
+    n1_tag:"ໂປຣໂມຊັນ", n1_h:"ຫຼຸດ 50% ສຳລັບ 3 ຖ້ຽວທຳອິດ",
+    n1_p:"ຜູ້ໃຊ້ໃໝ່ດາວໂຫຼດແອັບ EasyGO ແລ້ວໃສ່ລະຫັດ GOFIRST ກ່ອນເອີ້ນລົດ ຮັບສ່ວນຫຼຸດ 50% ທັນທີ 3 ຖ້ຽວທຳອິດ ໃຊ້ໄດ້ກັບທຸກບໍລິການ ທັງ EasyBike, EasyCar ແລະ EasyPremium",
+    n_more1:"ດາວໂຫຼດແອັບ →",
+    n2_tag:"ປະກາດ", n2_h:"EasyGO ໃຫ້ບໍລິການທົ່ວ ສປປ.ລາວ ແລ້ວ",
+    n2_p:"ເປີດໃຫ້ບໍລິການເອີ້ນລົດ ສົ່ງເຄື່ອງ ແລະ ບໍລິການພຣີມຽມທົ່ວ ສປປ.ລາວ ພ້ອມກຽມຂະຫຍາຍສູ່ປະເທດໄທ ແລະ ອີກຫຼາຍປະເທດໃນອາຊຽນໄວໆນີ້",
+    n_more2:"ອ່ານກ່ຽວກັບເຮົາ →",
+    n3_tag:"ຮັບສະໝັກ", n3_h:"ເປີດຮັບຄົນຂັບທົ່ວປະເທດ",
+    n3_p:"ຮັບທັງລົດຈັກ ແລະ ລົດເກັງ ຄ່າຄອມມິດຊັນຕ່ຳສຸດພຽງ 15% ໂອນລາຍຮັບເຂົ້າບັນຊີທຸກວັນ ເລືອກເວລາຂັບເອງໄດ້ 100% ສະໝັກຜ່ານແອັບໄດ້ເລີຍ",
+    n_more3:"ສະໝັກເປັນຄົນຂັບ →",
+    foot_l:"© 2026 EasyGO · ສະຫງວນລິຂະສິດ", foot_back:"← ກັບໜ້າຫຼັກ"
+  },
+  en: {
+    nav_about:"About us", nav_services:"Services", nav_news:"News", nav_driver:"Drive with us", nav_download:"Get the app",
+    b_eyebrow:"News board", b_h1:"News and announcements from EasyGO", b_p:"Promotions, service announcements, and driver recruitment — all in one place.",
+    f_all:"All", f_promo:"Promotions", f_announce:"Announcements", f_hiring:"Hiring", b_empty:"No news in this category yet",
+    n1_tag:"Promotion", n1_h:"50% off your first 3 rides",
+    n1_p:"New users: download the EasyGO app and enter code GOFIRST before booking to get 50% off your first 3 rides — valid on EasyBike, EasyCar, and EasyPremium.",
+    n_more1:"Get the app →",
+    n2_tag:"Announcement", n2_h:"EasyGO now serves all of Laos",
+    n2_p:"Rides, delivery, and premium service are now available across Laos, with Thailand and more ASEAN countries coming soon.",
+    n_more2:"About us →",
+    n3_tag:"Hiring", n3_h:"Recruiting drivers nationwide",
+    n3_p:"Motorbikes and cars welcome. Commission as low as 15%, daily payouts, and 100% flexible hours. Apply in the app.",
+    n_more3:"Become a driver →",
+    foot_l:"© 2026 EasyGO · All rights reserved", foot_back:"← Back to home"
+  }
+};
+const LANG_LABEL = { th: "ไทย", lo: "ລາວ", en: "English" };
+const langDd = document.getElementById('lang-dd');
+const langBtn = document.getElementById('lang-btn');
+const langMenu = document.getElementById('lang-menu');
+
+function setLang(lang){
+  const dict = I18N[lang] || I18N.th;
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const t = dict[el.dataset.i18n];
+    if (t !== undefined) el.innerHTML = t;
+  });
+  document.getElementById('lang-cur').textContent = LANG_LABEL[lang] || LANG_LABEL.th;
+  langMenu.querySelectorAll('button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.lang === lang)));
+  try { localStorage.setItem('easygo-lang', lang); } catch (e) {}
+}
+function toggleLangMenu(open){
+  const willOpen = open !== undefined ? open : langMenu.hidden;
+  langMenu.hidden = !willOpen;
+  langBtn.setAttribute('aria-expanded', String(willOpen));
+  if (willOpen) langDd.setAttribute('data-open',''); else langDd.removeAttribute('data-open');
+}
+langBtn.addEventListener('click', () => toggleLangMenu());
+langMenu.querySelectorAll('button').forEach(b => b.addEventListener('click', () => { setLang(b.dataset.lang); toggleLangMenu(false); }));
+document.addEventListener('click', e => { if (!langDd.contains(e.target)) toggleLangMenu(false); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') toggleLangMenu(false); });
+let saved = 'th';
+try { saved = localStorage.getItem('easygo-lang') || 'th'; } catch (e) {}
+if (saved !== 'th' && I18N[saved]) setLang(saved);
+
+/* กรองหมวดข่าว */
+document.querySelectorAll('.filters button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filters button').forEach(b => b.setAttribute('aria-pressed','false'));
+    btn.setAttribute('aria-pressed','true');
+    const f = btn.dataset.filter;
+    let shown = 0;
+    document.querySelectorAll('.post').forEach(p => {
+      const show = f === 'all' || p.dataset.cat === f;
+      p.hidden = !show;
+      if (show) shown++;
+    });
+    document.getElementById('empty').hidden = shown > 0;
+  });
+});
+</script>
+</body>
+</html>
