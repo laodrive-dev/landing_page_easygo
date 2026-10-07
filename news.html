@@ -71,7 +71,27 @@ a{color:inherit}
 .filters button:hover{border-color:var(--brand);color:var(--ink)}
 .filters button[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:var(--brand-ink)}
 .post-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;align-items:stretch}
-.post{display:flex;flex-direction:column;gap:8px;height:100%;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;transition:transform .2s,box-shadow .2s}
+.post{display:flex;flex-direction:column;gap:8px;height:100%;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 14px 20px;transition:transform .2s,box-shadow .2s}
+.cover{display:grid;place-items:center;height:150px;border-radius:12px;overflow:hidden;text-decoration:none}
+.cover b{font-family:var(--display);font-weight:800;font-size:2.6rem;color:#1c1a12}
+.cover svg{width:64px;height:64px;stroke:#fff;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.cv-promo{background:linear-gradient(135deg,#FFE485,#FEC200)}
+.cv-announce{background:linear-gradient(135deg,#2DD4BF,#0E9488)}
+.cv-hiring{background:linear-gradient(135deg,#FFB27A,#F0742B)}
+.post .body{display:flex;flex-direction:column;gap:8px;flex:1;padding:8px 8px 0}
+.post h3 a{text-decoration:none}
+.post h3 a:hover{color:#E08900}
+/* หน้าอ่านข่าวเต็ม */
+.article{padding-block:48px 72px}
+.article .wrap{max-width:760px}
+.article .back{display:inline-block;font-family:var(--display);font-weight:700;font-size:.9rem;color:var(--muted);text-decoration:none;margin-bottom:18px}
+.article .back:hover{color:var(--ink)}
+.article h1{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;margin-top:10px}
+.article .cover{height:240px;border-radius:18px;margin-block:20px}
+.article .cover b{font-size:4rem}
+.article .cover svg{width:96px;height:96px}
+.article .atext{display:grid;gap:14px;color:#4c4636}
+.article .btn-brand{margin-top:24px}
 .post:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(28,26,18,.1)}
 .post .tag{align-self:flex-start;font-family:var(--display);font-weight:700;font-size:.72rem;border-radius:999px;padding:3px 11px}
 .post .t-promo{background:var(--tint-yellow);color:#8a6400}
@@ -124,6 +144,7 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
   </div>
 </header>
 
+<div id="board-main">
 <main class="board">
   <div class="wrap">
     <div class="filters" role="group" aria-label="กรองหมวดข่าว">
@@ -134,27 +155,79 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
     </div>
     <div class="post-grid" id="post-grid">
       <article class="post" data-cat="promo">
-        <span class="tag t-promo" data-i18n="n1_tag">โปรโมชัน</span>
-        <h3 data-i18n="n1_h">ลด 50% สำหรับ 3 เที่ยวแรก</h3>
-        <p data-i18n="n1_p">ผู้ใช้ใหม่ดาวน์โหลดแอป EasyGO แล้วกรอกโค้ด GOFIRST ก่อนเรียกรถ รับส่วนลด 50% ได้ทันที 3 เที่ยวแรก ใช้ได้กับทุกบริการ ทั้ง EasyBike, EasyCar และ EasyPremium</p>
-        <a class="more" href="index.html#download" data-i18n="n_more1">ดาวน์โหลดแอป →</a>
+        <a class="cover cv-promo" href="#read-promo"><b>-50%</b></a>
+        <div class="body">
+          <span class="tag t-promo" data-i18n="n1_tag">โปรโมชัน</span>
+          <h3><a href="#read-promo" data-i18n="n1_h">ลด 50% สำหรับ 3 เที่ยวแรก</a></h3>
+          <p data-i18n="n1_p">ผู้ใช้ใหม่ดาวน์โหลดแอป EasyGO แล้วกรอกโค้ด GOFIRST ก่อนเรียกรถ รับส่วนลด 50% ได้ทันที 3 เที่ยวแรก</p>
+          <a class="more" href="#read-promo" data-i18n="n_read">อ่านต่อ →</a>
+        </div>
       </article>
       <article class="post" data-cat="announce">
-        <span class="tag t-announce" data-i18n="n2_tag">ประกาศ</span>
-        <h3 data-i18n="n2_h">EasyGO ให้บริการทั่ว สปป.ลาว แล้ว</h3>
-        <p data-i18n="n2_p">เปิดให้บริการเรียกรถ ส่งของ และบริการพรีเมียมทั่ว สปป.ลาว พร้อมเตรียมขยายสู่ประเทศไทยและอีกหลายประเทศในอาเซียนเร็ว ๆ นี้</p>
-        <a class="more" href="index.html#about" data-i18n="n_more2">อ่านเกี่ยวกับเรา →</a>
+        <a class="cover cv-announce" href="#read-announce"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-10.3a6.5 6.5 0 0 1 13 0C18.5 15.4 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.3"/></svg></a>
+        <div class="body">
+          <span class="tag t-announce" data-i18n="n2_tag">ประกาศ</span>
+          <h3><a href="#read-announce" data-i18n="n2_h">EasyGO ให้บริการทั่ว สปป.ลาว แล้ว</a></h3>
+          <p data-i18n="n2_p">เปิดให้บริการเรียกรถ ส่งของ และบริการพรีเมียมทั่ว สปป.ลาว</p>
+          <a class="more" href="#read-announce" data-i18n="n_read">อ่านต่อ →</a>
+        </div>
       </article>
       <article class="post" data-cat="hiring">
-        <span class="tag t-hiring" data-i18n="n3_tag">รับสมัคร</span>
-        <h3 data-i18n="n3_h">เปิดรับคนขับทั่วประเทศ</h3>
-        <p data-i18n="n3_p">รับทั้งมอเตอร์ไซค์และรถยนต์ ค่าคอมมิชชันต่ำสุดเพียง 15% โอนรายได้เข้าบัญชีทุกวัน เลือกเวลาขับเองได้ 100% สมัครผ่านแอปได้เลย</p>
-        <a class="more" href="index.html#driver" data-i18n="n_more3">สมัครเป็นคนขับ →</a>
+        <a class="cover cv-hiring" href="#read-hiring"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="2.5"/><path d="M3.5 12h6M14.5 12h6M12 14.5V20"/></svg></a>
+        <div class="body">
+          <span class="tag t-hiring" data-i18n="n3_tag">รับสมัคร</span>
+          <h3><a href="#read-hiring" data-i18n="n3_h">เปิดรับคนขับทั่วประเทศ</a></h3>
+          <p data-i18n="n3_p">รับทั้งมอเตอร์ไซค์และรถยนต์ ค่าคอมมิชชันต่ำสุดเพียง 15% โอนรายได้ทุกวัน</p>
+          <a class="more" href="#read-hiring" data-i18n="n_read">อ่านต่อ →</a>
+        </div>
       </article>
     </div>
     <p class="empty" id="empty" hidden data-i18n="b_empty">ยังไม่มีข่าวในหมวดนี้</p>
   </div>
 </main>
+</div>
+
+<section class="article" id="read-promo" hidden>
+  <div class="wrap">
+    <a class="back" href="#" data-i18n="a_back">← กลับไปกระดานข่าว</a>
+    <div><span class="tag t-promo" data-i18n="n1_tag">โปรโมชัน</span></div>
+    <h1 data-i18n="n1_h">ลด 50% สำหรับ 3 เที่ยวแรก</h1>
+    <div class="cover cv-promo"><b>-50%</b></div>
+    <div class="atext" data-i18n="n1_body">
+      <p>ต้อนรับผู้ใช้ใหม่ทุกคน! เพียงดาวน์โหลดแอป EasyGO แล้วกรอกโค้ด <b>GOFIRST</b> ก่อนกดเรียกรถ รับส่วนลด 50% ทันทีสำหรับ 3 เที่ยวแรก ใช้ได้กับทุกบริการ ทั้ง EasyBike, EasyCar และ EasyPremium</p>
+      <p>เงื่อนไข: สำหรับบัญชีผู้ใช้ใหม่เท่านั้น ใช้โค้ดได้ 1 ครั้งต่อเที่ยว ภายใน 30 วันหลังสมัคร ส่วนลดสูงสุดต่อเที่ยวเป็นไปตามที่ระบุในแอป</p>
+    </div>
+    <a class="btn btn-brand" href="index.html#download" data-i18n="n_more1">ดาวน์โหลดแอป →</a>
+  </div>
+</section>
+
+<section class="article" id="read-announce" hidden>
+  <div class="wrap">
+    <a class="back" href="#" data-i18n="a_back">← กลับไปกระดานข่าว</a>
+    <div><span class="tag t-announce" data-i18n="n2_tag">ประกาศ</span></div>
+    <h1 data-i18n="n2_h">EasyGO ให้บริการทั่ว สปป.ลาว แล้ว</h1>
+    <div class="cover cv-announce"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-10.3a6.5 6.5 0 0 1 13 0C18.5 15.4 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.3"/></svg></div>
+    <div class="atext" data-i18n="n2_body">
+      <p>วันนี้ EasyGO เปิดให้บริการครบทุกบริการทั่ว สปป.ลาว แล้ว ทั้งเรียกรถ (EasyBike, EasyCar, EasyPremium) และส่งของด่วน (EasySend) ด้วยคนขับที่ผ่านการตรวจสอบประวัติทุกคน และราคาที่แสดงชัดเจนก่อนยืนยันทุกเที่ยว</p>
+      <p>ก้าวต่อไปของเราคือการขยายบริการสู่ประเทศไทยและอีกหลายประเทศในภูมิภาคอาเซียน ติดตามประกาศได้ที่กระดานข่าวนี้</p>
+    </div>
+    <a class="btn btn-brand" href="index.html#about" data-i18n="n_more2">อ่านเกี่ยวกับเรา →</a>
+  </div>
+</section>
+
+<section class="article" id="read-hiring" hidden>
+  <div class="wrap">
+    <a class="back" href="#" data-i18n="a_back">← กลับไปกระดานข่าว</a>
+    <div><span class="tag t-hiring" data-i18n="n3_tag">รับสมัคร</span></div>
+    <h1 data-i18n="n3_h">เปิดรับคนขับทั่วประเทศ</h1>
+    <div class="cover cv-hiring"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="2.5"/><path d="M3.5 12h6M14.5 12h6M12 14.5V20"/></svg></div>
+    <div class="atext" data-i18n="n3_body">
+      <p>EasyGO เปิดรับคนขับทั่วประเทศ ทั้งมอเตอร์ไซค์และรถยนต์ ค่าคอมมิชชันต่ำสุดในตลาดเพียง 15% โอนรายได้เข้าบัญชีทุกวัน เลือกเวลาขับเองได้ 100% พร้อมประกันอุบัติเหตุคุ้มครองระหว่างรับงาน</p>
+      <p>เอกสารที่ใช้สมัคร: บัตรประชาชน ใบขับขี่ เอกสารรถ และบัญชีธนาคารสำหรับรับรายได้ สมัครผ่านแอปได้เลย ทีมงานตรวจสอบภายใน 1–3 วัน</p>
+    </div>
+    <a class="btn btn-brand" href="index.html#driver" data-i18n="n_more3">สมัครเป็นคนขับ →</a>
+  </div>
+</section>
 
 <footer>
   <div class="wrap foot-in">
@@ -169,14 +242,18 @@ const I18N = {
     nav_about:"เกี่ยวกับเรา", nav_services:"บริการ", nav_news:"ข่าวสาร", nav_driver:"ร่วมขับกับเรา", nav_download:"ดาวน์โหลดแอป",
     b_eyebrow:"กระดานข่าว", b_h1:"ข่าวสารและประกาศจาก EasyGO", b_p:"อัปเดตโปรโมชัน ประกาศบริการ และการรับสมัครคนขับ ทั้งหมดในที่เดียว",
     f_all:"ทั้งหมด", f_promo:"โปรโมชัน", f_announce:"ประกาศ", f_hiring:"รับสมัคร", b_empty:"ยังไม่มีข่าวในหมวดนี้",
+    n_read:"อ่านต่อ →", a_back:"← กลับไปกระดานข่าว",
     n1_tag:"โปรโมชัน", n1_h:"ลด 50% สำหรับ 3 เที่ยวแรก",
-    n1_p:"ผู้ใช้ใหม่ดาวน์โหลดแอป EasyGO แล้วกรอกโค้ด GOFIRST ก่อนเรียกรถ รับส่วนลด 50% ได้ทันที 3 เที่ยวแรก ใช้ได้กับทุกบริการ ทั้ง EasyBike, EasyCar และ EasyPremium",
+    n1_p:"ผู้ใช้ใหม่ดาวน์โหลดแอป EasyGO แล้วกรอกโค้ด GOFIRST ก่อนเรียกรถ รับส่วนลด 50% ได้ทันที 3 เที่ยวแรก",
+    n1_body:'<p>ต้อนรับผู้ใช้ใหม่ทุกคน! เพียงดาวน์โหลดแอป EasyGO แล้วกรอกโค้ด <b>GOFIRST</b> ก่อนกดเรียกรถ รับส่วนลด 50% ทันทีสำหรับ 3 เที่ยวแรก ใช้ได้กับทุกบริการ ทั้ง EasyBike, EasyCar และ EasyPremium</p><p>เงื่อนไข: สำหรับบัญชีผู้ใช้ใหม่เท่านั้น ใช้โค้ดได้ 1 ครั้งต่อเที่ยว ภายใน 30 วันหลังสมัคร ส่วนลดสูงสุดต่อเที่ยวเป็นไปตามที่ระบุในแอป</p>',
     n_more1:"ดาวน์โหลดแอป →",
     n2_tag:"ประกาศ", n2_h:"EasyGO ให้บริการทั่ว สปป.ลาว แล้ว",
-    n2_p:"เปิดให้บริการเรียกรถ ส่งของ และบริการพรีเมียมทั่ว สปป.ลาว พร้อมเตรียมขยายสู่ประเทศไทยและอีกหลายประเทศในอาเซียนเร็ว ๆ นี้",
+    n2_p:"เปิดให้บริการเรียกรถ ส่งของ และบริการพรีเมียมทั่ว สปป.ลาว",
+    n2_body:'<p>วันนี้ EasyGO เปิดให้บริการครบทุกบริการทั่ว สปป.ลาว แล้ว ทั้งเรียกรถ (EasyBike, EasyCar, EasyPremium) และส่งของด่วน (EasySend) ด้วยคนขับที่ผ่านการตรวจสอบประวัติทุกคน และราคาที่แสดงชัดเจนก่อนยืนยันทุกเที่ยว</p><p>ก้าวต่อไปของเราคือการขยายบริการสู่ประเทศไทยและอีกหลายประเทศในภูมิภาคอาเซียน ติดตามประกาศได้ที่กระดานข่าวนี้</p>',
     n_more2:"อ่านเกี่ยวกับเรา →",
     n3_tag:"รับสมัคร", n3_h:"เปิดรับคนขับทั่วประเทศ",
-    n3_p:"รับทั้งมอเตอร์ไซค์และรถยนต์ ค่าคอมมิชชันต่ำสุดเพียง 15% โอนรายได้เข้าบัญชีทุกวัน เลือกเวลาขับเองได้ 100% สมัครผ่านแอปได้เลย",
+    n3_p:"รับทั้งมอเตอร์ไซค์และรถยนต์ ค่าคอมมิชชันต่ำสุดเพียง 15% โอนรายได้ทุกวัน",
+    n3_body:'<p>EasyGO เปิดรับคนขับทั่วประเทศ ทั้งมอเตอร์ไซค์และรถยนต์ ค่าคอมมิชชันต่ำสุดในตลาดเพียง 15% โอนรายได้เข้าบัญชีทุกวัน เลือกเวลาขับเองได้ 100% พร้อมประกันอุบัติเหตุคุ้มครองระหว่างรับงาน</p><p>เอกสารที่ใช้สมัคร: บัตรประชาชน ใบขับขี่ เอกสารรถ และบัญชีธนาคารสำหรับรับรายได้ สมัครผ่านแอปได้เลย ทีมงานตรวจสอบภายใน 1–3 วัน</p>',
     n_more3:"สมัครเป็นคนขับ →",
     foot_l:"© 2026 EasyGO · สงวนลิขสิทธิ์", foot_back:"← กลับหน้าหลัก"
   },
@@ -184,14 +261,18 @@ const I18N = {
     nav_about:"ກ່ຽວກັບເຮົາ", nav_services:"ບໍລິການ", nav_news:"ຂ່າວສານ", nav_driver:"ຂັບກັບພວກເຮົາ", nav_download:"ດາວໂຫຼດແອັບ",
     b_eyebrow:"ກະດານຂ່າວ", b_h1:"ຂ່າວສານ ແລະ ປະກາດຈາກ EasyGO", b_p:"ອັບເດດໂປຣໂມຊັນ ປະກາດບໍລິການ ແລະ ການຮັບສະໝັກຄົນຂັບ ທັງໝົດຢູ່ບ່ອນດຽວ",
     f_all:"ທັງໝົດ", f_promo:"ໂປຣໂມຊັນ", f_announce:"ປະກາດ", f_hiring:"ຮັບສະໝັກ", b_empty:"ຍັງບໍ່ມີຂ່າວໃນໝວດນີ້",
+    n_read:"ອ່ານຕໍ່ →", a_back:"← ກັບໄປກະດານຂ່າວ",
     n1_tag:"ໂປຣໂມຊັນ", n1_h:"ຫຼຸດ 50% ສຳລັບ 3 ຖ້ຽວທຳອິດ",
-    n1_p:"ຜູ້ໃຊ້ໃໝ່ດາວໂຫຼດແອັບ EasyGO ແລ້ວໃສ່ລະຫັດ GOFIRST ກ່ອນເອີ້ນລົດ ຮັບສ່ວນຫຼຸດ 50% ທັນທີ 3 ຖ້ຽວທຳອິດ ໃຊ້ໄດ້ກັບທຸກບໍລິການ ທັງ EasyBike, EasyCar ແລະ EasyPremium",
+    n1_p:"ຜູ້ໃຊ້ໃໝ່ດາວໂຫຼດແອັບ EasyGO ແລ້ວໃສ່ລະຫັດ GOFIRST ກ່ອນເອີ້ນລົດ ຮັບສ່ວນຫຼຸດ 50% ທັນທີ 3 ຖ້ຽວທຳອິດ",
+    n1_body:'<p>ຕ້ອນຮັບຜູ້ໃຊ້ໃໝ່ທຸກຄົນ! ພຽງດາວໂຫຼດແອັບ EasyGO ແລ້ວໃສ່ລະຫັດ <b>GOFIRST</b> ກ່ອນກົດເອີ້ນລົດ ຮັບສ່ວນຫຼຸດ 50% ທັນທີສຳລັບ 3 ຖ້ຽວທຳອິດ ໃຊ້ໄດ້ກັບທຸກບໍລິການ ທັງ EasyBike, EasyCar ແລະ EasyPremium</p><p>ເງື່ອນໄຂ: ສຳລັບບັນຊີຜູ້ໃຊ້ໃໝ່ເທົ່ານັ້ນ ໃຊ້ລະຫັດໄດ້ 1 ຄັ້ງຕໍ່ຖ້ຽວ ພາຍໃນ 30 ວັນຫຼັງສະໝັກ ສ່ວນຫຼຸດສູງສຸດຕໍ່ຖ້ຽວເປັນໄປຕາມທີ່ລະບຸໃນແອັບ</p>',
     n_more1:"ດາວໂຫຼດແອັບ →",
     n2_tag:"ປະກາດ", n2_h:"EasyGO ໃຫ້ບໍລິການທົ່ວ ສປປ.ລາວ ແລ້ວ",
-    n2_p:"ເປີດໃຫ້ບໍລິການເອີ້ນລົດ ສົ່ງເຄື່ອງ ແລະ ບໍລິການພຣີມຽມທົ່ວ ສປປ.ລາວ ພ້ອມກຽມຂະຫຍາຍສູ່ປະເທດໄທ ແລະ ອີກຫຼາຍປະເທດໃນອາຊຽນໄວໆນີ້",
+    n2_p:"ເປີດໃຫ້ບໍລິການເອີ້ນລົດ ສົ່ງເຄື່ອງ ແລະ ບໍລິການພຣີມຽມທົ່ວ ສປປ.ລາວ",
+    n2_body:'<p>ມື້ນີ້ EasyGO ເປີດໃຫ້ບໍລິການຄົບທຸກບໍລິການທົ່ວ ສປປ.ລາວ ແລ້ວ ທັງເອີ້ນລົດ (EasyBike, EasyCar, EasyPremium) ແລະ ສົ່ງເຄື່ອງດ່ວນ (EasySend) ດ້ວຍຄົນຂັບທີ່ຜ່ານການກວດສອບປະຫວັດທຸກຄົນ ແລະ ລາຄາທີ່ສະແດງຊັດເຈນກ່ອນຢືນຢັນທຸກຖ້ຽວ</p><p>ກ້າວຕໍ່ໄປຂອງເຮົາຄືການຂະຫຍາຍບໍລິການສູ່ປະເທດໄທ ແລະ ອີກຫຼາຍປະເທດໃນພາກພື້ນອາຊຽນ ຕິດຕາມປະກາດໄດ້ທີ່ກະດານຂ່າວນີ້</p>',
     n_more2:"ອ່ານກ່ຽວກັບເຮົາ →",
     n3_tag:"ຮັບສະໝັກ", n3_h:"ເປີດຮັບຄົນຂັບທົ່ວປະເທດ",
-    n3_p:"ຮັບທັງລົດຈັກ ແລະ ລົດເກັງ ຄ່າຄອມມິດຊັນຕ່ຳສຸດພຽງ 15% ໂອນລາຍຮັບເຂົ້າບັນຊີທຸກວັນ ເລືອກເວລາຂັບເອງໄດ້ 100% ສະໝັກຜ່ານແອັບໄດ້ເລີຍ",
+    n3_p:"ຮັບທັງລົດຈັກ ແລະ ລົດເກັງ ຄ່າຄອມມິດຊັນຕ່ຳສຸດພຽງ 15% ໂອນລາຍຮັບທຸກວັນ",
+    n3_body:'<p>EasyGO ເປີດຮັບຄົນຂັບທົ່ວປະເທດ ທັງລົດຈັກ ແລະ ລົດເກັງ ຄ່າຄອມມິດຊັນຕ່ຳສຸດໃນຕະຫຼາດພຽງ 15% ໂອນລາຍຮັບເຂົ້າບັນຊີທຸກວັນ ເລືອກເວລາຂັບເອງໄດ້ 100% ພ້ອມປະກັນອຸບັດຕິເຫດຄຸ້ມຄອງລະຫວ່າງຮັບວຽກ</p><p>ເອກະສານທີ່ໃຊ້ສະໝັກ: ບັດປະຈຳຕົວ ໃບຂັບຂີ່ ເອກະສານລົດ ແລະ ບັນຊີທະນາຄານ ສະໝັກຜ່ານແອັບໄດ້ເລີຍ ທີມງານກວດສອບພາຍໃນ 1–3 ວັນ</p>',
     n_more3:"ສະໝັກເປັນຄົນຂັບ →",
     foot_l:"© 2026 EasyGO · ສະຫງວນລິຂະສິດ", foot_back:"← ກັບໜ້າຫຼັກ"
   },
@@ -199,14 +280,18 @@ const I18N = {
     nav_about:"About us", nav_services:"Services", nav_news:"News", nav_driver:"Drive with us", nav_download:"Get the app",
     b_eyebrow:"News board", b_h1:"News and announcements from EasyGO", b_p:"Promotions, service announcements, and driver recruitment — all in one place.",
     f_all:"All", f_promo:"Promotions", f_announce:"Announcements", f_hiring:"Hiring", b_empty:"No news in this category yet",
+    n_read:"Read more →", a_back:"← Back to the news board",
     n1_tag:"Promotion", n1_h:"50% off your first 3 rides",
-    n1_p:"New users: download the EasyGO app and enter code GOFIRST before booking to get 50% off your first 3 rides — valid on EasyBike, EasyCar, and EasyPremium.",
+    n1_p:"New users: download the EasyGO app and enter code GOFIRST before booking to get 50% off your first 3 rides.",
+    n1_body:'<p>Welcome aboard! Download the EasyGO app and enter code <b>GOFIRST</b> before booking to get 50% off instantly on your first 3 rides — valid on EasyBike, EasyCar, and EasyPremium.</p><p>Terms: new accounts only, one code use per ride, within 30 days of signing up. The maximum discount per ride is shown in the app.</p>',
     n_more1:"Get the app →",
     n2_tag:"Announcement", n2_h:"EasyGO now serves all of Laos",
-    n2_p:"Rides, delivery, and premium service are now available across Laos, with Thailand and more ASEAN countries coming soon.",
+    n2_p:"Rides, delivery, and premium service are now available across Laos.",
+    n2_body:'<p>EasyGO now offers its full range of services across Laos — rides (EasyBike, EasyCar, EasyPremium) and express delivery (EasySend) — with background-checked drivers and fares shown clearly before every booking.</p><p>Next up: expanding to Thailand and more ASEAN countries. Follow this news board for announcements.</p>',
     n_more2:"About us →",
     n3_tag:"Hiring", n3_h:"Recruiting drivers nationwide",
-    n3_p:"Motorbikes and cars welcome. Commission as low as 15%, daily payouts, and 100% flexible hours. Apply in the app.",
+    n3_p:"Motorbikes and cars welcome. Commission as low as 15%, with daily payouts.",
+    n3_body:'<p>EasyGO is recruiting drivers nationwide — motorbikes and cars welcome. Commission as low as 15%, daily payouts to your bank account, 100% flexible hours, and accident insurance while on the job.</p><p>What you need: ID card, driver\'s license, vehicle documents, and a bank account. Apply in the app; review takes 1–3 days.</p>',
     n_more3:"Become a driver →",
     foot_l:"© 2026 EasyGO · All rights reserved", foot_back:"← Back to home"
   }
@@ -240,6 +325,18 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') toggleLangMe
 let saved = 'th';
 try { saved = localStorage.getItem('easygo-lang') || 'th'; } catch (e) {}
 if (saved !== 'th' && I18N[saved]) setLang(saved);
+
+/* เปิดอ่านข่าวเต็มด้วย hash (#read-xxx) */
+const ARTICLE_IDS = ['read-promo','read-announce','read-hiring'];
+function route(){
+  const id = location.hash.replace('#','');
+  const reading = ARTICLE_IDS.includes(id);
+  document.getElementById('board-main').hidden = reading;
+  ARTICLE_IDS.forEach(a => { document.getElementById(a).hidden = (a !== id); });
+  if (reading) window.scrollTo(0, 0);
+}
+window.addEventListener('hashchange', route);
+route();
 
 /* กรองหมวดข่าว */
 document.querySelectorAll('.filters button').forEach(btn => {
