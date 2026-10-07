@@ -379,12 +379,15 @@ section{padding-block:72px}
 .driver .wrap{position:relative;z-index:1}
 .driver-in{display:flex;flex-wrap:wrap;align-items:center;gap:32px;padding-block:64px}
 .driver-copy{flex:1 1 340px;min-width:0}
-.driver h2{font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:700}
-.driver h2 em{font-style:normal;box-shadow:inset 0 -.18em 0 #fff}
+.driver .eyebrow{color:#7a5a00}
+.driver .eyebrow::after{content:"";display:inline-block;width:34px;height:2px;background:#1c1a12;border-radius:2px;vertical-align:middle;margin-left:12px}
+.driver h2{font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:800;margin-top:10px}
+.driver h2 em{font-style:normal;display:block;font-size:.72em;margin-top:6px;box-shadow:none;color:#fff;text-shadow:0 1px 2px rgba(28,26,18,.15)}
 .driver p{margin-top:12px;color:#4a4430;max-width:34em}
-.driver ul{margin:18px 0 0;padding:0;list-style:none;display:grid;gap:10px;font-size:.95rem}
-.driver li{padding-left:26px;position:relative}
-.driver li::before{content:"";position:absolute;left:0;top:.45em;width:14px;height:14px;border-radius:4px;background:#fff}
+.drv-perks{margin-top:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;max-width:720px}
+.perk{background:rgba(255,255,255,.9);border-radius:16px;padding:13px 16px;display:flex;align-items:center;gap:11px;font-family:var(--display);font-weight:700;font-size:.88rem;box-shadow:0 6px 16px rgba(28,26,18,.08)}
+.perk .ic{width:36px;height:36px;border-radius:50%;background:var(--brand);display:grid;place-items:center;flex:none}
+.perk .ic svg{width:19px;height:19px;stroke:#1c1a12;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .driver .btn-brand{margin-top:26px;background:#1c1a12;color:#FEC200}
 
 /* help center */
@@ -683,13 +686,14 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
 <section class="driver" id="driver" style="padding-block:0">
   <div class="wrap driver-in">
     <div class="driver-copy">
+      <span class="eyebrow" data-i18n="drv_eyebrow">ร่วมขับกับเรา</span>
       <h2 data-i18n="drv_h2">ขับกับ EasyGO <em>รายได้ชัดเจน ไม่หักเกินจริง</em></h2>
       <p data-i18n="drv_p">ค่าคอมมิชชันต่ำสุดในตลาดเพียง 15% โอนรายได้เข้าบัญชีทุกวัน เลือกเวลาขับเองได้ 100%</p>
-      <ul>
-        <li data-i18n="drv_li1">รับงานได้ทั้งมอเตอร์ไซค์และรถยนต์</li>
-        <li data-i18n="drv_li2">โบนัสพิเศษช่วงชั่วโมงเร่งด่วน</li>
-        <li data-i18n="drv_li3">ประกันอุบัติเหตุคุ้มครองระหว่างรับงาน</li>
-      </ul>
+      <div class="drv-perks">
+        <div class="perk"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17h7l-3-8h-3M13 9h3l2 8"/></svg></span><span data-i18n="drv_li1">รับงานได้ทั้งมอเตอร์ไซค์และรถยนต์</span></div>
+        <div class="perk"><span class="ic"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg></span><span data-i18n="drv_li2">โบนัสพิเศษช่วงชั่วโมงเร่งด่วน</span></div>
+        <div class="perk"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span><span data-i18n="drv_li3">ประกันอุบัติเหตุคุ้มครองระหว่างรับงาน</span></div>
+      </div>
       <a class="btn btn-brand" href="#download" data-i18n="drv_btn">สมัครเป็นคนขับ</a>
     </div>
   </div>
@@ -868,6 +872,7 @@ const I18N = {
     why2_h:"คนขับตรวจประวัติ 100%", why2_p:"ตรวจประวัติอาชญากรรมและใบขับขี่สาธารณะทุกคน พร้อมอบรมความปลอดภัยก่อนเริ่มงาน",
     why3_h:"ปุ่ม SOS ในแอป", why3_p:"แชร์ตำแหน่งเรียลไทม์ให้คนที่ไว้ใจ และติดต่อศูนย์ช่วยเหลือได้ตลอด 24 ชั่วโมง",
     why4_h:"ประกันทุกการเดินทาง", why4_p:"ผู้โดยสารทุกคนได้รับความคุ้มครองอุบัติเหตุ วงเงินสูงสุด 200,000 บาท โดยไม่ต้องสมัครเพิ่ม",
+    drv_eyebrow:"ร่วมขับกับเรา",
     drv_h2:'ขับกับ EasyGO <em>รายได้ชัดเจน ไม่หักเกินจริง</em>',
     drv_p:"ค่าคอมมิชชันต่ำสุดในตลาดเพียง 15% โอนรายได้เข้าบัญชีทุกวัน เลือกเวลาขับเองได้ 100%",
     drv_li1:"รับงานได้ทั้งมอเตอร์ไซค์และรถยนต์", drv_li2:"โบนัสพิเศษช่วงชั่วโมงเร่งด่วน", drv_li3:"ประกันอุบัติเหตุคุ้มครองระหว่างรับงาน",
@@ -942,6 +947,7 @@ const I18N = {
     why2_h:"ຄົນຂັບກວດປະຫວັດ 100%", why2_p:"ກວດປະຫວັດອາດຊະຍາກຳ ແລະ ໃບຂັບຂີ່ທຸກຄົນ ພ້ອມອົບຮົມຄວາມປອດໄພກ່ອນເລີ່ມວຽກ",
     why3_h:"ປຸ່ມ SOS ໃນແອັບ", why3_p:"ແຊຣ໌ຕຳແໜ່ງແບບສົດໃຫ້ຄົນທີ່ໄວ້ໃຈ ແລະ ຕິດຕໍ່ສູນຊ່ວຍເຫຼືອໄດ້ຕະຫຼອດ 24 ຊົ່ວໂມງ",
     why4_h:"ປະກັນທຸກການເດີນທາງ", why4_p:"ຜູ້ໂດຍສານທຸກຄົນໄດ້ຮັບຄວາມຄຸ້ມຄອງອຸບັດຕິເຫດ ໂດຍບໍ່ຕ້ອງສະໝັກເພີ່ມ",
+    drv_eyebrow:"ຂັບກັບພວກເຮົາ",
     drv_h2:'ຂັບກັບ EasyGO <em>ລາຍຮັບຊັດເຈນ ບໍ່ຫັກເກີນຈິງ</em>',
     drv_p:"ຄ່າຄອມມິດຊັນຕ່ຳສຸດໃນຕະຫຼາດພຽງ 15% ໂອນລາຍຮັບເຂົ້າບັນຊີທຸກວັນ ເລືອກເວລາຂັບເອງໄດ້ 100%",
     drv_li1:"ຮັບວຽກໄດ້ທັງລົດຈັກ ແລະ ລົດເກັງ", drv_li2:"ໂບນັດພິເສດຊ່ວງຊົ່ວໂມງເລັ່ງດ່ວນ", drv_li3:"ປະກັນອຸບັດຕິເຫດຄຸ້ມຄອງລະຫວ່າງຮັບວຽກ",
@@ -1016,7 +1022,8 @@ const I18N = {
     why2_h:"100% background-checked drivers", why2_p:"Criminal-record and license checks for every driver, plus safety training before starting.",
     why3_h:"In-app SOS button", why3_p:"Share your live location with people you trust and reach our help center 24/7.",
     why4_h:"Insurance on every ride", why4_p:"Every passenger is covered for accidents up to ฿200,000 — no sign-up needed.",
-    drv_h2:'Drive with EasyGO — <em>clear earnings, fair fees</em>',
+    drv_eyebrow:"Drive with us",
+    drv_h2:'Drive with EasyGO <em>clear earnings, fair fees</em>',
     drv_p:"The lowest commission in the market at just 15%. Daily payouts to your bank account. Set your own hours, 100%.",
     drv_li1:"Take jobs on a motorbike or a car", drv_li2:"Bonus pay during rush hours", drv_li3:"Accident insurance while on the job",
     drv_btn:"Become a driver",
