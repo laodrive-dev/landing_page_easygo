@@ -361,22 +361,40 @@ section{padding-block:72px}
 .driver .btn-brand{margin-top:26px;background:#1c1a12;color:#FEC200}
 
 /* help center */
-.help-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-.help-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;display:grid;gap:8px;align-content:start}
-.help-card .ic{width:46px;height:46px;border-radius:14px;background:var(--c,var(--brand));display:grid;place-items:center}
-.help-card .ic svg{width:26px;height:26px;stroke:#1c1a12;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.help-card:nth-child(2) .ic{--c:var(--tint-orange)}
-.help-card:nth-child(3) .ic{--c:var(--tint-teal)}
-.help-card h3{font-size:1.02rem;font-weight:700}
-.help-card p{font-size:.92rem;color:var(--muted)}
-.help-card .big{font-family:var(--display);font-weight:800;font-size:1.15rem;color:var(--ink);font-variant-numeric:tabular-nums;user-select:all}
+#help .eyebrow{display:inline-flex;align-items:center;gap:12px}
+#help .eyebrow::after{content:"";width:34px;height:2px;background:var(--brand);border-radius:2px}
+#help .sec-head h2{font-weight:800}
+.help-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;align-items:stretch}
+.help-card{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--ct,var(--tint-yellow)),#fff 125%);border:1px solid var(--line);border-radius:22px;padding:22px;display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.help-card:nth-child(1){--c:var(--brand);--ct:var(--tint-yellow)}
+.help-card:nth-child(2){--c:var(--orange);--ct:var(--tint-orange)}
+.help-card:nth-child(3){--c:var(--teal);--ct:var(--tint-teal)}
+.help-card .ic{width:46px;height:46px;border-radius:14px;background:var(--c);display:grid;place-items:center}
+.help-card .ic svg{width:25px;height:25px;stroke:#1c1a12;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.help-card:nth-child(2) .ic svg,.help-card:nth-child(3) .ic svg{stroke:#fff}
+.help-card h3{font-size:1.02rem;font-weight:800;margin-top:6px}
+.help-card p{font-size:.86rem;color:var(--muted);max-width:21em;position:relative;z-index:1}
+.help-card .big{font-family:var(--display);font-weight:800;font-size:1.12rem;color:var(--ink);font-variant-numeric:tabular-nums;user-select:all;position:relative;z-index:1}
+.help-card .act{margin-top:16px;display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 18px;font-family:var(--display);font-weight:700;font-size:.85rem;text-decoration:none;color:var(--ink);position:relative;z-index:1;margin-top:auto;padding-top:9px}
+.help-card .act::after{content:"›";font-size:1.05rem;line-height:0}
+.help-card .act:hover{border-color:var(--c)}
+.help-card .deco{position:absolute;right:-14px;bottom:-14px;width:120px;height:120px;opacity:.16;pointer-events:none}
+.help-card .deco svg{width:100%;height:100%;stroke:var(--c);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
 
-/* download */
-.dl{text-align:center;background:radial-gradient(ellipse at 50% 0%,var(--tint-yellow),var(--bg) 70%)}
+/* download — แถบโค้งเหลืองพร้อมเส้นขอบฟ้า */
+.dl{padding-block:0 72px}
+.dl-band{position:relative;overflow:hidden;border-radius:30px;background:linear-gradient(100deg,#FFE896,#FEC200 75%);padding:clamp(32px,5vw,60px) clamp(20px,4vw,48px);display:grid;gap:14px;justify-items:center;text-align:center}
+.dl-band::before{content:"";position:absolute;inset:0;pointer-events:none;background:
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 180' preserveAspectRatio='none'%3E%3Cpath fill='%231c1a12' fill-opacity='.06' d='M0 180v-50h55v-35h35v35h55v-80h45v80h40v-45h55v45h45V40h20V20h18v20h20v90h55v-70h45v70h40v-40h55v40h50v-55h40v55h55V55h45v125h40v-75h50v75h55v-35h45v35h40v-55h57v55z'/%3E%3C/svg%3E") bottom center/1100px 160px repeat-x,
+  radial-gradient(circle at 12% 20%,rgba(255,255,255,.5),transparent 30%)}
+.dl-band > *{position:relative;z-index:1}
 .dl h2{font-size:clamp(1.7rem,3.8vw,2.4rem);font-weight:800}
-.dl p{margin-top:12px;color:var(--muted)}
-.dl p b{background:var(--brand);border-radius:8px;padding:2px 10px;font-family:var(--display)}
+.dl p{margin-top:4px;color:#4a4430}
+.dl p b{background:#1c1a12;color:#FEC200;border-radius:8px;padding:3px 12px;font-family:var(--display)}
 .stores{margin-top:28px;display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+.dl-band .stores{margin-top:14px}
+.dl-band .store{background:#1c1a12;color:#FEC200}
+.dl-band .store:focus-visible{outline-color:#1c1a12}
 .store{display:flex;align-items:center;gap:10px;background:var(--brand);color:#1c1a12;text-decoration:none;border-radius:14px;padding:10px 20px;font-family:var(--display);text-align:left}
 .store:hover{filter:brightness(1.05)}
 .store:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
@@ -660,7 +678,7 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow" data-i18n="help_eyebrow">ศูนย์ช่วยเหลือ</span>
-      <h2 data-i18n="help_h2">มีปัญหาเมื่อไหร่ เราอยู่ตรงนี้เสมอ</h2>
+      <h2 data-i18n="help_h2">มีปัญหาเมื่อไหร่ <span class="hl">เราอยู่ตรงนี้เสมอ</span></h2>
       <p data-i18n="help_p">ทีมงานคนจริงพร้อมดูแลทุกวัน ไม่มีวันหยุด ทั้งภาษาไทย ลาว และอังกฤษ</p>
     </div>
     <div class="help-grid">
@@ -669,18 +687,24 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
         <h3 data-i18n="help1_h">โทรหาเรา</h3>
         <span class="big">+856 20 58 989 389</span>
         <p data-i18n="help1_p">สายด่วนตลอด 24 ชั่วโมง ทุกวัน</p>
+        <a class="act" href="tel:+8562058989389" data-i18n="help1_btn">โทรตอนนี้</a>
+        <span class="deco"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span>
       </div>
       <div class="help-card">
         <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
         <h3 data-i18n="help2_h">อีเมลหาเรา</h3>
         <span class="big">support@easygo.co.th</span>
         <p data-i18n="help2_p">ตอบกลับภายใน 24 ชั่วโมง</p>
+        <a class="act" href="mailto:support@easygo.co.th" data-i18n="help2_btn">ส่งอีเมล</a>
+        <span class="deco"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
       </div>
       <div class="help-card">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z"/><path d="M9 12h.01M13 12h.01M17 12h.01"/></svg></div>
         <h3 data-i18n="help3_h">แชทและปุ่ม SOS ในแอป</h3>
         <span class="big" data-i18n="help3_big">เมนู "ช่วยเหลือ" ในแอป</span>
         <p data-i18n="help3_p">แชทกับทีมงาน หรือกด SOS ระหว่างเดินทางเพื่อขอความช่วยเหลือฉุกเฉิน</p>
+        <a class="act" href="#download" data-i18n="help3_btn">เปิดแอปเลย</a>
+        <span class="deco"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z"/></svg></span>
       </div>
     </div>
   </div>
@@ -688,11 +712,13 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
 
 <section class="dl" id="download">
   <div class="wrap">
-    <h2 data-i18n="dl_h2">พร้อมออกเดินทางหรือยัง?</h2>
+    <div class="dl-band">
+    <h2 data-i18n="dl_h2">พร้อมออกเดินทาง<span class="hl">หรือยัง?</span></h2>
     <p data-i18n="dl_p">ดาวน์โหลด EasyGO ฟรี แล้วรับส่วนลด 50% สำหรับ 3 เที่ยวแรก ด้วยโค้ด <b>GOFIRST</b></p>
     <div class="stores">
       <a class="store" href="#download"><svg viewBox="0 0 24 24"><path d="M17.05 12.54c-.03-2.9 2.37-4.3 2.48-4.37-1.35-1.98-3.46-2.25-4.2-2.28-1.79-.18-3.5 1.05-4.4 1.05-.9 0-2.3-1.03-3.79-1-1.95.03-3.75 1.13-4.75 2.88-2.03 3.52-.52 8.72 1.46 11.57.97 1.4 2.12 2.96 3.63 2.9 1.46-.06 2.01-.94 3.77-.94s2.26.94 3.8.91c1.57-.03 2.57-1.42 3.53-2.82 1.11-1.62 1.57-3.19 1.6-3.27-.04-.02-3.07-1.18-3.13-4.63zM14.16 4c.8-.97 1.34-2.32 1.19-3.66-1.15.05-2.55.77-3.38 1.74-.74.86-1.39 2.23-1.22 3.55 1.29.1 2.6-.65 3.41-1.63z"/></svg><span><small data-i18n="store_on">ดาวน์โหลดบน</small><b>App Store</b></span></a>
       <a class="store" href="#download"><svg viewBox="0 0 24 24"><path d="M3.6 1.8c-.3.3-.5.8-.5 1.4v17.6c0 .6.2 1.1.5 1.4l.1.1 9.9-9.9v-.2L3.7 1.7l-.1.1zm13.2 13.3l-3.3-3.3v-.2l3.3-3.3.1 0 3.9 2.2c1.1.6 1.1 1.7 0 2.3l-3.9 2.2-.1.1zm-.1.1l-3.4-3.4-9.8 9.9c.4.4 1 .4 1.7 0l11.5-6.5zM3.5 1.6c-.7-.4-1.3-.3-1.7 0l9.9 9.9 3.4-3.4L3.5 1.6z"/></svg><span><small data-i18n="store_on">ดาวน์โหลดบน</small><b>Google Play</b></span></a>
+    </div>
     </div>
   </div>
 </section>
@@ -742,10 +768,10 @@ const I18N = {
     faq_q3:"คนขับผ่านการตรวจสอบอะไรบ้าง?", faq_a3:"ตรวจประวัติอาชญากรรม ใบขับขี่ และเอกสารรถทุกคน พร้อมอบรมก่อนเริ่มงาน",
     faq_q4:"ลืมของบนรถต้องทำอย่างไร?", faq_a4:'กด "แจ้งของหาย" ในประวัติการเดินทาง หรือโทรหาศูนย์ช่วยเหลือได้ตลอด 24 ชม.',
     faq_q5:"สมัครเป็นคนขับต้องใช้อะไรบ้าง?", faq_a5:"ใช้บัตรประชาชน ใบขับขี่ เอกสารรถ และบัญชีธนาคาร ตรวจสอบภายใน 1–3 วัน",
-    help_eyebrow:"ศูนย์ช่วยเหลือ", help_h2:"มีปัญหาเมื่อไหร่ เราอยู่ตรงนี้เสมอ", help_p:"ทีมงานคนจริงพร้อมดูแลทุกวัน ไม่มีวันหยุด ทั้งภาษาไทย ลาว และอังกฤษ",
-    help1_h:"โทรหาเรา", help1_p:"สายด่วนตลอด 24 ชั่วโมง ทุกวัน",
-    help2_h:"อีเมลหาเรา", help2_p:"ตอบกลับภายใน 24 ชั่วโมง",
-    help3_h:"แชทและปุ่ม SOS ในแอป", help3_big:'เมนู "ช่วยเหลือ" ในแอป', help3_p:"แชทกับทีมงาน หรือกด SOS ระหว่างเดินทางเพื่อขอความช่วยเหลือฉุกเฉิน",
+    help_eyebrow:"ศูนย์ช่วยเหลือ", help_h2:'มีปัญหาเมื่อไหร่ <span class="hl">เราอยู่ตรงนี้เสมอ</span>', help_p:"ทีมงานคนจริงพร้อมดูแลทุกวัน ไม่มีวันหยุด ทั้งภาษาไทย ลาว และอังกฤษ",
+    help1_h:"โทรหาเรา", help1_p:"สายด่วนตลอด 24 ชั่วโมง ทุกวัน", help1_btn:"โทรตอนนี้",
+    help2_h:"อีเมลหาเรา", help2_p:"ตอบกลับภายใน 24 ชั่วโมง", help2_btn:"ส่งอีเมล",
+    help3_h:"แชทและปุ่ม SOS ในแอป", help3_big:'เมนู "ช่วยเหลือ" ในแอป', help3_p:"แชทกับทีมงาน หรือกด SOS ระหว่างเดินทางเพื่อขอความช่วยเหลือฉุกเฉิน", help3_btn:"เปิดแอปเลย",
     hero_h1:'จะไปไหน<br>ก็ Easy แค่กด Easy<span class="go">GO</span>',
     hero_lede:"เรียกรถได้ไวใน 3 นาที เดินทางสะดวก ปลอดภัย ครอบคลุมทั่วไทย ไม่ว่าจะไปทำงาน เที่ยว หรือธุระสำคัญ EasyGO พร้อมพาคุณไปถึงอย่างมั่นใจ",
     hero_cta1:"ดาวน์โหลดแอป", hero_cta2:"ดูวิธีใช้งาน",
@@ -781,7 +807,7 @@ const I18N = {
     drv_p:"ค่าคอมมิชชันต่ำสุดในตลาดเพียง 15% โอนรายได้เข้าบัญชีทุกวัน เลือกเวลาขับเองได้ 100%",
     drv_li1:"รับงานได้ทั้งมอเตอร์ไซค์และรถยนต์", drv_li2:"โบนัสพิเศษช่วงชั่วโมงเร่งด่วน", drv_li3:"ประกันอุบัติเหตุคุ้มครองระหว่างรับงาน",
     drv_btn:"สมัครเป็นคนขับ",
-    dl_h2:"พร้อมออกเดินทางหรือยัง?",
+    dl_h2:'พร้อมออกเดินทาง<span class="hl">หรือยัง?</span>',
     dl_p:'ดาวน์โหลด EasyGO ฟรี แล้วรับส่วนลด 50% สำหรับ 3 เที่ยวแรก ด้วยโค้ด <b>GOFIRST</b>',
     store_on:"ดาวน์โหลดบน",
     foot_tag:"แอปเรียกรถที่คุณไว้ใจ ให้บริการทั่วไทยและลาว",
@@ -810,10 +836,10 @@ const I18N = {
     faq_q3:"ຄົນຂັບຜ່ານການກວດສອບຫຍັງແດ່?", faq_a3:"ກວດປະຫວັດອາດຊະຍາກຳ ໃບຂັບຂີ່ ແລະ ເອກະສານລົດທຸກຄົນ ພ້ອມອົບຮົມກ່ອນເລີ່ມວຽກ",
     faq_q4:"ລືມເຄື່ອງເທິງລົດຕ້ອງເຮັດແນວໃດ?", faq_a4:'ກົດ "ແຈ້ງເຄື່ອງເສຍ" ໃນປະຫວັດການເດີນທາງ ຫຼື ໂທຫາສູນຊ່ວຍເຫຼືອໄດ້ຕະຫຼອດ 24 ຊມ.',
     faq_q5:"ສະໝັກເປັນຄົນຂັບຕ້ອງໃຊ້ຫຍັງແດ່?", faq_a5:"ໃຊ້ບັດປະຈຳຕົວ ໃບຂັບຂີ່ ເອກະສານລົດ ແລະ ບັນຊີທະນາຄານ ກວດສອບພາຍໃນ 1–3 ວັນ",
-    help_eyebrow:"ສູນຊ່ວຍເຫຼືອ", help_h2:"ມີບັນຫາເມື່ອໃດ ເຮົາຢູ່ບ່ອນນີ້ສະເໝີ", help_p:"ທີມງານຄົນແທ້ພ້ອມດູແລທຸກວັນ ບໍ່ມີວັນພັກ ທັງພາສາລາວ ໄທ ແລະ ອັງກິດ",
-    help1_h:"ໂທຫາເຮົາ", help1_p:"ສາຍດ່ວນຕະຫຼອດ 24 ຊົ່ວໂມງ ທຸກວັນ",
-    help2_h:"ອີເມວຫາເຮົາ", help2_p:"ຕອບກັບພາຍໃນ 24 ຊົ່ວໂມງ",
-    help3_h:"ແຊັດ ແລະ ປຸ່ມ SOS ໃນແອັບ", help3_big:'ເມນູ "ຊ່ວຍເຫຼືອ" ໃນແອັບ', help3_p:"ແຊັດກັບທີມງານ ຫຼື ກົດ SOS ລະຫວ່າງເດີນທາງເພື່ອຂໍຄວາມຊ່ວຍເຫຼືອສຸກເສີນ",
+    help_eyebrow:"ສູນຊ່ວຍເຫຼືອ", help_h2:'ມີບັນຫາເມື່ອໃດ <span class="hl">ເຮົາຢູ່ບ່ອນນີ້ສະເໝີ</span>', help_p:"ທີມງານຄົນແທ້ພ້ອມດູແລທຸກວັນ ບໍ່ມີວັນພັກ ທັງພາສາລາວ ໄທ ແລະ ອັງກິດ",
+    help1_h:"ໂທຫາເຮົາ", help1_p:"ສາຍດ່ວນຕະຫຼອດ 24 ຊົ່ວໂມງ ທຸກວັນ", help1_btn:"ໂທຕອນນີ້",
+    help2_h:"ອີເມວຫາເຮົາ", help2_p:"ຕອບກັບພາຍໃນ 24 ຊົ່ວໂມງ", help2_btn:"ສົ່ງອີເມວ",
+    help3_h:"ແຊັດ ແລະ ປຸ່ມ SOS ໃນແອັບ", help3_big:'ເມນູ "ຊ່ວຍເຫຼືອ" ໃນແອັບ', help3_p:"ແຊັດກັບທີມງານ ຫຼື ກົດ SOS ລະຫວ່າງເດີນທາງເພື່ອຂໍຄວາມຊ່ວຍເຫຼືອສຸກເສີນ", help3_btn:"ເປີດແອັບເລີຍ",
     hero_h1:'ຈະໄປໃສ<br>ກໍ Easy ພຽງກົດ Easy<span class="go">GO</span>',
     hero_lede:"ເອີ້ນລົດໄດ້ໄວໃນ 3 ນາທີ ເດີນທາງສະດວກ ປອດໄພ ຄອບຄຸມທົ່ວລາວ ແລະ ໄທ ບໍ່ວ່າຈະໄປວຽກ ທ່ຽວ ຫຼື ທຸລະສຳຄັນ EasyGO ພ້ອມພາທ່ານໄປຮອດຢ່າງໝັ້ນໃຈ",
     hero_cta1:"ດາວໂຫຼດແອັບ", hero_cta2:"ເບິ່ງວິທີໃຊ້ງານ",
@@ -849,7 +875,7 @@ const I18N = {
     drv_p:"ຄ່າຄອມມິດຊັນຕ່ຳສຸດໃນຕະຫຼາດພຽງ 15% ໂອນລາຍຮັບເຂົ້າບັນຊີທຸກວັນ ເລືອກເວລາຂັບເອງໄດ້ 100%",
     drv_li1:"ຮັບວຽກໄດ້ທັງລົດຈັກ ແລະ ລົດເກັງ", drv_li2:"ໂບນັດພິເສດຊ່ວງຊົ່ວໂມງເລັ່ງດ່ວນ", drv_li3:"ປະກັນອຸບັດຕິເຫດຄຸ້ມຄອງລະຫວ່າງຮັບວຽກ",
     drv_btn:"ສະໝັກເປັນຄົນຂັບ",
-    dl_h2:"ພ້ອມອອກເດີນທາງແລ້ວບໍ?",
+    dl_h2:'ພ້ອມອອກເດີນທາງ<span class="hl">ແລ້ວບໍ?</span>',
     dl_p:'ດາວໂຫຼດ EasyGO ຟຣີ ແລ້ວຮັບສ່ວນຫຼຸດ 50% ສຳລັບ 3 ຖ້ຽວທຳອິດ ດ້ວຍລະຫັດ <b>GOFIRST</b>',
     store_on:"ດາວໂຫຼດຢູ່",
     foot_tag:"ແອັບເອີ້ນລົດທີ່ທ່ານໄວ້ໃຈ ໃຫ້ບໍລິການທົ່ວລາວ ແລະ ໄທ",
@@ -878,10 +904,10 @@ const I18N = {
     faq_q3:"How are drivers screened?", faq_a3:"Criminal-record, license, and vehicle checks for every driver, plus safety training.",
     faq_q4:"I left something in the car — what now?", faq_a4:'Tap "Report lost item" in your trip history, or call our 24-hour help center.',
     faq_q5:"What do I need to become a driver?", faq_a5:"ID card, driver's license, vehicle documents, and a bank account. Review takes 1–3 days.",
-    help_eyebrow:"Help center", help_h2:"Whenever there's a problem, we're here", help_p:"Real people, every day, no holidays — in Thai, Lao, and English.",
-    help1_h:"Call us", help1_p:"Hotline open 24 hours, every day",
-    help2_h:"Email us", help2_p:"We reply within 24 hours",
-    help3_h:"In-app chat & SOS", help3_big:'"Help" menu in the app', help3_p:"Chat with our team, or press SOS during a trip for emergency assistance.",
+    help_eyebrow:"Help center", help_h2:'Whenever there\'s a problem, <span class="hl">we\'re here</span>', help_p:"Real people, every day, no holidays — in Thai, Lao, and English.",
+    help1_h:"Call us", help1_p:"Hotline open 24 hours, every day", help1_btn:"Call now",
+    help2_h:"Email us", help2_p:"We reply within 24 hours", help2_btn:"Send email",
+    help3_h:"In-app chat & SOS", help3_big:'"Help" menu in the app', help3_p:"Chat with our team, or press SOS during a trip for emergency assistance.", help3_btn:"Open the app",
     hero_h1:'Going anywhere<br>is Easy — just tap Easy<span class="go">GO</span>',
     hero_lede:"Get a ride in 3 minutes — convenient, safe, and ready nationwide. Work, travel, or errands, EasyGO gets you there with confidence.",
     hero_cta1:"Download the app", hero_cta2:"See how it works",
@@ -917,7 +943,7 @@ const I18N = {
     drv_p:"The lowest commission in the market at just 15%. Daily payouts to your bank account. Set your own hours, 100%.",
     drv_li1:"Take jobs on a motorbike or a car", drv_li2:"Bonus pay during rush hours", drv_li3:"Accident insurance while on the job",
     drv_btn:"Become a driver",
-    dl_h2:"Ready to go?",
+    dl_h2:'Ready to <span class="hl">go?</span>',
     dl_p:'Download EasyGO free and get 50% off your first 3 rides with code <b>GOFIRST</b>',
     store_on:"Download on",
     foot_tag:"The ride-hailing app you can trust, serving Thailand and Laos",
