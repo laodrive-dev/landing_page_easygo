@@ -260,20 +260,38 @@ section{padding-block:72px}
 .band-quote .hl{color:var(--orange)}
 
 /* services — การ์ดละสี: เหลือง ส้ม ม่วง เขียวมินต์ */
-.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-.svc{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--c,var(--brand));border-radius:18px;padding:24px;display:grid;gap:10px;align-content:start;transition:transform .2s ease,box-shadow .2s ease}
+.svc-headrow{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:flex-start;margin-bottom:40px}
+.svc-headrow .sec-head{margin-bottom:0}
+.svc-badges{display:flex;flex-wrap:wrap;align-items:center}
+.sbadge{display:flex;align-items:center;gap:10px;padding-inline:18px;border-left:1px solid var(--line)}
+.sbadge:first-child{border-left:0;padding-left:0}
+.sbadge .ic{width:40px;height:40px;border-radius:12px;background:var(--tint-yellow);display:grid;place-items:center;flex:none}
+.sbadge .ic svg{width:21px;height:21px;stroke:#c08a00;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sbadge b{display:block;font-family:var(--display);font-weight:700;font-size:.88rem}
+.sbadge small{color:var(--muted);font-size:.76rem}
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.svc{background:linear-gradient(170deg,var(--ct,var(--tint-yellow)),#fff 72%);border:1px solid var(--line);border-radius:22px;padding:24px 22px;display:flex;flex-direction:column;gap:10px;transition:transform .2s ease,box-shadow .2s ease}
 .svc:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(28,26,18,.12)}
-.svc:nth-child(1){--c:var(--brand);--ct:var(--tint-yellow)}
-.svc:nth-child(2){--c:var(--orange);--ct:var(--tint-orange)}
-.svc:nth-child(3){--c:var(--violet);--ct:var(--tint-violet)}
-.svc:nth-child(4){--c:var(--teal);--ct:var(--tint-teal)}
-.svc .ic{width:46px;height:46px;border-radius:14px;background:var(--c,var(--brand));display:grid;place-items:center}
+.svc:nth-child(1){--c:var(--brand);--ct:var(--tint-yellow);--cd:#c08a00}
+.svc:nth-child(2){--c:var(--orange);--ct:var(--tint-orange);--cd:var(--orange)}
+.svc:nth-child(3){--c:var(--violet);--ct:var(--tint-violet);--cd:var(--violet)}
+.svc:nth-child(4){--c:var(--teal);--ct:var(--tint-teal);--cd:var(--teal)}
+.svc .ic{width:48px;height:48px;border-radius:15px;background:var(--c,var(--brand));display:grid;place-items:center}
 .svc:nth-child(3) .ic svg,.svc:nth-child(4) .ic svg{stroke:#fff}
 .svc .ic svg{width:26px;height:26px;stroke:#1c1a12;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-.svc h3{font-size:1.08rem;font-weight:700}
-.svc p{font-size:.93rem;color:var(--muted)}
-.svc .price{font-family:var(--display);font-weight:600;font-size:.85rem;color:var(--ink);background:var(--ct,var(--tint-yellow));border-radius:999px;padding:4px 14px;justify-self:start}
-.svc .price b{font-variant-numeric:tabular-nums}
+.svc h3{font-size:1.35rem;font-weight:800;margin-top:4px}
+.svc h3 b{color:var(--cd,var(--orange));font-weight:800}
+.svc p{font-size:.9rem;color:var(--muted)}
+.svc ul{margin:4px 0 2px;padding:0;list-style:none;display:grid;gap:8px;font-size:.85rem}
+.svc li{padding-left:26px;position:relative}
+.svc li::before{content:"✓";position:absolute;left:0;top:.05em;width:17px;height:17px;border-radius:50%;background:var(--c,var(--brand));color:#fff;font-size:.68rem;font-weight:700;display:grid;place-items:center;line-height:0}
+.svc:nth-child(1) li::before{color:#1c1a12}
+.svc-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 8px 7px 18px;margin-top:auto}
+.svc-foot .price{font-family:var(--display);font-weight:700;font-size:.95rem}
+.svc-foot .price b{font-size:1.1rem;font-variant-numeric:tabular-nums}
+.svc-foot .arrow{width:36px;height:36px;border-radius:50%;background:var(--c,var(--brand));display:grid;place-items:center;flex:none}
+.svc-foot .arrow svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.svc:nth-child(1) .svc-foot .arrow svg{stroke:#1c1a12}
 
 /* steps — หัวข้อซ้าย การ์ด 4 ขั้นตอนขวา */
 .steps{background:linear-gradient(180deg,var(--tint-yellow),var(--surface));border-block:1px solid var(--line)}
@@ -476,35 +494,63 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
 
 <section id="services">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow" data-i18n="svc_eyebrow">บริการของเรา</span>
-      <h2 data-i18n="svc_h2">เลือกให้เหมาะกับทริปของคุณ</h2>
-      <p data-i18n="svc_p">ทุกบริการแสดงราคาก่อนยืนยันเสมอ จ่ายได้ทั้งเงินสด บัตร และ EasyWallet</p>
+    <div class="svc-headrow">
+      <div class="sec-head">
+        <span class="eyebrow" data-i18n="svc_eyebrow">บริการของเรา</span>
+        <h2 style="font-weight:800" data-i18n="svc_h2">เลือกให้เหมาะกับ<span class="hl">ทริปของคุณ</span></h2>
+        <p data-i18n="svc_p">ทุกบริการแสดงราคาก่อนยืนยันเสมอ จ่ายได้ทั้งเงินสด บัตร และ EasyWallet</p>
+      </div>
+      <div class="svc-badges">
+        <div class="sbadge"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span><div><b data-i18n="sb1_h">ราคาชัดเจน</b><small data-i18n="sb1_s">ก่อนยืนยัน</small></div></div>
+        <div class="sbadge"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span><div><b data-i18n="sb2_h">ใช้งานง่าย</b><small data-i18n="sb2_s">เพียงไม่กี่ขั้นตอน</small></div></div>
+        <div class="sbadge"><span class="ic"><svg viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span><div><b data-i18n="sb3_h">ปลอดภัย</b><small data-i18n="sb3_s">ทุกเส้นทาง</small></div></div>
+        <div class="sbadge"><span class="ic"><svg viewBox="0 0 24 24"><path d="M4 13a8 8 0 0 1 16 0"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19a3 3 0 0 1-3 2h-2"/></svg></span><div><b data-i18n="sb4_h">ทีมซัพพอร์ต</b><small data-i18n="sb4_s">ดูแล 24 ชั่วโมง</small></div></div>
+      </div>
     </div>
     <div class="svc-grid">
       <div class="svc">
         <div class="ic"><svg viewBox="0 0 24 24"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17h7l-3-8h-3M13 9h3l2 8M10 6h4"/></svg></div>
-        <h3>EasyBike</h3>
-        <p data-i18n="svc1_p">มอเตอร์ไซค์ซอกแซกทันใจ เหมาะกับระยะสั้นและชั่วโมงเร่งด่วน</p>
-        <span class="price"><span data-i18n="price_from">เริ่มต้น</span> <b>฿20</b></span>
+        <h3>Easy<b>Bike</b></h3>
+        <p data-i18n="svc1_p">มอเตอร์ไซค์เรียกง่าย เดินทางไว</p>
+        <ul>
+          <li data-i18n="svc1_c1">เหมาะกับระยะสั้น และช่วงเร่งด่วน</li>
+          <li data-i18n="svc1_c2">ราคาประหยัด คุ้มค่า</li>
+          <li data-i18n="svc1_c3">คนขับมืออาชีพ ผ่านการตรวจสอบ</li>
+        </ul>
+        <div class="svc-foot"><span class="price"><span data-i18n="price_from">เริ่มต้น</span> <b>฿20</b></span><a class="arrow" href="#download" aria-label="EasyBike"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
       </div>
       <div class="svc">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 16v-4l2-5h12l2 5v4M4 12h16M7 16v2M17 16v2"/><circle cx="8" cy="16" r="1"/><circle cx="16" cy="16" r="1"/></svg></div>
-        <h3>EasyCar</h3>
-        <p data-i18n="svc2_p">รถยนต์ 4 ที่นั่ง สะอาด แอร์เย็น สำหรับเดินทางในเมืองทุกวัน</p>
-        <span class="price"><span data-i18n="price_from">เริ่มต้น</span> <b>฿45</b></span>
+        <h3>Easy<b>Car</b></h3>
+        <p data-i18n="svc2_p">รถยนต์ 4 ที่นั่ง สะอาด แอร์เย็น</p>
+        <ul>
+          <li data-i18n="svc2_c1">เดินทางสบาย ทุกเส้นทาง</li>
+          <li data-i18n="svc2_c2">เหมาะสำหรับเดินทางในเมืองทุกวัน</li>
+          <li data-i18n="svc2_c3">ปลอดภัย คนขับผ่านการตรวจสอบ</li>
+        </ul>
+        <div class="svc-foot"><span class="price"><span data-i18n="price_from">เริ่มต้น</span> <b>฿45</b></span><a class="arrow" href="#download" aria-label="EasyCar"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
       </div>
       <div class="svc">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l2.4 5 5.6.7-4 3.9.9 5.4-4.9-2.6L7.1 18l.9-5.4-4-3.9L9.6 8z"/></svg></div>
-        <h3>EasyPremium</h3>
-        <p data-i18n="svc3_p">รถใหญ่พร้อมคนขับมืออาชีพ รับส่งสนามบินหรือประชุมสำคัญ</p>
-        <span class="price"><span data-i18n="price_from">เริ่มต้น</span> <b>฿150</b></span>
+        <h3>Easy<b>Premium</b></h3>
+        <p data-i18n="svc3_p">รถใหญ่ระดับพรีเมียม พร้อมคนขับมืออาชีพ</p>
+        <ul>
+          <li data-i18n="svc3_c1">รถกว้าง นั่งสบาย เหมาะกับกลุ่ม</li>
+          <li data-i18n="svc3_c2">รองรับสัมภาระเยอะ</li>
+          <li data-i18n="svc3_c3">บริการระดับพรีเมียม</li>
+        </ul>
+        <div class="svc-foot"><span class="price"><span data-i18n="price_from">เริ่มต้น</span> <b>฿150</b></span><a class="arrow" href="#download" aria-label="EasyPremium"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
       </div>
       <div class="svc">
         <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 8l8-4 8 4v8l-8 4-8-4zM4 8l8 4 8-4M12 12v8"/></svg></div>
-        <h3>EasySend</h3>
-        <p data-i18n="svc4_p">ส่งของด่วนถึงมือใน 1 ชั่วโมง ติดตามพัสดุแบบเรียลไทม์</p>
-        <span class="price"><span data-i18n="price_from">เริ่มต้น</span> <b>฿35</b></span>
+        <h3>Easy<b>Send</b></h3>
+        <p data-i18n="svc4_p">ส่งของด่วน ถึงมือไว ภายใน 1 ชั่วโมง</p>
+        <ul>
+          <li data-i18n="svc4_c1">ส่งเอกสาร พัสดุ และของใช้ทั่วไป</li>
+          <li data-i18n="svc4_c2">ติดตามพัสดุได้แบบเรียลไทม์</li>
+          <li data-i18n="svc4_c3">ปลอดภัย ดูแลทุกขั้นตอน</li>
+        </ul>
+        <div class="svc-foot"><span class="price"><span data-i18n="price_from">เริ่มต้น</span> <b>฿35</b></span><a class="arrow" href="#download" aria-label="EasySend"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
       </div>
     </div>
   </div>
@@ -667,12 +713,17 @@ const I18N = {
     hero_cta1:"ดาวน์โหลดแอป", hero_cta2:"ดูวิธีใช้งาน",
     stat1_v:"3 นาที", stat1_l:"เฉลี่ยรอรถเพียง", stat2_l:"คนขับที่ได้รับการตรวจสอบ", stat3_l:"คะแนนความพึงพอใจ",
     ph_eta:"ถึงใน 3 นาที", ph_route:"สยาม → อารีย์ · 6.4 กม.", ph_go:"เรียกรถเลย",
-    svc_eyebrow:"บริการของเรา", svc_h2:"เลือกให้เหมาะกับทริปของคุณ",
+    svc_eyebrow:"บริการของเรา", svc_h2:'เลือกให้เหมาะกับ<span class="hl">ทริปของคุณ</span>',
     svc_p:"ทุกบริการแสดงราคาก่อนยืนยันเสมอ จ่ายได้ทั้งเงินสด บัตร และ EasyWallet",
-    svc1_p:"มอเตอร์ไซค์ซอกแซกทันใจ เหมาะกับระยะสั้นและชั่วโมงเร่งด่วน",
-    svc2_p:"รถยนต์ 4 ที่นั่ง สะอาด แอร์เย็น สำหรับเดินทางในเมืองทุกวัน",
-    svc3_p:"รถใหญ่พร้อมคนขับมืออาชีพ รับส่งสนามบินหรือประชุมสำคัญ",
-    svc4_p:"ส่งของด่วนถึงมือใน 1 ชั่วโมง ติดตามพัสดุแบบเรียลไทม์",
+    sb1_h:"ราคาชัดเจน", sb1_s:"ก่อนยืนยัน", sb2_h:"ใช้งานง่าย", sb2_s:"เพียงไม่กี่ขั้นตอน", sb3_h:"ปลอดภัย", sb3_s:"ทุกเส้นทาง", sb4_h:"ทีมซัพพอร์ต", sb4_s:"ดูแล 24 ชั่วโมง",
+    svc1_p:"มอเตอร์ไซค์เรียกง่าย เดินทางไว",
+    svc1_c1:"เหมาะกับระยะสั้น และช่วงเร่งด่วน", svc1_c2:"ราคาประหยัด คุ้มค่า", svc1_c3:"คนขับมืออาชีพ ผ่านการตรวจสอบ",
+    svc2_p:"รถยนต์ 4 ที่นั่ง สะอาด แอร์เย็น",
+    svc2_c1:"เดินทางสบาย ทุกเส้นทาง", svc2_c2:"เหมาะสำหรับเดินทางในเมืองทุกวัน", svc2_c3:"ปลอดภัย คนขับผ่านการตรวจสอบ",
+    svc3_p:"รถใหญ่ระดับพรีเมียม พร้อมคนขับมืออาชีพ",
+    svc3_c1:"รถกว้าง นั่งสบาย เหมาะกับกลุ่ม", svc3_c2:"รองรับสัมภาระเยอะ", svc3_c3:"บริการระดับพรีเมียม",
+    svc4_p:"ส่งของด่วน ถึงมือไว ภายใน 1 ชั่วโมง",
+    svc4_c1:"ส่งเอกสาร พัสดุ และของใช้ทั่วไป", svc4_c2:"ติดตามพัสดุได้แบบเรียลไทม์", svc4_c3:"ปลอดภัย ดูแลทุกขั้นตอน",
     price_from:"เริ่มต้น",
     how_eyebrow:"วิธีใช้งาน", how_h2:'ใช้งานง่าย <span class="hl">เพียงไม่กี่ขั้นตอน</span>',
     how_lede:"เรียกรถได้ทันที เดินทางสะดวก ปลอดภัยในทุกเส้นทาง ไม่ว่าจะในไทยหรือลาว ไปกับ EasyGO",
@@ -727,12 +778,17 @@ const I18N = {
     hero_cta1:"ດາວໂຫຼດແອັບ", hero_cta2:"ເບິ່ງວິທີໃຊ້ງານ",
     stat1_v:"3 ນາທີ", stat1_l:"ສະເລ່ຍລໍຖ້າພຽງ", stat2_l:"ຄົນຂັບທີ່ຜ່ານການກວດສອບ", stat3_l:"ຄະແນນຄວາມພໍໃຈ",
     ph_eta:"ຮອດໃນ 3 ນາທີ", ph_route:"ຕະຫຼາດເຊົ້າ → ທາດຫຼວງ · 6.4 ກມ.", ph_go:"ເອີ້ນລົດເລີຍ",
-    svc_eyebrow:"ບໍລິການຂອງເຮົາ", svc_h2:"ເລືອກໃຫ້ເໝາະກັບການເດີນທາງຂອງທ່ານ",
+    svc_eyebrow:"ບໍລິການຂອງເຮົາ", svc_h2:'ເລືອກໃຫ້ເໝາະກັບ<span class="hl">ການເດີນທາງຂອງທ່ານ</span>',
     svc_p:"ທຸກບໍລິການສະແດງລາຄາກ່ອນຢືນຢັນສະເໝີ ຈ່າຍໄດ້ທັງເງິນສົດ ບັດ ແລະ EasyWallet",
-    svc1_p:"ລົດຈັກວ່ອງໄວ ເໝາະກັບໄລຍະສັ້ນ ແລະ ຊົ່ວໂມງເລັ່ງດ່ວນ",
-    svc2_p:"ລົດເກັງ 4 ບ່ອນນັ່ງ ສະອາດ ແອເຢັນ ສຳລັບເດີນທາງໃນເມືອງທຸກວັນ",
-    svc3_p:"ລົດໃຫຍ່ພ້ອມຄົນຂັບມືອາຊີບ ຮັບສົ່ງສະໜາມບິນ ຫຼື ປະຊຸມສຳຄັນ",
-    svc4_p:"ສົ່ງເຄື່ອງດ່ວນຮອດມືພາຍໃນ 1 ຊົ່ວໂມງ ຕິດຕາມພັດສະດຸແບບສົດ",
+    sb1_h:"ລາຄາຊັດເຈນ", sb1_s:"ກ່ອນຢືນຢັນ", sb2_h:"ໃຊ້ງານງ່າຍ", sb2_s:"ພຽງບໍ່ເທົ່າໃດຂັ້ນຕອນ", sb3_h:"ປອດໄພ", sb3_s:"ທຸກເສັ້ນທາງ", sb4_h:"ທີມຊັບພອດ", sb4_s:"ດູແລ 24 ຊົ່ວໂມງ",
+    svc1_p:"ລົດຈັກເອີ້ນງ່າຍ ເດີນທາງໄວ",
+    svc1_c1:"ເໝາະກັບໄລຍະສັ້ນ ແລະ ຊ່ວງເລັ່ງດ່ວນ", svc1_c2:"ລາຄາປະຢັດ ຄຸ້ມຄ່າ", svc1_c3:"ຄົນຂັບມືອາຊີບ ຜ່ານການກວດສອບ",
+    svc2_p:"ລົດເກັງ 4 ບ່ອນນັ່ງ ສະອາດ ແອເຢັນ",
+    svc2_c1:"ເດີນທາງສະບາຍ ທຸກເສັ້ນທາງ", svc2_c2:"ເໝາະສຳລັບເດີນທາງໃນເມືອງທຸກວັນ", svc2_c3:"ປອດໄພ ຄົນຂັບຜ່ານການກວດສອບ",
+    svc3_p:"ລົດໃຫຍ່ລະດັບພຣີມຽມ ພ້ອມຄົນຂັບມືອາຊີບ",
+    svc3_c1:"ລົດກວ້າງ ນັ່ງສະບາຍ ເໝາະກັບກຸ່ມ", svc3_c2:"ຮອງຮັບສຳພາລະຫຼາຍ", svc3_c3:"ບໍລິການລະດັບພຣີມຽມ",
+    svc4_p:"ສົ່ງເຄື່ອງດ່ວນ ຮອດມືໄວ ພາຍໃນ 1 ຊົ່ວໂມງ",
+    svc4_c1:"ສົ່ງເອກະສານ ພັດສະດຸ ແລະ ເຄື່ອງໃຊ້ທົ່ວໄປ", svc4_c2:"ຕິດຕາມພັດສະດຸໄດ້ແບບສົດ", svc4_c3:"ປອດໄພ ດູແລທຸກຂັ້ນຕອນ",
     price_from:"ເລີ່ມຕົ້ນ",
     how_eyebrow:"ວິທີໃຊ້ງານ", how_h2:'ໃຊ້ງານງ່າຍ <span class="hl">ພຽງບໍ່ເທົ່າໃດຂັ້ນຕອນ</span>',
     how_lede:"ເອີ້ນລົດໄດ້ທັນທີ ເດີນທາງສະດວກ ປອດໄພໃນທຸກເສັ້ນທາງ ບໍ່ວ່າຈະໃນລາວ ຫຼື ໄທ ໄປກັບ EasyGO",
@@ -787,12 +843,17 @@ const I18N = {
     hero_cta1:"Download the app", hero_cta2:"See how it works",
     stat1_v:"3 min", stat1_l:"average wait only", stat2_l:"verified drivers", stat3_l:"satisfaction score",
     ph_eta:"Arriving in 3 min", ph_route:"Siam → Ari · 6.4 km", ph_go:"Book now",
-    svc_eyebrow:"Our services", svc_h2:"Pick the ride that fits your trip",
+    svc_eyebrow:"Our services", svc_h2:'The right ride for <span class="hl">your trip</span>',
     svc_p:"Every service shows the fare before you confirm. Pay with cash, card, or EasyWallet.",
-    svc1_p:"Nimble motorbikes for short hops and rush-hour traffic.",
-    svc2_p:"Clean, air-conditioned 4-seaters for everyday city trips.",
-    svc3_p:"Spacious cars with professional drivers for airports and big meetings.",
-    svc4_p:"Same-hour delivery with real-time package tracking.",
+    sb1_h:"Clear pricing", sb1_s:"before you confirm", sb2_h:"Easy to use", sb2_s:"in just a few steps", sb3_h:"Safe", sb3_s:"on every route", sb4_h:"Support team", sb4_s:"here 24 hours",
+    svc1_p:"Quick motorbike rides, booked in seconds",
+    svc1_c1:"Great for short hops and rush hour", svc1_c2:"Budget-friendly fares", svc1_c3:"Professional, vetted drivers",
+    svc2_p:"Clean, air-conditioned 4-seaters",
+    svc2_c1:"Comfortable on every route", svc2_c2:"Perfect for everyday city trips", svc2_c3:"Safe, background-checked drivers",
+    svc3_p:"Premium cars with professional drivers",
+    svc3_c1:"Spacious and great for groups", svc3_c2:"Room for plenty of luggage", svc3_c3:"Premium-level service",
+    svc4_p:"Express delivery within 1 hour",
+    svc4_c1:"Documents, parcels, and everyday items", svc4_c2:"Real-time package tracking", svc4_c3:"Safe hands at every step",
     price_from:"from",
     how_eyebrow:"How it works", how_h2:'Easy to use, <span class="hl">in just a few steps</span>',
     how_lede:"Get a ride instantly — convenient and safe on every route, in Thailand or Laos, with EasyGO.",
