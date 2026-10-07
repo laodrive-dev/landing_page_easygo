@@ -441,7 +441,8 @@ section{padding-block:72px}
 .dl p b{background:#1c1a12;color:#FEC200;border-radius:8px;padding:3px 12px;font-family:var(--display)}
 .stores{margin-top:28px;display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
 .dl-band .stores{margin-top:14px}
-.dl-band .store{background:#1c1a12;color:#FEC200}
+.dl-band .store{background:#1c1a12;color:#fff}
+.dl-band .store small{opacity:.8}
 .dl-band .store:focus-visible{outline-color:#1c1a12}
 .store{display:flex;align-items:center;gap:10px;background:var(--brand);color:#1c1a12;text-decoration:none;border-radius:14px;padding:10px 20px;font-family:var(--display);text-align:left}
 .store:hover{filter:brightness(1.05)}
@@ -782,11 +783,11 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
 <section class="dl" id="download">
   <div class="wrap">
     <div class="dl-band">
-    <h2 data-i18n="dl_h2">พร้อมออกเดินทาง<span class="hl">หรือยัง?</span></h2>
+    <h2 data-i18n="dl_h2">พร้อมออกเดินทาง<span class="hl-y">หรือยัง?</span></h2>
     <p data-i18n="dl_p">ดาวน์โหลด EasyGO ฟรี แล้วรับส่วนลด 50% สำหรับ 3 เที่ยวแรก ด้วยโค้ด <b>GOFIRST</b></p>
     <div class="stores">
       <a class="store" href="#download"><svg viewBox="0 0 24 24"><path d="M17.05 12.54c-.03-2.9 2.37-4.3 2.48-4.37-1.35-1.98-3.46-2.25-4.2-2.28-1.79-.18-3.5 1.05-4.4 1.05-.9 0-2.3-1.03-3.79-1-1.95.03-3.75 1.13-4.75 2.88-2.03 3.52-.52 8.72 1.46 11.57.97 1.4 2.12 2.96 3.63 2.9 1.46-.06 2.01-.94 3.77-.94s2.26.94 3.8.91c1.57-.03 2.57-1.42 3.53-2.82 1.11-1.62 1.57-3.19 1.6-3.27-.04-.02-3.07-1.18-3.13-4.63zM14.16 4c.8-.97 1.34-2.32 1.19-3.66-1.15.05-2.55.77-3.38 1.74-.74.86-1.39 2.23-1.22 3.55 1.29.1 2.6-.65 3.41-1.63z"/></svg><span><small data-i18n="store_on">ดาวน์โหลดบน</small><b>App Store</b></span></a>
-      <a class="store" href="#download"><svg viewBox="0 0 24 24"><path d="M3.6 1.8c-.3.3-.5.8-.5 1.4v17.6c0 .6.2 1.1.5 1.4l.1.1 9.9-9.9v-.2L3.7 1.7l-.1.1zm13.2 13.3l-3.3-3.3v-.2l3.3-3.3.1 0 3.9 2.2c1.1.6 1.1 1.7 0 2.3l-3.9 2.2-.1.1zm-.1.1l-3.4-3.4-9.8 9.9c.4.4 1 .4 1.7 0l11.5-6.5zM3.5 1.6c-.7-.4-1.3-.3-1.7 0l9.9 9.9 3.4-3.4L3.5 1.6z"/></svg><span><small data-i18n="store_on">ดาวน์โหลดบน</small><b>Google Play</b></span></a>
+      <a class="store" href="#download"><svg viewBox="0 0 24 24"><path fill="#00A0FF" d="M3.9 1.9c-.3.3-.5.8-.5 1.3v17.6c0 .5.2 1 .5 1.3l.1.1 9.9-9.9v-.2L4 1.8l-.1.1z"/><path fill="#00E677" d="M3.9 1.8c.5-.4 1.2-.3 1.8.1l11.5 6.5-3.3 3.4L3.9 1.8z"/><path fill="#FFBC00" d="M17.2 8.4l-3.3 3.3v.2l3.3 3.3.1.1 3.9-2.2c1.1-.6 1.1-1.7 0-2.3l-3.9-2.3-.1-.1z"/><path fill="#FF3A44" d="M17.3 15.3l-3.4-3.4-9.9 9.9c.5.4 1.1.4 1.8 0l11.5-6.5z"/></svg><span><small data-i18n="store_on">ดาวน์โหลดบน</small><b>Google Play</b></span></a>
     </div>
     </div>
   </div>
@@ -884,7 +885,7 @@ const I18N = {
     drv_p:"ค่าคอมมิชชันต่ำสุดในตลาดเพียง 15% โอนรายได้เข้าบัญชีทุกวัน เลือกเวลาขับเองได้ 100%",
     drv_li1:"รับงานได้ทั้งมอเตอร์ไซค์และรถยนต์", drv_li2:"โบนัสพิเศษช่วงชั่วโมงเร่งด่วน", drv_li3:"ประกันอุบัติเหตุคุ้มครองระหว่างรับงาน",
     drv_btn:"สมัครเป็นคนขับ",
-    dl_h2:'พร้อมออกเดินทาง<span class="hl">หรือยัง?</span>',
+    dl_h2:'พร้อมออกเดินทาง<span class="hl-y">หรือยัง?</span>',
     dl_p:'ดาวน์โหลด EasyGO ฟรี แล้วรับส่วนลด 50% สำหรับ 3 เที่ยวแรก ด้วยโค้ด <b>GOFIRST</b>',
     store_on:"ดาวน์โหลดบน",
     foot_tag:"แอปเรียกรถที่คุณไว้ใจ ให้บริการทั่วลาวและไทย",
@@ -959,7 +960,7 @@ const I18N = {
     drv_p:"ຄ່າຄອມມິດຊັນຕ່ຳສຸດໃນຕະຫຼາດພຽງ 15% ໂອນລາຍຮັບເຂົ້າບັນຊີທຸກວັນ ເລືອກເວລາຂັບເອງໄດ້ 100%",
     drv_li1:"ຮັບວຽກໄດ້ທັງລົດຈັກ ແລະ ລົດເກັງ", drv_li2:"ໂບນັດພິເສດຊ່ວງຊົ່ວໂມງເລັ່ງດ່ວນ", drv_li3:"ປະກັນອຸບັດຕິເຫດຄຸ້ມຄອງລະຫວ່າງຮັບວຽກ",
     drv_btn:"ສະໝັກເປັນຄົນຂັບ",
-    dl_h2:'ພ້ອມອອກເດີນທາງ<span class="hl">ແລ້ວບໍ?</span>',
+    dl_h2:'ພ້ອມອອກເດີນທາງ<span class="hl-y">ແລ້ວບໍ?</span>',
     dl_p:'ດາວໂຫຼດ EasyGO ຟຣີ ແລ້ວຮັບສ່ວນຫຼຸດ 50% ສຳລັບ 3 ຖ້ຽວທຳອິດ ດ້ວຍລະຫັດ <b>GOFIRST</b>',
     store_on:"ດາວໂຫຼດຢູ່",
     foot_tag:"ແອັບເອີ້ນລົດທີ່ທ່ານໄວ້ໃຈ ໃຫ້ບໍລິການທົ່ວລາວ ແລະ ໄທ",
@@ -1034,7 +1035,7 @@ const I18N = {
     drv_p:"The lowest commission in the market at just 15%. Daily payouts to your bank account. Set your own hours, 100%.",
     drv_li1:"Take jobs on a motorbike or a car", drv_li2:"Bonus pay during rush hours", drv_li3:"Accident insurance while on the job",
     drv_btn:"Become a driver",
-    dl_h2:'Ready to <span class="hl">go?</span>',
+    dl_h2:'Ready to <span class="hl-y">go?</span>',
     dl_p:'Download EasyGO free and get 50% off your first 3 rides with code <b>GOFIRST</b>',
     store_on:"Download on",
     foot_tag:"The ride-hailing app you can trust, serving Laos and Thailand",
