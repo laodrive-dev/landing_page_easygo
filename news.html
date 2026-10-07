@@ -362,7 +362,7 @@ if (menuBtn) {
 
 let saved = 'en';
 try { saved = localStorage.getItem('easygo-lang') || 'en'; } catch (e) {}
-if (saved !== 'th' && I18N[saved]) setLang(saved);
+if (I18N[saved]) setLang(saved);
 
 /* เปิดอ่านข่าวเต็มด้วย hash (#read-xxx) */
 const ARTICLE_IDS = ['read-promo','read-announce','read-hiring'];
