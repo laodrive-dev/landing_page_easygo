@@ -121,12 +121,19 @@ a{color:inherit}
 @media (max-width:760px){.nav-links{display:none}}
 @media (max-width:480px){.nav .btn-brand{display:none}}
 
-/* hero — ไล่เฉดเหลืองทอง + วงแสงขาวนุ่ม ๆ */
+/* hero — แบนเนอร์เต็มจอบนเดสก์ท็อป / เวอร์ชันข้อความ+พื้นหลังเมืองบนมือถือ */
 .hero{background:linear-gradient(135deg,#FFDB55 0%,#FEC200 55%,#F3A900 100%);color:var(--brand-ink);position:relative;overflow:hidden}
+.hero .banner{display:none;width:100%;height:auto}
+@media (min-width:820px){
+  .hero .banner{display:block}
+  .hero .hero-in{display:none}
+}
 .hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:
   radial-gradient(circle at 86% 16%,rgba(255,255,255,.4),transparent 38%),
   radial-gradient(circle at 6% 92%,rgba(255,255,255,.28),transparent 32%),
-  radial-gradient(circle at 60% 110%,rgba(255,138,61,.22),transparent 40%)}
+  radial-gradient(circle at 60% 110%,rgba(255,138,61,.22),transparent 40%),
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 180' preserveAspectRatio='none'%3E%3Cpath fill='%231c1a12' fill-opacity='.08' d='M0 180v-50h55v-35h35v35h55v-80h45v80h40v-45h55v45h45V40h20V20h18v20h20v90h55v-70h45v70h40v-40h55v40h50v-55h40v55h55V55h45v125h40v-75h50v75h55v-35h45v35h40v-55h57v55z'/%3E%3C/svg%3E") bottom center/1200px 180px repeat-x}
+@media (min-width:820px){.hero::before{display:none}}
 .hero-in{display:flex;flex-wrap:wrap;align-items:center;gap:40px;padding-block:64px 56px;position:relative;z-index:1}
 .hero-copy{flex:1 1 340px;min-width:0}
 .hero h1{font-size:clamp(2.1rem,5.5vw,3.5rem);font-weight:800;letter-spacing:-.02em}
@@ -315,6 +322,7 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
 </nav>
 
 <header class="hero" id="top">
+  <img class="banner" src="assets/hero-banner.png" alt="จะไปไหนก็ easy แค่กด EasyGO — เรียกรถได้ไวใน 3 นาที เดินทางสะดวก ปลอดภัย ครอบคลุมทั่วไทย">
   <div class="wrap hero-in">
     <div class="hero-copy">
       <h1 data-i18n="hero_h1">จะไปไหน<br>ก็ <span class="under">easy</span> แค่กด EasyGO</h1>
