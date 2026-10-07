@@ -9,6 +9,7 @@
 <meta name="keywords" content="เรียกรถ, แอปเรียกรถ, เรียกแท็กซี่, เรียกมอเตอร์ไซค์, ส่งของด่วน, EasyGO, อีซี่โก, ride hailing app, ແອັບເອີ້ນລົດ">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#FEC200">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 22s-8-6.9-8-12.7C4 4.9 7.6 1.5 12 1.5s8 3.4 8 7.8C20 15.1 12 22 12 22z' fill='%23FEC200' stroke='%231c1a12' stroke-width='1.6'/%3E%3Ccircle cx='12' cy='9.5' r='3' fill='%231c1a12'/%3E%3C/svg%3E">
 <link rel="canonical" href="https://www.easygo.la/">
 
 <!-- Open Graph -->
@@ -90,7 +91,9 @@
 }
 /* หน้านี้ล็อกธีมสว่าง: ขาว + เหลือง #FEC200 เท่านั้น */
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7}
+html{scroll-behavior:smooth}
+::selection{background:var(--brand);color:#1c1a12}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
 h1,h2,h3{font-family:var(--display);line-height:1.25;text-wrap:balance;margin:0}
 p{margin:0}
 a{color:inherit}
@@ -98,7 +101,7 @@ a{color:inherit}
 .eyebrow{font-family:var(--display);font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E08900}
 
 /* nav */
-.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 2px 14px rgba(28,26,18,.06)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);box-shadow:0 2px 14px rgba(28,26,18,.05)}
 .nav-in{display:flex;align-items:center;gap:clamp(24px,4vw,56px);padding-block:14px;padding-inline:clamp(16px,3vw,40px)}
 .logo{font-family:var(--display);font-weight:800;font-size:1.3rem;letter-spacing:-.01em;text-decoration:none;display:inline-flex;align-items:center}
 .logo b{color:var(--brand)}
@@ -107,9 +110,11 @@ a{color:inherit}
 .nav-links a{text-decoration:none;color:var(--muted);padding-block:4px;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
 .nav-links a:hover,.nav-links a:focus-visible{color:var(--ink);border-bottom-color:var(--brand)}
 .nav-right{display:flex;align-items:center;gap:12px;margin-left:auto}
-.btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:.95rem;text-decoration:none;border-radius:999px;padding:11px 24px;border:2px solid transparent;cursor:pointer}
+.btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:.95rem;text-decoration:none;border-radius:999px;padding:11px 24px;border:2px solid transparent;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,filter .15s ease}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(28,26,18,.14)}
+.btn:active{transform:translateY(0);box-shadow:none}
 .btn-brand{background:var(--brand);color:var(--brand-ink)}
-.btn-brand:hover{filter:brightness(1.05)}
+.btn-brand:hover{filter:brightness(1.04)}
 .btn:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
 
 /* language dropdown */
@@ -813,6 +818,7 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
   </div>
   <div class="wrap foot-bottom">
     <span data-i18n="foot_l">© 2026 EasyGO · สงวนลิขสิทธิ์</span>
+    <span><a href="privacy.html" data-i18n="foot_privacy">นโยบายความเป็นส่วนตัว</a> · <a href="terms.html" data-i18n="foot_terms">เงื่อนไขการใช้งาน</a></span>
   </div>
 </footer>
 
@@ -891,7 +897,7 @@ const I18N = {
     foot_addr:"บ้านโพนป่าเป้า เมืองสีสัตตนาก นครหลวงเวียงจันทน์ สปป.ลาว",
     foot_map:"เปิดแผนที่ Google Maps",
     foot_contact_h:"ติดต่อเรา", foot_hours:"ศูนย์ช่วยเหลือเปิดตลอด 24 ชั่วโมง",
-    foot_l:"© 2026 EasyGO · สงวนลิขสิทธิ์"
+    foot_privacy:"นโยบายความเป็นส่วนตัว", foot_terms:"เงื่อนไขการใช้งาน", foot_l:"© 2026 EasyGO · สงวนลิขสิทธิ์"
   },
   lo: {
     nav_about:"ກ່ຽວກັບເຮົາ", nav_services:"ບໍລິການ", nav_news:"ຂ່າວສານ", nav_driver:"ຂັບກັບພວກເຮົາ", nav_download:"ດາວໂຫຼດແອັບ",
@@ -966,7 +972,7 @@ const I18N = {
     foot_addr:"ບ້ານໂພນປ່າເປົ້າ ເມືອງສີສັດຕະນາກ ນະຄອນຫຼວງວຽງຈັນ ສປປ.ລາວ",
     foot_map:"ເປີດແຜນທີ່ Google Maps",
     foot_contact_h:"ຕິດຕໍ່ເຮົາ", foot_hours:"ສູນຊ່ວຍເຫຼືອເປີດຕະຫຼອດ 24 ຊົ່ວໂມງ",
-    foot_l:"© 2026 EasyGO · ສະຫງວນລິຂະສິດ"
+    foot_privacy:"ນະໂຍບາຍຄວາມເປັນສ່ວນຕົວ", foot_terms:"ເງື່ອນໄຂການໃຊ້ງານ", foot_l:"© 2026 EasyGO · ສະຫງວນລິຂະສິດ"
   },
   en: {
     nav_about:"About us", nav_services:"Services", nav_news:"News", nav_driver:"Drive with us", nav_download:"Get the app",
@@ -1041,7 +1047,7 @@ const I18N = {
     foot_addr:"Phonpapao Village, Sisattanak District, Vientiane Capital, Lao PDR",
     foot_map:"Open in Google Maps",
     foot_contact_h:"Contact us", foot_hours:"Help center open 24 hours",
-    foot_l:"© 2026 EasyGO · All rights reserved"
+    foot_privacy:"Privacy policy", foot_terms:"Terms of service", foot_l:"© 2026 EasyGO · All rights reserved"
   }
 };
 
