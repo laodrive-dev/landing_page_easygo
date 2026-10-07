@@ -100,9 +100,9 @@ a{color:inherit}
 /* nav */
 .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 2px 14px rgba(28,26,18,.06)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:14px}
-.logo{font-family:var(--display);font-weight:800;font-size:1.3rem;letter-spacing:-.01em;text-decoration:none;display:flex;align-items:center;gap:8px}
+.logo{font-family:var(--display);font-weight:800;font-size:1.3rem;letter-spacing:-.01em;text-decoration:none;display:inline-flex;align-items:center}
 .logo b{color:var(--brand)}
-.logo::before{content:"";width:12px;height:12px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--brand);border:3px solid var(--ink)}
+.logo::before{content:"";width:12px;height:12px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--brand);border:3px solid var(--ink);margin-right:9px;flex:none}
 .nav-links{display:flex;gap:24px;font-size:.92rem;font-weight:500}
 .nav-links a{text-decoration:none;color:var(--muted);padding-block:4px;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
 .nav-links a:hover,.nav-links a:focus-visible{color:var(--ink);border-bottom-color:var(--brand)}
