@@ -142,6 +142,15 @@ a{color:inherit}
 .lang-menu button[aria-selected="true"]{background:var(--brand);color:var(--brand-ink)}
 .lang-menu button:focus-visible{outline:3px solid var(--brand);outline-offset:1px}
 @media (max-width:760px){.nav-links{display:none}}
+/* mobile menu */
+.menu-btn{display:none;width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:var(--surface);cursor:pointer;place-items:center}
+.menu-btn svg{width:22px;height:22px;stroke:var(--ink);fill:none;stroke-width:2;stroke-linecap:round}
+.mobile-menu{position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 14px 30px rgba(28,26,18,.12);display:grid;gap:4px;padding:12px 20px 16px;z-index:25}
+.mobile-menu[hidden]{display:none !important}
+.mobile-menu a{text-decoration:none;color:var(--ink);font-family:var(--display);font-weight:600;font-size:1rem;padding:11px 10px;border-radius:10px}
+.mobile-menu a:hover{background:var(--tint-yellow)}
+@media (max-width:760px){.menu-btn{display:grid}}
+
 @media (max-width:480px){.nav .btn-brand{display:none}}
 
 /* hero — ข้อความเดิมทับภาพพื้นหลังแบนเนอร์ (จอกว้าง) / ไล่เฉด+เส้นขอบฟ้า (มือถือ) */
@@ -474,6 +483,20 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
 .foot-map{display:inline-flex;align-items:center;gap:6px;font-family:var(--display);font-weight:600;color:#8F6400 !important;text-decoration:none;border-bottom:2px solid var(--brand);justify-self:start}
 .foot-tel{font-family:var(--display);font-weight:700;font-size:1.05rem;color:var(--ink);font-variant-numeric:tabular-nums}
 .foot-bottom{border-top:1px solid var(--line);margin-top:32px;padding-block:18px;font-size:.84rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+/* responsive เก็บงาน */
+@media (max-width:900px){
+  .svc-badges{display:grid;grid-template-columns:1fr 1fr;gap:12px 20px}
+  .sbadge{border-left:0;padding-inline:0}
+}
+@media (max-width:640px){
+  section{padding-block:48px}
+  .band-badge{transform:none}
+  .band-card{justify-content:center;text-align:center}
+  .band-stats{justify-content:center}
+  .steps-grid{gap:24px}
+  .hero-in{padding-block:48px 44px}
+}
 @media (prefers-reduced-motion:no-preference){
   .hero-copy{animation:rise .6s ease both}
   .phone{animation:rise .6s ease .12s both,float 5s ease-in-out 1.2s infinite alternate}
@@ -508,6 +531,7 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
         </div>
       </div>
       <a class="btn btn-brand" href="#download" data-i18n="nav_download">ดาวน์โหลดแอป</a>
+      <button type="button" class="menu-btn" id="menu-btn" aria-label="เมนู / Menu" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
 </nav>
@@ -1099,6 +1123,24 @@ document.addEventListener('click', e => {
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') toggleLangMenu(false);
 });
+
+
+/* เมนูมือถือ: โคลนลิงก์จาก nav-links */
+const menuBtn = document.getElementById('menu-btn');
+if (menuBtn) {
+  const mm = document.createElement('div');
+  mm.className = 'mobile-menu'; mm.hidden = true;
+  mm.innerHTML = document.querySelector('.nav-links').innerHTML;
+  document.querySelector('.nav').appendChild(mm);
+  menuBtn.addEventListener('click', () => {
+    mm.hidden = !mm.hidden;
+    menuBtn.setAttribute('aria-expanded', String(!mm.hidden));
+  });
+  mm.addEventListener('click', e => { if (e.target.tagName === 'A') mm.hidden = true; });
+  document.addEventListener('click', e => {
+    if (!mm.hidden && !mm.contains(e.target) && e.target !== menuBtn && !menuBtn.contains(e.target)) mm.hidden = true;
+  });
+}
 
 let saved = 'en';
 try { saved = localStorage.getItem('easygo-lang') || 'en'; } catch (e) {}

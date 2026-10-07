@@ -51,6 +51,15 @@ a{color:inherit}
 .btn-brand:hover{filter:brightness(1.05)}
 .btn:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
 @media (max-width:760px){.nav-links{display:none}}
+/* mobile menu */
+.menu-btn{display:none;width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:var(--surface);cursor:pointer;place-items:center}
+.menu-btn svg{width:22px;height:22px;stroke:var(--ink);fill:none;stroke-width:2;stroke-linecap:round}
+.mobile-menu{position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 14px 30px rgba(28,26,18,.12);display:grid;gap:4px;padding:12px 20px 16px;z-index:25}
+.mobile-menu[hidden]{display:none !important}
+.mobile-menu a{text-decoration:none;color:var(--ink);font-family:var(--display);font-weight:600;font-size:1rem;padding:11px 10px;border-radius:10px}
+.mobile-menu a:hover{background:var(--tint-yellow)}
+@media (max-width:760px){.menu-btn{display:grid}}
+
 @media (max-width:480px){.nav .btn-brand{display:none}}
 
 .lang{position:relative}
@@ -140,6 +149,7 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
         </div>
       </div>
       <a class="btn btn-brand" href="index.html#download" data-i18n="nav_download">ดาวน์โหลดแอป</a>
+      <button type="button" class="menu-btn" id="menu-btn" aria-label="เมนู / Menu" aria-expanded="false"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
 </nav>
@@ -332,6 +342,24 @@ langBtn.addEventListener('click', () => toggleLangMenu());
 langMenu.querySelectorAll('button').forEach(b => b.addEventListener('click', () => { setLang(b.dataset.lang); toggleLangMenu(false); }));
 document.addEventListener('click', e => { if (!langDd.contains(e.target)) toggleLangMenu(false); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') toggleLangMenu(false); });
+
+/* เมนูมือถือ: โคลนลิงก์จาก nav-links */
+const menuBtn = document.getElementById('menu-btn');
+if (menuBtn) {
+  const mm = document.createElement('div');
+  mm.className = 'mobile-menu'; mm.hidden = true;
+  mm.innerHTML = document.querySelector('.nav-links').innerHTML;
+  document.querySelector('.nav').appendChild(mm);
+  menuBtn.addEventListener('click', () => {
+    mm.hidden = !mm.hidden;
+    menuBtn.setAttribute('aria-expanded', String(!mm.hidden));
+  });
+  mm.addEventListener('click', e => { if (e.target.tagName === 'A') mm.hidden = true; });
+  document.addEventListener('click', e => {
+    if (!mm.hidden && !mm.contains(e.target) && e.target !== menuBtn && !menuBtn.contains(e.target)) mm.hidden = true;
+  });
+}
+
 let saved = 'en';
 try { saved = localStorage.getItem('easygo-lang') || 'en'; } catch (e) {}
 if (saved !== 'th' && I18N[saved]) setLang(saved);
