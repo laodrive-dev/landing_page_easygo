@@ -38,7 +38,7 @@ a{color:inherit}
 .nav-in{display:flex;align-items:center;gap:clamp(24px,4vw,56px);padding-block:14px;padding-inline:clamp(16px,3vw,40px)}
 .logo{font-family:var(--display);font-weight:800;font-size:1.3rem;letter-spacing:-.01em;text-decoration:none;display:inline-flex;align-items:center}
 .logo b{color:var(--brand)}
-.logo::before{content:"";width:12px;height:12px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--brand);border:3px solid var(--ink);margin-right:9px;flex:none}
+.logo img{height:36px;width:auto;display:block}
 .nav-links{display:flex;gap:24px;font-size:.92rem;font-weight:500}
 .nav-links a{text-decoration:none;color:var(--muted);padding-block:4px;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
 .nav-links a:hover,.nav-links a:focus-visible,.nav-links a.active{color:var(--ink);border-bottom-color:var(--brand)}
@@ -76,9 +76,9 @@ a{color:inherit}
 .cover{display:grid;place-items:center;height:150px;border-radius:12px;overflow:hidden;text-decoration:none}
 .cover b{font-family:var(--display);font-weight:800;font-size:2.6rem;color:#1c1a12}
 .cover svg{width:64px;height:64px;stroke:#FEC200;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.cv-promo{background:url("assets/news-promo.jpg") center/cover no-repeat,linear-gradient(135deg,#FFE485,#FEC200)}
-.cv-announce{background:url("assets/news-announce.jpg") center/cover no-repeat,linear-gradient(135deg,#3a3523,#1c1a12)}
-.cv-hiring{background:url("assets/news-hiring.jpg") center/cover no-repeat,linear-gradient(135deg,#F3A900,#D98E00)}
+.cv-promo{background:url("assets/news-promo.webp") center/cover no-repeat,linear-gradient(135deg,#FFE485,#FEC200)}
+.cv-announce{background:url("assets/news-announce.webp") center/cover no-repeat,linear-gradient(135deg,#3a3523,#1c1a12)}
+.cv-hiring{background:url("assets/news-hiring.webp") center/cover no-repeat,linear-gradient(135deg,#F3A900,#D98E00)}
 .post .body{display:flex;flex-direction:column;gap:8px;flex:1;padding:8px 8px 0}
 .post h3 a{text-decoration:none}
 .post h3 a:hover{color:#E08900}
@@ -116,7 +116,7 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
 <body>
 <nav class="nav">
   <div class="nav-in">
-    <a class="logo" href="index.html">Easy<b>GO</b></a>
+    <a class="logo" href="index.html"><img src="assets/logo.webp" alt="EasyGO"></a>
     <div class="nav-links">
       <a href="index.html#about" data-i18n="nav_about">เกี่ยวกับเรา</a>
       <a href="index.html#services" data-i18n="nav_services">บริการ</a>

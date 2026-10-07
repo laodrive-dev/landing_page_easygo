@@ -105,7 +105,7 @@ a{color:inherit}
 .nav-in{display:flex;align-items:center;gap:clamp(24px,4vw,56px);padding-block:14px;padding-inline:clamp(16px,3vw,40px)}
 .logo{font-family:var(--display);font-weight:800;font-size:1.3rem;letter-spacing:-.01em;text-decoration:none;display:inline-flex;align-items:center}
 .logo b{color:var(--brand)}
-.logo::before{content:"";width:12px;height:12px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--brand);border:3px solid var(--ink);margin-right:9px;flex:none}
+.logo img{height:36px;width:auto;display:block}
 .nav-links{display:flex;gap:24px;font-size:.92rem;font-weight:500}
 .nav-links a{text-decoration:none;color:var(--muted);padding-block:4px;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
 .nav-links a:hover,.nav-links a:focus-visible{color:var(--ink);border-bottom-color:var(--brand)}
@@ -137,7 +137,7 @@ a{color:inherit}
 /* hero — ข้อความเดิมทับภาพพื้นหลังแบนเนอร์ (จอกว้าง) / ไล่เฉด+เส้นขอบฟ้า (มือถือ) */
 .hero{background:linear-gradient(135deg,#FFDB55 0%,#FEC200 55%,#F3A900 100%);color:var(--brand-ink);position:relative;overflow:hidden}
 @media (min-width:820px){
-  .hero{background:url("assets/hero-banner.jpg") center/cover no-repeat #FEC200;aspect-ratio:2170/725;display:flex;align-items:center}
+  .hero{background:url("assets/hero-banner.webp") center/cover no-repeat #FEC200;aspect-ratio:2170/725;display:flex;align-items:center}
   .hero-in{width:100%;padding-block:20px;max-width:none;padding-inline:clamp(56px,13vw,250px)}
   .hero-copy{flex:0 1 520px}
   .hero h1{font-size:clamp(2rem,4vw,2.9rem)}
@@ -261,7 +261,7 @@ section{padding-block:72px}
 
 .feat b{display:block;font-family:var(--display);font-weight:700;font-size:.93rem}
 .feat small{color:var(--muted);font-size:.8rem}
-.about-img{flex:1 1 420px;max-width:100%;align-self:center;aspect-ratio:3/2;border-radius:24px;background:url("assets/about.jpg") center/cover no-repeat;box-shadow:0 18px 44px rgba(28,26,18,.16)}
+.about-img{flex:1 1 420px;max-width:100%;align-self:center;aspect-ratio:3/2;border-radius:24px;background:url("assets/about.webp") center/cover no-repeat;box-shadow:0 18px 44px rgba(28,26,18,.16)}
 .chips{flex:1 1 320px;display:grid;gap:16px;align-content:start}
 .chip{display:flex;align-items:center;gap:14px;background:var(--ct,var(--tint-yellow));border-radius:18px;padding:18px 20px}
 .chip::before{content:"";width:14px;height:14px;border-radius:50%;background:var(--c,var(--brand));flex:none;box-shadow:0 0 0 5px #fff}
@@ -413,9 +413,9 @@ section{padding-block:72px}
 .news-card .cover{display:grid;place-items:center;height:150px;border-radius:12px;overflow:hidden}
 .news-card .cover b{font-family:var(--display);font-weight:800;font-size:2.6rem;color:#1c1a12}
 .news-card .cover svg{width:64px;height:64px;stroke:#FEC200;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.cv-promo{background:url("assets/news-promo.jpg") center/cover no-repeat,linear-gradient(135deg,#FFE485,#FEC200)}
-.cv-announce{background:url("assets/news-announce.jpg") center/cover no-repeat,linear-gradient(135deg,#3a3523,#1c1a12)}
-.cv-hiring{background:url("assets/news-hiring.jpg") center/cover no-repeat,linear-gradient(135deg,#F3A900,#D98E00)}
+.cv-promo{background:url("assets/news-promo.webp") center/cover no-repeat,linear-gradient(135deg,#FFE485,#FEC200)}
+.cv-announce{background:url("assets/news-announce.webp") center/cover no-repeat,linear-gradient(135deg,#3a3523,#1c1a12)}
+.cv-hiring{background:url("assets/news-hiring.webp") center/cover no-repeat,linear-gradient(135deg,#F3A900,#D98E00)}
 .news-card .cv-hiring svg{stroke:#1c1a12}
 .news-card .nbody{display:flex;flex-direction:column;gap:6px;flex:1;padding:8px 8px 0}
 .news-card .more{margin-top:auto;padding-top:8px;font-family:var(--display);font-weight:700;font-size:.84rem;color:#E08900}
@@ -430,7 +430,7 @@ section{padding-block:72px}
 /* download — ภาพเต็มความกว้าง ข้อความทับกลาง */
 .dl{padding-block:0 72px}
 .dl-band{position:relative;overflow:hidden;border-radius:30px;background:
-  url("assets/download-bg.jpg") center/cover no-repeat,
+  url("assets/download-bg.webp") center/cover no-repeat,
   linear-gradient(100deg,#FFE896,#FEC200 75%);
   padding:clamp(32px,5vw,60px) clamp(20px,4vw,48px);display:grid;gap:14px;justify-items:center;text-align:center}
 .dl-band::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 46%,rgba(255,244,214,.72),rgba(255,244,214,.25) 52%,transparent 72%)}
@@ -481,7 +481,7 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
 <!--ART-BODY-->
 <nav class="nav">
   <div class="nav-in">
-    <a class="logo" href="#top">Easy<b>GO</b></a>
+    <a class="logo" href="#top"><img src="assets/logo.webp" alt="EasyGO"></a>
     <div class="nav-links">
       <a href="#about" data-i18n="nav_about">เกี่ยวกับเรา</a>
       <a href="#services" data-i18n="nav_services">บริการ</a>
@@ -802,7 +802,7 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
 <footer>
   <div class="wrap foot-grid">
     <div class="foot-col">
-      <a class="logo" href="#top">Easy<b>GO</b></a>
+      <a class="logo" href="#top"><img src="assets/logo.webp" alt="EasyGO"></a>
       <span data-i18n="foot_tag">แอปเรียกรถที่คุณไว้ใจ ให้บริการทั่วลาวและไทย</span>
     </div>
     <div class="foot-col">
