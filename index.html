@@ -112,12 +112,19 @@ a{color:inherit}
 .btn-brand:hover{filter:brightness(1.05)}
 .btn:focus-visible{outline:3px solid var(--brand);outline-offset:2px}
 
-/* language switcher */
-.lang{display:flex;gap:2px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px}
-.lang button{font-family:var(--display);font-weight:600;font-size:.8rem;border:0;background:transparent;color:var(--muted);border-radius:999px;padding:5px 12px;cursor:pointer}
-.lang button:hover{color:var(--ink)}
-.lang button[aria-pressed="true"]{background:var(--brand);color:var(--brand-ink)}
-.lang button:focus-visible{outline:3px solid var(--brand);outline-offset:1px}
+/* language dropdown */
+.lang{position:relative}
+.lang-btn{display:flex;align-items:center;gap:7px;font-family:var(--display);font-weight:600;font-size:.85rem;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 14px;color:var(--ink);cursor:pointer}
+.lang-btn svg{width:16px;height:16px;stroke:var(--ink);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.lang-btn .caret{width:11px;height:11px;transition:transform .15s}
+.lang[data-open] .lang-btn .caret{transform:rotate(180deg)}
+.lang-btn:hover{border-color:var(--brand)}
+.lang-btn:focus-visible{outline:3px solid var(--brand);outline-offset:1px}
+.lang-menu{position:absolute;top:calc(100% + 8px);right:0;min-width:150px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 30px rgba(28,26,18,.14);padding:6px;display:grid;gap:2px;z-index:30}
+.lang-menu button{font-family:var(--display);font-weight:600;font-size:.88rem;text-align:left;border:0;background:transparent;color:var(--ink);border-radius:9px;padding:9px 12px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.lang-menu button:hover{background:var(--tint-yellow)}
+.lang-menu button[aria-selected="true"]{background:var(--brand);color:var(--brand-ink)}
+.lang-menu button:focus-visible{outline:3px solid var(--brand);outline-offset:1px}
 @media (max-width:760px){.nav-links{display:none}}
 @media (max-width:480px){.nav .btn-brand{display:none}}
 
@@ -313,10 +320,17 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
       <a href="#driver" data-i18n="nav_driver">ร่วมขับกับเรา</a>
     </div>
     <div class="nav-right">
-      <div class="lang" role="group" aria-label="เลือกภาษา / Select language">
-        <button type="button" id="lang-th" data-lang="th" aria-pressed="true">ไทย</button>
-        <button type="button" id="lang-lo" data-lang="lo" aria-pressed="false">ລາວ</button>
-        <button type="button" id="lang-en" data-lang="en" aria-pressed="false">EN</button>
+      <div class="lang" id="lang-dd">
+        <button type="button" class="lang-btn" id="lang-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="เลือกภาษา / Select language">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+          <span id="lang-cur">ไทย</span>
+          <svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="lang-menu" id="lang-menu" role="listbox" hidden>
+          <button type="button" data-lang="th" role="option" aria-selected="true">ไทย</button>
+          <button type="button" data-lang="lo" role="option" aria-selected="false">ລາວ</button>
+          <button type="button" data-lang="en" role="option" aria-selected="false">English</button>
+        </div>
       </div>
       <a class="btn btn-brand" href="#download" data-i18n="nav_download">ดาวน์โหลดแอป</a>
     </div>
@@ -707,6 +721,11 @@ const I18N = {
   }
 };
 
+const LANG_LABEL = { th: "ไทย", lo: "ລາວ", en: "English" };
+const langDd = document.getElementById('lang-dd');
+const langBtn = document.getElementById('lang-btn');
+const langMenu = document.getElementById('lang-menu');
+
 function setLang(lang){
   const dict = I18N[lang] || I18N.th;
   document.documentElement.lang = lang;
@@ -714,14 +733,29 @@ function setLang(lang){
     const t = dict[el.dataset.i18n];
     if (t !== undefined) el.innerHTML = t;
   });
-  document.querySelectorAll('.lang button').forEach(b => {
-    b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+  document.getElementById('lang-cur').textContent = LANG_LABEL[lang] || LANG_LABEL.th;
+  langMenu.querySelectorAll('button').forEach(b => {
+    b.setAttribute('aria-selected', String(b.dataset.lang === lang));
   });
   try { localStorage.setItem('easygo-lang', lang); } catch (e) {}
 }
 
-document.querySelectorAll('.lang button').forEach(b => {
-  b.addEventListener('click', () => setLang(b.dataset.lang));
+function toggleLangMenu(open){
+  const willOpen = open !== undefined ? open : langMenu.hidden;
+  langMenu.hidden = !willOpen;
+  langBtn.setAttribute('aria-expanded', String(willOpen));
+  if (willOpen) langDd.setAttribute('data-open',''); else langDd.removeAttribute('data-open');
+}
+
+langBtn.addEventListener('click', () => toggleLangMenu());
+langMenu.querySelectorAll('button').forEach(b => {
+  b.addEventListener('click', () => { setLang(b.dataset.lang); toggleLangMenu(false); });
+});
+document.addEventListener('click', e => {
+  if (!langDd.contains(e.target)) toggleLangMenu(false);
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') toggleLangMenu(false);
 });
 
 let saved = 'th';
