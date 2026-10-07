@@ -10,6 +10,7 @@
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#FEC200">
 <link rel="icon" href="assets/favicon.png">
+<link rel="preload" as="image" href="assets/hero-banner.webp" fetchpriority="high">
 <link rel="canonical" href="https://www.easygo.la/">
 
 <!-- Open Graph -->
@@ -19,6 +20,9 @@
 <meta property="og:description" content="เรียกรถใน 3 นาที รู้ราคาก่อนขึ้นทุกเที่ยว คนขับตรวจประวัติ 100% ดาวน์โหลดฟรีวันนี้ รับส่วนลด 50% สำหรับ 3 เที่ยวแรก">
 <meta property="og:url" content="https://www.easygo.la/">
 <meta property="og:image" content="https://www.easygo.la/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="EasyGO logo">
 <meta property="og:locale" content="lo_LA">
 <meta property="og:locale:alternate" content="th_TH">
 <meta property="og:locale:alternate" content="en_US">
@@ -57,6 +61,9 @@
 }
 </script>
 <script type="application/ld+json">
+{ "@context": "https://schema.org", "@type": "WebSite", "name": "EasyGO", "url": "https://www.easygo.la/", "inLanguage": ["th","lo","en"] }
+</script>
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -70,8 +77,11 @@
 }
 </script>
 <!--ART-HEAD-->
-<title>EasyGO</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;600;700;800&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Sans+Lao+Looped:wght@400;500;600;700;800&display=swap">
+<title>EasyGO — แอปเรียกรถของคนลาว | Ride-hailing in Laos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;600;700;800&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Sans+Lao+Looped:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;600;700;800&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Sans+Lao+Looped:wght@400;500;600;700;800&display=swap"></noscript>
 <style>
 /* Layout: white canvas + yellow #FEC200 bands; Prompt display, IBM Plex Sans Thai body, Noto Sans Lao Looped covers Lao glyphs */
 :root{
@@ -98,7 +108,7 @@ h1,h2,h3{font-family:var(--display);line-height:1.25;text-wrap:balance;margin:0}
 p{margin:0}
 a{color:inherit}
 .wrap{max-width:1240px;margin-inline:auto;padding-inline:20px}
-.eyebrow{font-family:var(--display);font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E08900}
+.eyebrow{font-family:var(--display);font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#8F6400}
 
 /* nav */
 .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);box-shadow:0 2px 14px rgba(28,26,18,.05)}
@@ -135,7 +145,7 @@ a{color:inherit}
 @media (max-width:480px){.nav .btn-brand{display:none}}
 
 /* hero — ข้อความเดิมทับภาพพื้นหลังแบนเนอร์ (จอกว้าง) / ไล่เฉด+เส้นขอบฟ้า (มือถือ) */
-.hero{background:linear-gradient(135deg,#FFDB55 0%,#FEC200 55%,#F3A900 100%);color:var(--brand-ink);position:relative;overflow:hidden}
+.hero{background:linear-gradient(180deg,rgba(254,194,0,.9),rgba(254,194,0,.72)),url("assets/hero-banner.webp") center/cover no-repeat #FEC200;color:var(--brand-ink);position:relative;overflow:hidden}
 @media (min-width:820px){
   .hero{background:url("assets/hero-banner.webp") center/cover no-repeat #FEC200;aspect-ratio:2170/725;display:flex;align-items:center}
   .hero-in{width:100%;padding-block:20px;max-width:none;padding-inline:clamp(56px,13vw,250px)}
@@ -158,11 +168,7 @@ a{color:inherit}
   .hero-stats span{font-size:.75rem}
   .hero-stats svg{width:16px;height:16px;margin-top:3px}
 }
-.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:
-  radial-gradient(circle at 86% 16%,rgba(255,255,255,.4),transparent 38%),
-  radial-gradient(circle at 6% 92%,rgba(255,255,255,.28),transparent 32%),
-  radial-gradient(circle at 60% 110%,rgba(255,138,61,.22),transparent 40%),
-  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 180' preserveAspectRatio='none'%3E%3Cpath fill='%231c1a12' fill-opacity='.08' d='M0 180v-50h55v-35h35v35h55v-80h45v80h40v-45h55v45h45V40h20V20h18v20h20v90h55v-70h45v70h40v-40h55v40h50v-55h40v55h55V55h45v125h40v-75h50v75h55v-35h45v35h40v-55h57v55z'/%3E%3C/svg%3E") bottom center/1200px 180px repeat-x}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 86% 16%,rgba(255,255,255,.35),transparent 38%),radial-gradient(circle at 6% 92%,rgba(255,255,255,.22),transparent 32%)}
 @media (min-width:820px){.hero::before{display:none}}
 .hero-in{display:flex;flex-wrap:wrap;align-items:center;gap:40px;padding-block:64px 56px;position:relative;z-index:1}
 .hero-copy{flex:1 1 340px;min-width:0}
@@ -224,7 +230,7 @@ section{padding-block:72px}
 .faq details[open]{border-color:var(--brand)}
 .faq summary{font-family:var(--display);font-weight:700;font-size:.98rem;padding-block:15px;cursor:pointer;list-style:none;display:flex;align-items:center;gap:13px}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";font-weight:700;font-size:1.3rem;color:#E08900;flex:none;margin-left:auto}
+.faq summary::after{content:"+";font-weight:700;font-size:1.3rem;color:#8F6400;flex:none;margin-left:auto}
 .faq details[open] summary::after{content:"−"}
 .faq .qic{width:38px;height:38px;border-radius:50%;background:var(--qc,var(--tint-yellow));display:grid;place-items:center;flex:none}
 .faq .qic svg{width:19px;height:19px;stroke:#1c1a12;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
@@ -250,7 +256,7 @@ section{padding-block:72px}
 /* about */
 .about{background:var(--bg)}
 .hl{color:var(--orange)}
-.hl-y{color:var(--brand)}
+.hl-y{color:#C78C00}
 .about-grid{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start}
 .about-copy{flex:1 1 380px;min-width:0}
 .about-copy p{margin-top:12px;color:var(--muted);max-width:38em}
@@ -285,8 +291,8 @@ section{padding-block:72px}
 .band-stats b{display:block;font-size:1.35rem;font-weight:800;font-variant-numeric:tabular-nums}
 .band-stats span{font-size:.82rem;color:var(--muted)}
 .band-quote{font-family:var(--display);font-weight:800;font-size:clamp(1.05rem,2vw,1.35rem);text-align:center}
-.band-quote .hl{color:var(--brand)}
-.hl-y{color:var(--brand)}
+.band-quote .hl{color:#C78C00}
+.hl-y{color:#C78C00}
 
 /* services — การ์ดละสี: เหลือง ส้ม ม่วง เขียวมินต์ */
 #services{padding-top:48px}
@@ -418,7 +424,7 @@ section{padding-block:72px}
 .cv-hiring{background:url("assets/news-hiring.webp") center/cover no-repeat,linear-gradient(135deg,#F3A900,#D98E00)}
 .news-card .cv-hiring svg{stroke:#1c1a12}
 .news-card .nbody{display:flex;flex-direction:column;gap:6px;flex:1;padding:8px 8px 0}
-.news-card .more{margin-top:auto;padding-top:8px;font-family:var(--display);font-weight:700;font-size:.84rem;color:#E08900}
+.news-card .more{margin-top:auto;padding-top:8px;font-family:var(--display);font-weight:700;font-size:.84rem;color:#8F6400}
 .news-card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(28,26,18,.1)}
 .news-card .tag{align-self:flex-start;font-family:var(--display);font-weight:700;font-size:.72rem;border-radius:999px;padding:3px 11px}
 .news-card .t1{background:var(--tint-yellow);color:#8a6400}
@@ -465,7 +471,7 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
 .foot-h{font-family:var(--display);font-weight:700;font-size:.95rem;color:var(--ink)}
 .foot-col a{color:var(--muted)}
 .foot-col a:hover{color:var(--ink)}
-.foot-map{display:inline-flex;align-items:center;gap:6px;font-family:var(--display);font-weight:600;color:#E08900 !important;text-decoration:none;border-bottom:2px solid var(--brand);justify-self:start}
+.foot-map{display:inline-flex;align-items:center;gap:6px;font-family:var(--display);font-weight:600;color:#8F6400 !important;text-decoration:none;border-bottom:2px solid var(--brand);justify-self:start}
 .foot-tel{font-family:var(--display);font-weight:700;font-size:1.05rem;color:var(--ink);font-variant-numeric:tabular-nums}
 .foot-bottom{border-top:1px solid var(--line);margin-top:32px;padding-block:18px;font-size:.84rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
 @media (prefers-reduced-motion:no-preference){
@@ -481,7 +487,7 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
 <!--ART-BODY-->
 <nav class="nav">
   <div class="nav-in">
-    <a class="logo" href="#top"><img src="assets/logo.webp" alt="EasyGO"></a>
+    <a class="logo" href="#top"><img src="assets/logo.webp" alt="EasyGO" width="148" height="46"></a>
     <div class="nav-links">
       <a href="#about" data-i18n="nav_about">เกี่ยวกับเรา</a>
       <a href="#services" data-i18n="nav_services">บริการ</a>
@@ -540,6 +546,7 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
   </div>
 </header>
 
+<main>
 <section class="trust" aria-label="ความน่าเชื่อถือ">
   <div class="wrap trust-grid">
     <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span data-i18n="trust1">จดทะเบียนบริษัทถูกต้องตามกฎหมาย</span></div>
@@ -798,11 +805,12 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
     </div>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="wrap foot-grid">
     <div class="foot-col">
-      <a class="logo" href="#top"><img src="assets/logo.webp" alt="EasyGO"></a>
+      <a class="logo" href="#top"><img src="assets/logo.webp" alt="EasyGO" width="148" height="46"></a>
       <span data-i18n="foot_tag">แอปเรียกรถที่คุณไว้ใจ ให้บริการทั่วลาวและไทย</span>
     </div>
     <div class="foot-col">
