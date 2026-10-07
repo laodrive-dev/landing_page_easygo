@@ -121,12 +121,14 @@ a{color:inherit}
 @media (max-width:760px){.nav-links{display:none}}
 @media (max-width:480px){.nav .btn-brand{display:none}}
 
-/* hero — แบนเนอร์เต็มจอบนเดสก์ท็อป / เวอร์ชันข้อความ+พื้นหลังเมืองบนมือถือ */
+/* hero — ข้อความเดิมทับภาพพื้นหลังแบนเนอร์ (จอกว้าง) / ไล่เฉด+เส้นขอบฟ้า (มือถือ) */
 .hero{background:linear-gradient(135deg,#FFDB55 0%,#FEC200 55%,#F3A900 100%);color:var(--brand-ink);position:relative;overflow:hidden}
-.hero .banner{display:none;width:100%;height:auto}
 @media (min-width:820px){
-  .hero .banner{display:block}
-  .hero .hero-in{display:none}
+  .hero{background:
+    linear-gradient(90deg,#FEC200 0%,rgba(254,194,0,.97) 36%,rgba(254,194,0,.55) 62%,rgba(254,194,0,.08) 100%),
+    url("assets/hero-banner.png") right center/cover no-repeat #FEC200}
+  .phone{display:none}
+  .hero-in{padding-block:88px 76px}
 }
 .hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:
   radial-gradient(circle at 86% 16%,rgba(255,255,255,.4),transparent 38%),
@@ -322,7 +324,6 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
 </nav>
 
 <header class="hero" id="top">
-  <img class="banner" src="assets/hero-banner.png" alt="จะไปไหนก็ easy แค่กด EasyGO — เรียกรถได้ไวใน 3 นาที เดินทางสะดวก ปลอดภัย ครอบคลุมทั่วไทย">
   <div class="wrap hero-in">
     <div class="hero-copy">
       <h1 data-i18n="hero_h1">จะไปไหน<br>ก็ <span class="under">easy</span> แค่กด EasyGO</h1>
