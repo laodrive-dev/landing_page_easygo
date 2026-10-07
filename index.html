@@ -410,7 +410,16 @@ section{padding-block:72px}
 /* news */
 #news{padding-top:0}
 .news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;align-items:stretch}
-.news-card{display:flex;flex-direction:column;gap:6px;height:100%;box-sizing:border-box;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;text-decoration:none;color:var(--ink);transition:transform .2s,box-shadow .2s}
+.news-card{display:flex;flex-direction:column;gap:6px;height:100%;box-sizing:border-box;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px 14px 20px;text-decoration:none;color:var(--ink);transition:transform .2s,box-shadow .2s}
+.news-card .cover{display:grid;place-items:center;height:150px;border-radius:12px;overflow:hidden}
+.news-card .cover b{font-family:var(--display);font-weight:800;font-size:2.6rem;color:#1c1a12}
+.news-card .cover svg{width:64px;height:64px;stroke:#FEC200;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.cv-promo{background:linear-gradient(135deg,#FFE485,#FEC200)}
+.cv-announce{background:linear-gradient(135deg,#3a3523,#1c1a12)}
+.cv-hiring{background:linear-gradient(135deg,#F3A900,#D98E00)}
+.news-card .cv-hiring svg{stroke:#1c1a12}
+.news-card .nbody{display:flex;flex-direction:column;gap:6px;flex:1;padding:8px 8px 0}
+.news-card .more{margin-top:auto;padding-top:8px;font-family:var(--display);font-weight:700;font-size:.84rem;color:#E08900}
 .news-card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(28,26,18,.1)}
 .news-card .tag{align-self:flex-start;font-family:var(--display);font-weight:700;font-size:.72rem;border-radius:999px;padding:3px 11px}
 .news-card .t1{background:var(--tint-yellow);color:#8a6400}
@@ -762,9 +771,9 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
       <a class="btn btn-brand" href="news.html" data-i18n="news_all">ดูข่าวทั้งหมด</a>
     </div>
     <div class="news-grid">
-      <a class="news-card" href="news.html#read-promo"><span class="tag t1" data-i18n="n1_tag">โปรโมชัน</span><h3 data-i18n="n1_h">ลด 50% สำหรับ 3 เที่ยวแรก</h3><p data-i18n="n1_p">ผู้ใช้ใหม่ดาวน์โหลดแอปแล้วใช้โค้ด GOFIRST ได้ทันที</p></a>
-      <a class="news-card" href="news.html#read-announce"><span class="tag t2" data-i18n="n2_tag">ประกาศ</span><h3 data-i18n="n2_h">เปิดให้บริการทั่วลาวและไทยแล้ว</h3><p data-i18n="n2_p">พร้อมเตรียมขยายสู่อีกหลายประเทศในอาเซียนเร็ว ๆ นี้</p></a>
-      <a class="news-card" href="news.html#read-hiring"><span class="tag t3" data-i18n="n3_tag">รับสมัคร</span><h3 data-i18n="n3_h">เปิดรับคนขับทั่วประเทศ</h3><p data-i18n="n3_p">คอมมิชชันต่ำสุด 15% โอนรายได้เข้าบัญชีทุกวัน</p></a>
+      <a class="news-card" href="news.html#read-promo"><span class="cover cv-promo"><b>-50%</b></span><span class="nbody"><span class="tag t1" data-i18n="n1_tag">โปรโมชัน</span><h3 data-i18n="n1_h">ลด 50% สำหรับ 3 เที่ยวแรก</h3><p data-i18n="n1_p">ผู้ใช้ใหม่ดาวน์โหลดแอปแล้วใช้โค้ด GOFIRST ได้ทันที</p><span class="more" data-i18n="n_read">อ่านต่อ →</span></span></a>
+      <a class="news-card" href="news.html#read-announce"><span class="cover cv-announce"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-10.3a6.5 6.5 0 0 1 13 0C18.5 15.4 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.3"/></svg></span><span class="nbody"><span class="tag t2" data-i18n="n2_tag">ประกาศ</span><h3 data-i18n="n2_h">เปิดให้บริการทั่ว สปป.ลาว แล้ว</h3><p data-i18n="n2_p">พร้อมเตรียมขยายสู่อีกหลายประเทศในอาเซียนเร็ว ๆ นี้</p><span class="more" data-i18n="n_read">อ่านต่อ →</span></span></a>
+      <a class="news-card" href="news.html#read-hiring"><span class="cover cv-hiring"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="2.5"/><path d="M3.5 12h6M14.5 12h6M12 14.5V20"/></svg></span><span class="nbody"><span class="tag t3" data-i18n="n3_tag">รับสมัคร</span><h3 data-i18n="n3_h">เปิดรับคนขับทั่วประเทศ</h3><p data-i18n="n3_p">คอมมิชชันต่ำสุด 15% โอนรายได้เข้าบัญชีทุกวัน</p><span class="more" data-i18n="n_read">อ่านต่อ →</span></span></a>
     </div>
   </div>
 </section>
@@ -812,7 +821,7 @@ const I18N = {
   th: {
     nav_about:"เกี่ยวกับเรา", nav_services:"บริการ", nav_news:"ข่าวสาร", nav_driver:"ร่วมขับกับเรา", nav_download:"ดาวน์โหลดแอป",
     news_eyebrow:"ข่าวสาร", news_all:"ดูข่าวทั้งหมด", news_h2:'ข่าวสารและ<span class="hl-y">โปรโมชัน</span>',
-    n1_tag:"โปรโมชัน", n1_h:"ลด 50% สำหรับ 3 เที่ยวแรก", n1_p:"ผู้ใช้ใหม่ดาวน์โหลดแอปแล้วใช้โค้ด GOFIRST ได้ทันที",
+    n_read:"อ่านต่อ →", n1_tag:"โปรโมชัน", n1_h:"ลด 50% สำหรับ 3 เที่ยวแรก", n1_p:"ผู้ใช้ใหม่ดาวน์โหลดแอปแล้วใช้โค้ด GOFIRST ได้ทันที",
     n2_tag:"ประกาศ", n2_h:"เปิดให้บริการทั่วลาวและไทยแล้ว", n2_p:"พร้อมเตรียมขยายสู่อีกหลายประเทศในอาเซียนเร็ว ๆ นี้",
     n3_tag:"รับสมัคร", n3_h:"เปิดรับคนขับทั่วประเทศ", n3_p:"คอมมิชชันต่ำสุด 15% โอนรายได้เข้าบัญชีทุกวัน",
     about_eyebrow:"เกี่ยวกับเรา", about_h2:'แพลตฟอร์มเรียกรถ<br>ของ<span class="hl-y">คนลาว</span>',
@@ -887,7 +896,7 @@ const I18N = {
   lo: {
     nav_about:"ກ່ຽວກັບເຮົາ", nav_services:"ບໍລິການ", nav_news:"ຂ່າວສານ", nav_driver:"ຂັບກັບພວກເຮົາ", nav_download:"ດາວໂຫຼດແອັບ",
     news_eyebrow:"ຂ່າວສານ", news_all:"ເບິ່ງຂ່າວທັງໝົດ", news_h2:'ຂ່າວສານ ແລະ <span class="hl-y">ໂປຣໂມຊັນ</span>',
-    n1_tag:"ໂປຣໂມຊັນ", n1_h:"ຫຼຸດ 50% ສຳລັບ 3 ຖ້ຽວທຳອິດ", n1_p:"ຜູ້ໃຊ້ໃໝ່ດາວໂຫຼດແອັບແລ້ວໃຊ້ລະຫັດ GOFIRST ໄດ້ທັນທີ",
+    n_read:"ອ່ານຕໍ່ →", n1_tag:"ໂປຣໂມຊັນ", n1_h:"ຫຼຸດ 50% ສຳລັບ 3 ຖ້ຽວທຳອິດ", n1_p:"ຜູ້ໃຊ້ໃໝ່ດາວໂຫຼດແອັບແລ້ວໃຊ້ລະຫັດ GOFIRST ໄດ້ທັນທີ",
     n2_tag:"ປະກາດ", n2_h:"ເປີດໃຫ້ບໍລິການທົ່ວລາວ ແລະ ໄທແລ້ວ", n2_p:"ພ້ອມກຽມຂະຫຍາຍສູ່ອີກຫຼາຍປະເທດໃນອາຊຽນໄວໆນີ້",
     n3_tag:"ຮັບສະໝັກ", n3_h:"ເປີດຮັບຄົນຂັບທົ່ວປະເທດ", n3_p:"ຄອມມິດຊັນຕ່ຳສຸດ 15% ໂອນລາຍຮັບເຂົ້າບັນຊີທຸກວັນ",
     about_eyebrow:"ກ່ຽວກັບເຮົາ", about_h2:'ແພລດຟອມເອີ້ນລົດ<br>ຂອງ<span class="hl-y">ຄົນລາວ</span>',
@@ -962,7 +971,7 @@ const I18N = {
   en: {
     nav_about:"About us", nav_services:"Services", nav_news:"News", nav_driver:"Drive with us", nav_download:"Get the app",
     news_eyebrow:"News", news_all:"View all news", news_h2:'News and <span class="hl-y">promotions</span>',
-    n1_tag:"Promotion", n1_h:"50% off your first 3 rides", n1_p:"New users: download the app and use code GOFIRST right away.",
+    n_read:"Read more →", n1_tag:"Promotion", n1_h:"50% off your first 3 rides", n1_p:"New users: download the app and use code GOFIRST right away.",
     n2_tag:"Announcement", n2_h:"Now serving Laos and Thailand", n2_p:"Preparing to expand to more ASEAN countries soon.",
     n3_tag:"Hiring", n3_h:"Recruiting drivers nationwide", n3_p:"Commission as low as 15%, with daily payouts.",
     about_eyebrow:"About us", about_h2:'The ride-hailing platform<br>of <span class="hl-y">the Lao people</span>',
