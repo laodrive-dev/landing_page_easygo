@@ -428,12 +428,14 @@ section{padding-block:72px}
 .news-card h3{font-size:.96rem;font-weight:800;margin-top:4px}
 .news-card p{font-size:.82rem;color:var(--muted)}
 
-/* download — แถบโค้งเหลืองพร้อมเส้นขอบฟ้า */
-.dl{padding-block:0 72px}
-.dl-band{position:relative;overflow:hidden;border-radius:30px;background:linear-gradient(100deg,#FFE896,#FEC200 75%);padding:clamp(32px,5vw,60px) clamp(20px,4vw,48px);display:grid;gap:14px;justify-items:center;text-align:center}
-.dl-band::before{content:"";position:absolute;inset:0;pointer-events:none;background:
-  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 180' preserveAspectRatio='none'%3E%3Cpath fill='%231c1a12' fill-opacity='.06' d='M0 180v-50h55v-35h35v35h55v-80h45v80h40v-45h55v45h45V40h20V20h18v20h20v90h55v-70h45v70h40v-40h55v40h50v-55h40v55h55V55h45v125h40v-75h50v75h55v-35h45v35h40v-55h57v55z'/%3E%3C/svg%3E") bottom center/1100px 160px repeat-x,
-  radial-gradient(circle at 12% 20%,rgba(255,255,255,.5),transparent 30%)}
+/* download — ภาพเต็มความกว้าง ข้อความทับกลาง */
+.dl{padding-block:0}
+.dl .wrap{max-width:none;padding-inline:0}
+.dl-band{position:relative;overflow:hidden;border-radius:0;background:
+  url("assets/download-bg.jpg") center/cover no-repeat,
+  linear-gradient(100deg,#FFE896,#FEC200 75%);
+  padding:clamp(56px,8vw,110px) clamp(20px,4vw,48px);display:grid;gap:14px;justify-items:center;text-align:center}
+.dl-band::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 46%,rgba(255,244,214,.72),rgba(255,244,214,.25) 52%,transparent 72%)}
 .dl-band > *{position:relative;z-index:1}
 .dl h2{font-size:clamp(1.7rem,3.8vw,2.4rem);font-weight:800}
 .dl p{margin-top:4px;color:#4a4430}
