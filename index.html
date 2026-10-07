@@ -55,6 +55,19 @@
   }
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "EasyGO คิดราคาอย่างไร?", "acceptedAnswer": { "@type": "Answer", "text": "คำนวณจากระยะทางและเวลาโดยประมาณ แสดงราคาเต็มก่อนกดยืนยันทุกครั้ง ราคาที่เห็นคือราคาที่จ่ายจริง ไม่มีบวกเพิ่มระหว่างทาง" } },
+    { "@type": "Question", "name": "จ่ายเงินได้ช่องทางไหนบ้าง?", "acceptedAnswer": { "@type": "Answer", "text": "เงินสด บัตรเครดิต/เดบิต และกระเป๋าเงิน EasyWallet ทุกรายการออนไลน์เข้ารหัสตามมาตรฐานสากล" } },
+    { "@type": "Question", "name": "คนขับผ่านการตรวจสอบอะไรบ้าง?", "acceptedAnswer": { "@type": "Answer", "text": "ตรวจประวัติอาชญากรรม ใบขับขี่ และเอกสารยานพาหนะทุกคน พร้อมอบรมความปลอดภัยก่อนเริ่มรับงานครั้งแรก" } },
+    { "@type": "Question", "name": "ลืมของบนรถต้องทำอย่างไร?", "acceptedAnswer": { "@type": "Answer", "text": "เปิดประวัติการเดินทางในแอปแล้วกดแจ้งของหาย ระบบจะติดต่อคนขับให้ทันที หรือโทรหาศูนย์ช่วยเหลือได้ตลอด 24 ชั่วโมง" } },
+    { "@type": "Question", "name": "สมัครเป็นคนขับต้องใช้อะไรบ้าง?", "acceptedAnswer": { "@type": "Answer", "text": "บัตรประชาชน ใบขับขี่ เอกสารรถ และบัญชีธนาคารสำหรับรับรายได้ สมัครผ่านแอปได้เลย ทีมงานตรวจสอบภายใน 1–3 วันทำการ" } }
+  ]
+}
+</script>
 <!--ART-HEAD-->
 <title>EasyGO</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;600;700;800&family=IBM+Plex+Sans+Thai:wght@400;500;600&family=Noto+Sans+Lao+Looped:wght@400;500;600;700;800&display=swap">
@@ -151,6 +164,23 @@ section{padding-block:72px}
 .sec-head h2{font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:700;margin-top:10px}
 .sec-head p{margin-top:12px;color:var(--muted)}
 
+/* trust strip */
+.trust{background:var(--bg);border-bottom:1px solid var(--line);padding-block:0}
+.trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;padding-block:26px}
+.trust-item{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:600;font-size:.92rem}
+.trust-item svg{width:34px;height:34px;flex:none;stroke:var(--ink);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;background:var(--tint-yellow);border-radius:10px;padding:6px}
+
+/* faq */
+.faq{background:var(--surface);border-top:1px solid var(--line)}
+.faq-list{display:grid;gap:12px;max-width:760px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:0 20px}
+.faq details[open]{border-color:var(--brand)}
+.faq summary{font-family:var(--display);font-weight:600;font-size:1rem;padding-block:16px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-weight:700;font-size:1.3rem;color:#E08900;flex:none}
+.faq details[open] summary::after{content:"−"}
+.faq details p{padding-bottom:18px;font-size:.94rem;color:var(--muted)}
+
 /* about */
 .about{background:var(--bg)}
 .about-grid{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start}
@@ -216,6 +246,17 @@ section{padding-block:72px}
 .driver li{padding-left:26px;position:relative}
 .driver li::before{content:"";position:absolute;left:0;top:.45em;width:14px;height:14px;border-radius:4px;background:#fff}
 .driver .btn-brand{margin-top:26px;background:#1c1a12;color:#FEC200}
+
+/* help center */
+.help-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.help-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;display:grid;gap:8px;align-content:start}
+.help-card .ic{width:46px;height:46px;border-radius:14px;background:var(--c,var(--brand));display:grid;place-items:center}
+.help-card .ic svg{width:26px;height:26px;stroke:#1c1a12;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.help-card:nth-child(2) .ic{--c:var(--tint-orange)}
+.help-card:nth-child(3) .ic{--c:var(--tint-teal)}
+.help-card h3{font-size:1.02rem;font-weight:700}
+.help-card p{font-size:.92rem;color:var(--muted)}
+.help-card .big{font-family:var(--display);font-weight:800;font-size:1.15rem;color:var(--ink);font-variant-numeric:tabular-nums;user-select:all}
 
 /* download */
 .dl{text-align:center;background:radial-gradient(ellipse at 50% 0%,var(--tint-yellow),var(--bg) 70%)}
@@ -306,6 +347,15 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
     </div>
   </div>
 </header>
+
+<section class="trust" aria-label="ความน่าเชื่อถือ">
+  <div class="wrap trust-grid">
+    <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><span data-i18n="trust1">จดทะเบียนบริษัทถูกต้องตามกฎหมาย</span></div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M12 21c-4-2-7-6-7-10V6l7-3 7 3v5c0 4-3 8-7 10z"/><path d="M12 8v4M12 15h.01"/></svg><span data-i18n="trust2">ประกันอุบัติเหตุทุกการเดินทาง</span></div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span data-i18n="trust3">ชำระเงินปลอดภัย เข้ารหัสทุกรายการ</span></div>
+    <div class="trust-item"><svg viewBox="0 0 24 24"><path d="M4 13a8 8 0 0 1 16 0"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/><path d="M19 19a3 3 0 0 1-3 2h-2"/></svg><span data-i18n="trust4">ศูนย์ช่วยเหลือจริง ตลอด 24 ชั่วโมง</span></div>
+  </div>
+</section>
 
 <section id="about" class="about">
   <div class="wrap about-grid">
@@ -404,6 +454,52 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
   </div>
 </section>
 
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="faq_eyebrow">คำถามที่พบบ่อย</span>
+      <h2 data-i18n="faq_h2">สงสัยอะไร เราตอบตรง ๆ</h2>
+    </div>
+    <div class="faq-list">
+      <details><summary data-i18n="faq_q1">EasyGO คิดราคาอย่างไร?</summary><p data-i18n="faq_a1">คำนวณจากระยะทางและเวลาโดยประมาณ แสดงราคาเต็มก่อนกดยืนยันทุกครั้ง ราคาที่เห็นคือราคาที่จ่ายจริง ไม่มีบวกเพิ่มระหว่างทาง</p></details>
+      <details><summary data-i18n="faq_q2">จ่ายเงินได้ช่องทางไหนบ้าง?</summary><p data-i18n="faq_a2">เงินสด บัตรเครดิต/เดบิต และกระเป๋าเงิน EasyWallet ทุกรายการออนไลน์เข้ารหัสตามมาตรฐานสากล</p></details>
+      <details><summary data-i18n="faq_q3">คนขับผ่านการตรวจสอบอะไรบ้าง?</summary><p data-i18n="faq_a3">ตรวจประวัติอาชญากรรม ใบขับขี่ และเอกสารยานพาหนะทุกคน พร้อมอบรมความปลอดภัยก่อนเริ่มรับงานครั้งแรก</p></details>
+      <details><summary data-i18n="faq_q4">ลืมของบนรถต้องทำอย่างไร?</summary><p data-i18n="faq_a4">เปิดประวัติการเดินทางในแอปแล้วกด "แจ้งของหาย" ระบบจะติดต่อคนขับให้ทันที หรือโทรหาศูนย์ช่วยเหลือได้ตลอด 24 ชั่วโมง</p></details>
+      <details><summary data-i18n="faq_q5">สมัครเป็นคนขับต้องใช้อะไรบ้าง?</summary><p data-i18n="faq_a5">บัตรประชาชน ใบขับขี่ เอกสารรถ และบัญชีธนาคารสำหรับรับรายได้ สมัครผ่านแอปได้เลย ทีมงานตรวจสอบภายใน 1–3 วันทำการ</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="help">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" data-i18n="help_eyebrow">ศูนย์ช่วยเหลือ</span>
+      <h2 data-i18n="help_h2">มีปัญหาเมื่อไหร่ เราอยู่ตรงนี้เสมอ</h2>
+      <p data-i18n="help_p">ทีมงานคนจริงพร้อมดูแลทุกวัน ไม่มีวันหยุด ทั้งภาษาไทย ลาว และอังกฤษ</p>
+    </div>
+    <div class="help-grid">
+      <div class="help-card">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></div>
+        <h3 data-i18n="help1_h">โทรหาเรา</h3>
+        <span class="big">+856 20 58 989 389</span>
+        <p data-i18n="help1_p">สายด่วนตลอด 24 ชั่วโมง ทุกวัน</p>
+      </div>
+      <div class="help-card">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+        <h3 data-i18n="help2_h">อีเมลหาเรา</h3>
+        <span class="big">support@easygo.co.th</span>
+        <p data-i18n="help2_p">ตอบกลับภายใน 24 ชั่วโมง</p>
+      </div>
+      <div class="help-card">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-8 8H5l-2 2V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z"/><path d="M9 12h.01M13 12h.01M17 12h.01"/></svg></div>
+        <h3 data-i18n="help3_h">แชทและปุ่ม SOS ในแอป</h3>
+        <span class="big" data-i18n="help3_big">เมนู "ช่วยเหลือ" ในแอป</span>
+        <p data-i18n="help3_p">แชทกับทีมงาน หรือกด SOS ระหว่างเดินทางเพื่อขอความช่วยเหลือฉุกเฉิน</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="dl" id="download">
   <div class="wrap">
     <h2 data-i18n="dl_h2">พร้อมออกเดินทางหรือยัง?</h2>
@@ -447,6 +543,17 @@ const I18N = {
     about_p1:"EasyGO ก่อตั้งขึ้นเพื่อทำให้การเดินทางในเมืองเป็นเรื่องง่าย ราคายุติธรรม และปลอดภัยสำหรับทุกคน เราเริ่มต้นจากทีมงานท้องถิ่นที่เข้าใจถนน การจราจร และวิถีการเดินทางของแต่ละเมืองจริง ๆ",
     about_p2:"วันนี้เราให้บริการทั่วประเทศไทยและลาว ทั้งเรียกรถ ส่งของ และบริการพรีเมียม และกำลังเตรียมขยายสู่อีกหลายประเทศในภูมิภาคอาเซียนเร็ว ๆ นี้",
     about_c1:"ให้บริการทั่วประเทศไทย", about_c2:"ให้บริการทั่ว สปป.ลาว", about_c3:"เตรียมขยายทั่วอาเซียน",
+    trust1:"จดทะเบียนบริษัทถูกต้องตามกฎหมาย", trust2:"ประกันอุบัติเหตุทุกการเดินทาง", trust3:"ชำระเงินปลอดภัย เข้ารหัสทุกรายการ", trust4:"ศูนย์ช่วยเหลือจริง ตลอด 24 ชั่วโมง",
+    faq_eyebrow:"คำถามที่พบบ่อย", faq_h2:"สงสัยอะไร เราตอบตรง ๆ",
+    faq_q1:"EasyGO คิดราคาอย่างไร?", faq_a1:"คำนวณจากระยะทางและเวลาโดยประมาณ แสดงราคาเต็มก่อนกดยืนยันทุกครั้ง ราคาที่เห็นคือราคาที่จ่ายจริง ไม่มีบวกเพิ่มระหว่างทาง",
+    faq_q2:"จ่ายเงินได้ช่องทางไหนบ้าง?", faq_a2:"เงินสด บัตรเครดิต/เดบิต และกระเป๋าเงิน EasyWallet ทุกรายการออนไลน์เข้ารหัสตามมาตรฐานสากล",
+    faq_q3:"คนขับผ่านการตรวจสอบอะไรบ้าง?", faq_a3:"ตรวจประวัติอาชญากรรม ใบขับขี่ และเอกสารยานพาหนะทุกคน พร้อมอบรมความปลอดภัยก่อนเริ่มรับงานครั้งแรก",
+    faq_q4:"ลืมของบนรถต้องทำอย่างไร?", faq_a4:'เปิดประวัติการเดินทางในแอปแล้วกด "แจ้งของหาย" ระบบจะติดต่อคนขับให้ทันที หรือโทรหาศูนย์ช่วยเหลือได้ตลอด 24 ชั่วโมง',
+    faq_q5:"สมัครเป็นคนขับต้องใช้อะไรบ้าง?", faq_a5:"บัตรประชาชน ใบขับขี่ เอกสารรถ และบัญชีธนาคารสำหรับรับรายได้ สมัครผ่านแอปได้เลย ทีมงานตรวจสอบภายใน 1–3 วันทำการ",
+    help_eyebrow:"ศูนย์ช่วยเหลือ", help_h2:"มีปัญหาเมื่อไหร่ เราอยู่ตรงนี้เสมอ", help_p:"ทีมงานคนจริงพร้อมดูแลทุกวัน ไม่มีวันหยุด ทั้งภาษาไทย ลาว และอังกฤษ",
+    help1_h:"โทรหาเรา", help1_p:"สายด่วนตลอด 24 ชั่วโมง ทุกวัน",
+    help2_h:"อีเมลหาเรา", help2_p:"ตอบกลับภายใน 24 ชั่วโมง",
+    help3_h:"แชทและปุ่ม SOS ในแอป", help3_big:'เมนู "ช่วยเหลือ" ในแอป', help3_p:"แชทกับทีมงาน หรือกด SOS ระหว่างเดินทางเพื่อขอความช่วยเหลือฉุกเฉิน",
     hero_h1:'จะไปไหน<br>ก็ <span class="under">easy</span> แค่กด EasyGO',
     hero_lede:"เรียกรถได้ใน 3 นาที รู้ราคาก่อนขึ้นทุกเที่ยว ไม่มีบวกเพิ่มตอนฝนตก คนขับผ่านการตรวจประวัติทุกคน",
     hero_cta1:"ดาวน์โหลดฟรี", hero_cta2:"ดูวิธีใช้งาน",
@@ -489,6 +596,17 @@ const I18N = {
     about_p1:"EasyGO ກໍ່ຕັ້ງຂຶ້ນເພື່ອເຮັດໃຫ້ການເດີນທາງໃນເມືອງເປັນເລື່ອງງ່າຍ ລາຄາຍຸຕິທຳ ແລະ ປອດໄພສຳລັບທຸກຄົນ ເຮົາເລີ່ມຕົ້ນຈາກທີມງານທ້ອງຖິ່ນທີ່ເຂົ້າໃຈເສັ້ນທາງ ການຈະລາຈອນ ແລະ ວິຖີການເດີນທາງຂອງແຕ່ລະເມືອງແທ້ໆ",
     about_p2:"ມື້ນີ້ເຮົາໃຫ້ບໍລິການທົ່ວລາວ ແລະ ໄທ ທັງເອີ້ນລົດ ສົ່ງເຄື່ອງ ແລະ ບໍລິການພຣີມຽມ ແລະ ກຳລັງກຽມຂະຫຍາຍສູ່ອີກຫຼາຍປະເທດໃນພາກພື້ນອາຊຽນໃນໄວໆນີ້",
     about_c1:"ໃຫ້ບໍລິການທົ່ວ ສປປ.ລາວ", about_c2:"ໃຫ້ບໍລິການທົ່ວປະເທດໄທ", about_c3:"ກຽມຂະຫຍາຍທົ່ວອາຊຽນ",
+    trust1:"ຈົດທະບຽນບໍລິສັດຖືກຕ້ອງຕາມກົດໝາຍ", trust2:"ປະກັນອຸບັດຕິເຫດທຸກການເດີນທາງ", trust3:"ຊຳລະເງິນປອດໄພ ເຂົ້າລະຫັດທຸກລາຍການ", trust4:"ສູນຊ່ວຍເຫຼືອແທ້ ຕະຫຼອດ 24 ຊົ່ວໂມງ",
+    faq_eyebrow:"ຄຳຖາມທີ່ພົບເລື້ອຍ", faq_h2:"ສົງໄສຫຍັງ ເຮົາຕອບກົງໆ",
+    faq_q1:"EasyGO ຄິດລາຄາແນວໃດ?", faq_a1:"ຄຳນວນຈາກໄລຍະທາງ ແລະ ເວລາໂດຍປະມານ ສະແດງລາຄາເຕັມກ່ອນກົດຢືນຢັນທຸກຄັ້ງ ລາຄາທີ່ເຫັນຄືລາຄາທີ່ຈ່າຍແທ້ ບໍ່ມີບວກເພີ່ມລະຫວ່າງທາງ",
+    faq_q2:"ຈ່າຍເງິນໄດ້ຊ່ອງທາງໃດແດ່?", faq_a2:"ເງິນສົດ ບັດເຄຣດິດ/ເດບິດ ແລະ ກະເປົາເງິນ EasyWallet ທຸກລາຍການອອນລາຍເຂົ້າລະຫັດຕາມມາດຕະຖານສາກົນ",
+    faq_q3:"ຄົນຂັບຜ່ານການກວດສອບຫຍັງແດ່?", faq_a3:"ກວດປະຫວັດອາດຊະຍາກຳ ໃບຂັບຂີ່ ແລະ ເອກະສານພາຫະນະທຸກຄົນ ພ້ອມອົບຮົມຄວາມປອດໄພກ່ອນເລີ່ມຮັບວຽກຄັ້ງທຳອິດ",
+    faq_q4:"ລືມເຄື່ອງເທິງລົດຕ້ອງເຮັດແນວໃດ?", faq_a4:'ເປີດປະຫວັດການເດີນທາງໃນແອັບແລ້ວກົດ "ແຈ້ງເຄື່ອງເສຍ" ລະບົບຈະຕິດຕໍ່ຄົນຂັບໃຫ້ທັນທີ ຫຼື ໂທຫາສູນຊ່ວຍເຫຼືອໄດ້ຕະຫຼອດ 24 ຊົ່ວໂມງ',
+    faq_q5:"ສະໝັກເປັນຄົນຂັບຕ້ອງໃຊ້ຫຍັງແດ່?", faq_a5:"ບັດປະຈຳຕົວ ໃບຂັບຂີ່ ເອກະສານລົດ ແລະ ບັນຊີທະນາຄານສຳລັບຮັບລາຍຮັບ ສະໝັກຜ່ານແອັບໄດ້ເລີຍ ທີມງານກວດສອບພາຍໃນ 1–3 ວັນລັດຖະການ",
+    help_eyebrow:"ສູນຊ່ວຍເຫຼືອ", help_h2:"ມີບັນຫາເມື່ອໃດ ເຮົາຢູ່ບ່ອນນີ້ສະເໝີ", help_p:"ທີມງານຄົນແທ້ພ້ອມດູແລທຸກວັນ ບໍ່ມີວັນພັກ ທັງພາສາລາວ ໄທ ແລະ ອັງກິດ",
+    help1_h:"ໂທຫາເຮົາ", help1_p:"ສາຍດ່ວນຕະຫຼອດ 24 ຊົ່ວໂມງ ທຸກວັນ",
+    help2_h:"ອີເມວຫາເຮົາ", help2_p:"ຕອບກັບພາຍໃນ 24 ຊົ່ວໂມງ",
+    help3_h:"ແຊັດ ແລະ ປຸ່ມ SOS ໃນແອັບ", help3_big:'ເມນູ "ຊ່ວຍເຫຼືອ" ໃນແອັບ', help3_p:"ແຊັດກັບທີມງານ ຫຼື ກົດ SOS ລະຫວ່າງເດີນທາງເພື່ອຂໍຄວາມຊ່ວຍເຫຼືອສຸກເສີນ",
     hero_h1:'ຈະໄປໃສ<br>ກໍ<span class="under">ງ່າຍ</span> ພຽງກົດ GO',
     hero_lede:"ເອີ້ນລົດໄດ້ພາຍໃນ 3 ນາທີ ຮູ້ລາຄາກ່ອນຂຶ້ນທຸກຖ້ຽວ ບໍ່ມີບວກເພີ່ມຕອນຝົນຕົກ ຄົນຂັບຜ່ານການກວດປະຫວັດທຸກຄົນ",
     hero_cta1:"ດາວໂຫຼດຟຣີ", hero_cta2:"ເບິ່ງວິທີໃຊ້ງານ",
@@ -531,6 +649,17 @@ const I18N = {
     about_p1:"EasyGO was founded to make city travel simple, fairly priced, and safe for everyone. We started as a local team that truly knows the streets, the traffic, and how people in each city get around.",
     about_p2:"Today we operate across Thailand and Laos — rides, delivery, and premium service — and we're preparing to expand to more countries across ASEAN soon.",
     about_c1:"Serving all of Thailand", about_c2:"Serving all of Laos", about_c3:"Expanding across ASEAN",
+    trust1:"Legally registered company", trust2:"Accident insurance on every trip", trust3:"Secure, encrypted payments", trust4:"Real 24-hour help center",
+    faq_eyebrow:"FAQ", faq_h2:"Straight answers to common questions",
+    faq_q1:"How does EasyGO calculate fares?", faq_a1:"Fares are based on estimated distance and time, shown in full before you confirm. The price you see is the price you pay — no mid-trip extras.",
+    faq_q2:"How can I pay?", faq_a2:"Cash, credit/debit card, or EasyWallet. Every online transaction is encrypted to international standards.",
+    faq_q3:"How are drivers screened?", faq_a3:"Every driver passes criminal-record, license, and vehicle-document checks, plus safety training before their first job.",
+    faq_q4:"I left something in the car — what now?", faq_a4:'Open your trip history in the app and tap "Report lost item" — we contact the driver right away. You can also call our 24-hour help center.',
+    faq_q5:"What do I need to become a driver?", faq_a5:"ID card, driver's license, vehicle documents, and a bank account for payouts. Apply in the app; review takes 1–3 business days.",
+    help_eyebrow:"Help center", help_h2:"Whenever there's a problem, we're here", help_p:"Real people, every day, no holidays — in Thai, Lao, and English.",
+    help1_h:"Call us", help1_p:"Hotline open 24 hours, every day",
+    help2_h:"Email us", help2_p:"We reply within 24 hours",
+    help3_h:"In-app chat & SOS", help3_big:'"Help" menu in the app', help3_p:"Chat with our team, or press SOS during a trip for emergency assistance.",
     hero_h1:'Going anywhere<br>is <span class="under">easy</span> — just tap GO',
     hero_lede:"Get a ride in 3 minutes. See the exact fare before you hop in — no rain surcharges, ever. Every driver is background-checked.",
     hero_cta1:"Download free", hero_cta2:"See how it works",
