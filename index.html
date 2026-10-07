@@ -1104,7 +1104,16 @@ const toTop = document.getElementById('totop');
 window.addEventListener('scroll', () => {
   toTop.classList.toggle('show', window.scrollY > 400);
 }, { passive: true });
-toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+toTop.addEventListener('click', () => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { window.scrollTo(0, 0); return; }
+  const start = window.scrollY, dur = 650, t0 = performance.now();
+  const ease = t => t < .5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3) / 2;
+  (function step(now){
+    const p = Math.min((now - t0) / dur, 1);
+    window.scrollTo(0, start * (1 - ease(p)));
+    if (p < 1) requestAnimationFrame(step);
+  })(t0);
+});
 </script>
 <!--/ART-BODY-->
 </body>
