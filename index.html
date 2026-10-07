@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
 <!-- SEO -->
-<meta name="description" content="EasyGO แอปเรียกรถที่คุณไว้ใจ เรียกรถใน 3 นาที รู้ราคาก่อนขึ้นทุกเที่ยว คนขับตรวจประวัติ 100% มีทั้งมอเตอร์ไซค์ รถยนต์ รถพรีเมียม และส่งของด่วน ครอบคลุมกรุงเทพฯ และ 12 จังหวัด">
+<meta name="description" content="EasyGO แอปเรียกรถที่คุณไว้ใจ เรียกรถใน 3 นาที รู้ราคาก่อนขึ้นทุกเที่ยว คนขับตรวจประวัติ 100% มีทั้งมอเตอร์ไซค์ รถยนต์ รถพรีเมียม และส่งของด่วน ให้บริการทั่วไทยและลาว">
 <meta name="keywords" content="เรียกรถ, แอปเรียกรถ, เรียกแท็กซี่, เรียกมอเตอร์ไซค์, ส่งของด่วน, EasyGO, อีซี่โก, ride hailing app, ແອັບເອີ້ນລົດ">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#FEC200">
@@ -42,9 +42,16 @@
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "52000" },
   "publisher": {
     "@type": "Organization",
-    "name": "EasyGO Thailand",
+    "name": "บริษัท อินโนเทค ที่ปรึกษาการลงทุนและพัฒนา จำกัด",
+    "alternateName": "Innotech Investment Consulting and Development Co., Ltd.",
     "url": "https://www.easygo.co.th",
-    "contactPoint": { "@type": "ContactPoint", "telephone": "1499", "contactType": "customer service", "availableLanguage": ["Thai", "Lao", "English"] }
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "บ้านโพนป่าเป้า เมืองสีสัตตนาก",
+      "addressLocality": "นครหลวงเวียงจันทน์",
+      "addressCountry": "LA"
+    },
+    "contactPoint": { "@type": "ContactPoint", "telephone": "+856 20 58 989 389", "contactType": "customer service", "availableLanguage": ["Thai", "Lao", "English"] }
   }
 }
 </script>
@@ -78,13 +85,14 @@ a{color:inherit}
 .eyebrow{font-family:var(--display);font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E08900}
 
 /* nav */
-.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 2px 14px rgba(28,26,18,.06)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:14px}
-.logo{font-family:var(--display);font-weight:800;font-size:1.3rem;letter-spacing:-.01em;text-decoration:none}
+.logo{font-family:var(--display);font-weight:800;font-size:1.3rem;letter-spacing:-.01em;text-decoration:none;display:flex;align-items:center;gap:8px}
 .logo b{color:var(--brand)}
-.nav-links{display:flex;gap:22px;font-size:.92rem;font-weight:500}
-.nav-links a{text-decoration:none;color:var(--muted)}
-.nav-links a:hover,.nav-links a:focus-visible{color:var(--ink)}
+.logo::before{content:"";width:12px;height:12px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:var(--brand);border:3px solid var(--ink)}
+.nav-links{display:flex;gap:24px;font-size:.92rem;font-weight:500}
+.nav-links a{text-decoration:none;color:var(--muted);padding-block:4px;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--ink);border-bottom-color:var(--brand)}
 .nav-right{display:flex;align-items:center;gap:12px}
 .btn{display:inline-block;font-family:var(--display);font-weight:600;font-size:.95rem;text-decoration:none;border-radius:999px;padding:11px 24px;border:2px solid transparent;cursor:pointer}
 .btn-brand{background:var(--brand);color:var(--brand-ink)}
@@ -142,6 +150,18 @@ section{padding-block:72px}
 .sec-head{max-width:34em;margin-bottom:40px}
 .sec-head h2{font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:700;margin-top:10px}
 .sec-head p{margin-top:12px;color:var(--muted)}
+
+/* about */
+.about{background:var(--bg)}
+.about-grid{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start}
+.about-copy{flex:1 1 380px;min-width:0}
+.about-copy p{margin-top:12px;color:var(--muted);max-width:38em}
+.chips{flex:1 1 260px;display:grid;gap:12px;align-content:start}
+.chip{display:flex;align-items:center;gap:10px;background:var(--ct,var(--tint-yellow));border:1px solid var(--line);border-radius:14px;padding:14px 18px;font-family:var(--display);font-weight:600;font-size:.95rem}
+.chip::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--c,var(--brand));flex:none}
+.chip:nth-child(1){--c:var(--brand);--ct:var(--tint-yellow)}
+.chip:nth-child(2){--c:var(--teal);--ct:var(--tint-teal)}
+.chip:nth-child(3){--c:var(--orange);--ct:var(--tint-orange)}
 
 /* services — การ์ดละสี: เหลือง ส้ม ม่วง เขียวมินต์ */
 .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
@@ -211,8 +231,16 @@ section{padding-block:72px}
 .store svg{width:24px;height:24px;fill:currentColor;flex:none}
 
 /* footer */
-footer{border-top:1px solid var(--line);padding-block:32px;font-size:.88rem;color:var(--muted)}
-.foot-in{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+footer{border-top:1px solid var(--line);background:var(--surface);padding-block:40px 0;font-size:.9rem;color:var(--muted)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between}
+.foot-col{flex:1 1 280px;min-width:0;display:grid;gap:8px;align-content:start}
+.foot-col .logo{font-size:1.15rem;color:var(--ink)}
+.foot-h{font-family:var(--display);font-weight:700;font-size:.95rem;color:var(--ink)}
+.foot-col a{color:var(--muted)}
+.foot-col a:hover{color:var(--ink)}
+.foot-map{display:inline-flex;align-items:center;gap:6px;font-family:var(--display);font-weight:600;color:#E08900 !important;text-decoration:none;border-bottom:2px solid var(--brand);justify-self:start}
+.foot-tel{font-family:var(--display);font-weight:700;font-size:1.05rem;color:var(--ink);font-variant-numeric:tabular-nums}
+.foot-bottom{border-top:1px solid var(--line);margin-top:32px;padding-block:18px;font-size:.84rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
 @media (prefers-reduced-motion:no-preference){
   .hero-copy{animation:rise .6s ease both}
   .phone{animation:rise .6s ease .12s both,float 5s ease-in-out 1.2s infinite alternate}
@@ -228,6 +256,7 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:.88rem;colo
   <div class="wrap nav-in">
     <a class="logo" href="#top">Easy<b>GO</b></a>
     <div class="nav-links">
+      <a href="#about" data-i18n="nav_about">เกี่ยวกับเรา</a>
       <a href="#services" data-i18n="nav_services">บริการ</a>
       <a href="#how" data-i18n="nav_how">วิธีใช้งาน</a>
       <a href="#why" data-i18n="nav_why">ทำไมต้อง EasyGO</a>
@@ -248,7 +277,7 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:.88rem;colo
   <div class="wrap hero-in">
     <div class="hero-copy">
       <h1 data-i18n="hero_h1">จะไปไหน<br>ก็ <span class="under">easy</span> แค่กด EasyGO</h1>
-      <p class="lede" data-i18n="hero_lede">เรียกรถได้ใน 3 นาที รู้ราคาก่อนขึ้นทุกเที่ยว ไม่มีบวกเพิ่มตอนฝนตก คนขับผ่านการตรวจประวัติทุกคน พร้อมรับคุณทั่วกรุงเทพฯ และอีก 12 จังหวัด</p>
+      <p class="lede" data-i18n="hero_lede">เรียกรถได้ใน 3 นาที รู้ราคาก่อนขึ้นทุกเที่ยว ไม่มีบวกเพิ่มตอนฝนตก คนขับผ่านการตรวจประวัติทุกคน ให้บริการทั่วไทยและลาว และกำลังขยายสู่อีกหลายประเทศเร็ว ๆ นี้</p>
       <div class="hero-cta">
         <a class="btn btn-dark" href="#download" data-i18n="hero_cta1">ดาวน์โหลดฟรี</a>
         <a class="btn btn-line" href="#how" data-i18n="hero_cta2">ดูวิธีใช้งาน</a>
@@ -277,6 +306,22 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:.88rem;colo
     </div>
   </div>
 </header>
+
+<section id="about" class="about">
+  <div class="wrap about-grid">
+    <div class="about-copy">
+      <span class="eyebrow" data-i18n="about_eyebrow">เกี่ยวกับเรา</span>
+      <h2 class="sec-h2" style="font-size:clamp(1.6rem,3.4vw,2.2rem);font-weight:700;margin-top:10px" data-i18n="about_h2">แพลตฟอร์มเรียกรถของคนไทยและลาว</h2>
+      <p data-i18n="about_p1">EasyGO ก่อตั้งขึ้นเพื่อทำให้การเดินทางในเมืองเป็นเรื่องง่าย ราคายุติธรรม และปลอดภัยสำหรับทุกคน เราเริ่มต้นจากทีมงานท้องถิ่นที่เข้าใจถนน การจราจร และวิถีการเดินทางของแต่ละเมืองจริง ๆ</p>
+      <p data-i18n="about_p2">วันนี้เราให้บริการทั่วประเทศไทยและลาว ทั้งเรียกรถ ส่งของ และบริการพรีเมียม และกำลังเตรียมขยายสู่อีกหลายประเทศในภูมิภาคอาเซียนเร็ว ๆ นี้</p>
+    </div>
+    <div class="chips">
+      <div class="chip" data-i18n="about_c1">ให้บริการทั่วประเทศไทย</div>
+      <div class="chip" data-i18n="about_c2">ให้บริการทั่ว สปป.ลาว</div>
+      <div class="chip" data-i18n="about_c3">เตรียมขยายทั่วอาเซียน</div>
+    </div>
+  </div>
+</section>
 
 <section id="services">
   <div class="wrap">
@@ -371,18 +416,39 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:.88rem;colo
 </section>
 
 <footer>
-  <div class="wrap foot-in">
-    <span data-i18n="foot_l">© 2026 EasyGO Thailand · แอปเรียกรถที่คุณไว้ใจ</span>
-    <span data-i18n="foot_r">ศูนย์ช่วยเหลือ 24 ชม. โทร 1499 · support@easygo.co.th</span>
+  <div class="wrap foot-grid">
+    <div class="foot-col">
+      <a class="logo" href="#top">Easy<b>GO</b></a>
+      <span data-i18n="foot_tag">แอปเรียกรถที่คุณไว้ใจ ให้บริการทั่วไทยและลาว</span>
+    </div>
+    <div class="foot-col">
+      <span class="foot-h" data-i18n="foot_co_h">บริษัท</span>
+      <span data-i18n="foot_co">บริษัท อินโนเทค ที่ปรึกษาการลงทุนและพัฒนา จำกัด</span>
+      <span data-i18n="foot_addr">บ้านโพนป่าเป้า เมืองสีสัตตนาก นครหลวงเวียงจันทน์ สปป.ลาว</span>
+      <a class="foot-map" href="https://maps.app.goo.gl/KFSUqe5SWVz784Cn8" target="_blank" rel="noopener" data-i18n="foot_map">เปิดแผนที่ Google Maps</a>
+    </div>
+    <div class="foot-col">
+      <span class="foot-h" data-i18n="foot_contact_h">ติดต่อเรา</span>
+      <span class="foot-tel">+856 20 58 989 389</span>
+      <span>support@easygo.co.th</span>
+      <span data-i18n="foot_hours">ศูนย์ช่วยเหลือเปิดตลอด 24 ชั่วโมง</span>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span data-i18n="foot_l">© 2026 EasyGO · สงวนลิขสิทธิ์</span>
   </div>
 </footer>
 
 <script>
 const I18N = {
   th: {
-    nav_services:"บริการ", nav_how:"วิธีใช้งาน", nav_why:"ทำไมต้อง EasyGO", nav_driver:"ร่วมขับกับเรา", nav_download:"ดาวน์โหลดแอป",
+    nav_about:"เกี่ยวกับเรา", nav_services:"บริการ", nav_how:"วิธีใช้งาน", nav_why:"ทำไมต้อง EasyGO", nav_driver:"ร่วมขับกับเรา", nav_download:"ดาวน์โหลดแอป",
+    about_eyebrow:"เกี่ยวกับเรา", about_h2:"แพลตฟอร์มเรียกรถของคนไทยและลาว",
+    about_p1:"EasyGO ก่อตั้งขึ้นเพื่อทำให้การเดินทางในเมืองเป็นเรื่องง่าย ราคายุติธรรม และปลอดภัยสำหรับทุกคน เราเริ่มต้นจากทีมงานท้องถิ่นที่เข้าใจถนน การจราจร และวิถีการเดินทางของแต่ละเมืองจริง ๆ",
+    about_p2:"วันนี้เราให้บริการทั่วประเทศไทยและลาว ทั้งเรียกรถ ส่งของ และบริการพรีเมียม และกำลังเตรียมขยายสู่อีกหลายประเทศในภูมิภาคอาเซียนเร็ว ๆ นี้",
+    about_c1:"ให้บริการทั่วประเทศไทย", about_c2:"ให้บริการทั่ว สปป.ลาว", about_c3:"เตรียมขยายทั่วอาเซียน",
     hero_h1:'จะไปไหน<br>ก็ <span class="under">easy</span> แค่กด EasyGO',
-    hero_lede:"เรียกรถได้ใน 3 นาที รู้ราคาก่อนขึ้นทุกเที่ยว ไม่มีบวกเพิ่มตอนฝนตก คนขับผ่านการตรวจประวัติทุกคน พร้อมรับคุณทั่วกรุงเทพฯ และอีก 12 จังหวัด",
+    hero_lede:"เรียกรถได้ใน 3 นาที รู้ราคาก่อนขึ้นทุกเที่ยว ไม่มีบวกเพิ่มตอนฝนตก คนขับผ่านการตรวจประวัติทุกคน ให้บริการทั่วไทยและลาว และกำลังขยายสู่อีกหลายประเทศเร็ว ๆ นี้",
     hero_cta1:"ดาวน์โหลดฟรี", hero_cta2:"ดูวิธีใช้งาน",
     stat1_v:"3 นาที", stat1_l:"เวลารอรถเฉลี่ย", stat2_l:"คนขับที่ตรวจประวัติแล้ว", stat3_l:"คะแนนจากผู้ใช้",
     ph_eta:"ถึงใน 3 นาที", ph_route:"สยาม → อารีย์ · 6.4 กม.", ph_go:"เรียกรถเลย",
@@ -410,13 +476,21 @@ const I18N = {
     dl_h2:"พร้อมออกเดินทางหรือยัง?",
     dl_p:'ดาวน์โหลด EasyGO ฟรี แล้วรับส่วนลด 50% สำหรับ 3 เที่ยวแรก ด้วยโค้ด <b>GOFIRST</b>',
     store_on:"ดาวน์โหลดบน",
-    foot_l:"© 2026 EasyGO Thailand · แอปเรียกรถที่คุณไว้ใจ",
-    foot_r:"ศูนย์ช่วยเหลือ 24 ชม. โทร 1499 · support@easygo.co.th"
+    foot_tag:"แอปเรียกรถที่คุณไว้ใจ ให้บริการทั่วไทยและลาว",
+    foot_co_h:"บริษัท", foot_co:"บริษัท อินโนเทค ที่ปรึกษาการลงทุนและพัฒนา จำกัด",
+    foot_addr:"บ้านโพนป่าเป้า เมืองสีสัตตนาก นครหลวงเวียงจันทน์ สปป.ลาว",
+    foot_map:"เปิดแผนที่ Google Maps",
+    foot_contact_h:"ติดต่อเรา", foot_hours:"ศูนย์ช่วยเหลือเปิดตลอด 24 ชั่วโมง",
+    foot_l:"© 2026 EasyGO · สงวนลิขสิทธิ์"
   },
   lo: {
-    nav_services:"ບໍລິການ", nav_how:"ວິທີໃຊ້ງານ", nav_why:"ເປັນຫຍັງຕ້ອງ EasyGO", nav_driver:"ຂັບກັບພວກເຮົາ", nav_download:"ດາວໂຫຼດແອັບ",
+    nav_about:"ກ່ຽວກັບເຮົາ", nav_services:"ບໍລິການ", nav_how:"ວິທີໃຊ້ງານ", nav_why:"ເປັນຫຍັງຕ້ອງ EasyGO", nav_driver:"ຂັບກັບພວກເຮົາ", nav_download:"ດາວໂຫຼດແອັບ",
+    about_eyebrow:"ກ່ຽວກັບເຮົາ", about_h2:"ແພລດຟອມເອີ້ນລົດຂອງຄົນລາວ ແລະ ໄທ",
+    about_p1:"EasyGO ກໍ່ຕັ້ງຂຶ້ນເພື່ອເຮັດໃຫ້ການເດີນທາງໃນເມືອງເປັນເລື່ອງງ່າຍ ລາຄາຍຸຕິທຳ ແລະ ປອດໄພສຳລັບທຸກຄົນ ເຮົາເລີ່ມຕົ້ນຈາກທີມງານທ້ອງຖິ່ນທີ່ເຂົ້າໃຈເສັ້ນທາງ ການຈະລາຈອນ ແລະ ວິຖີການເດີນທາງຂອງແຕ່ລະເມືອງແທ້ໆ",
+    about_p2:"ມື້ນີ້ເຮົາໃຫ້ບໍລິການທົ່ວລາວ ແລະ ໄທ ທັງເອີ້ນລົດ ສົ່ງເຄື່ອງ ແລະ ບໍລິການພຣີມຽມ ແລະ ກຳລັງກຽມຂະຫຍາຍສູ່ອີກຫຼາຍປະເທດໃນພາກພື້ນອາຊຽນໃນໄວໆນີ້",
+    about_c1:"ໃຫ້ບໍລິການທົ່ວ ສປປ.ລາວ", about_c2:"ໃຫ້ບໍລິການທົ່ວປະເທດໄທ", about_c3:"ກຽມຂະຫຍາຍທົ່ວອາຊຽນ",
     hero_h1:'ຈະໄປໃສ<br>ກໍ<span class="under">ງ່າຍ</span> ພຽງກົດ GO',
-    hero_lede:"ເອີ້ນລົດໄດ້ພາຍໃນ 3 ນາທີ ຮູ້ລາຄາກ່ອນຂຶ້ນທຸກຖ້ຽວ ບໍ່ມີບວກເພີ່ມຕອນຝົນຕົກ ຄົນຂັບຜ່ານການກວດປະຫວັດທຸກຄົນ ພ້ອມຮັບທ່ານທົ່ວນະຄອນຫຼວງ ແລະ ອີກ 12 ແຂວງ",
+    hero_lede:"ເອີ້ນລົດໄດ້ພາຍໃນ 3 ນາທີ ຮູ້ລາຄາກ່ອນຂຶ້ນທຸກຖ້ຽວ ບໍ່ມີບວກເພີ່ມຕອນຝົນຕົກ ຄົນຂັບຜ່ານການກວດປະຫວັດທຸກຄົນ ໃຫ້ບໍລິການທົ່ວລາວ ແລະ ໄທ ແລະ ກຳລັງຂະຫຍາຍສູ່ອີກຫຼາຍປະເທດໃນໄວໆນີ້",
     hero_cta1:"ດາວໂຫຼດຟຣີ", hero_cta2:"ເບິ່ງວິທີໃຊ້ງານ",
     stat1_v:"3 ນາທີ", stat1_l:"ເວລາລໍຖ້າລົດສະເລ່ຍ", stat2_l:"ຄົນຂັບທີ່ກວດປະຫວັດແລ້ວ", stat3_l:"ຄະແນນຈາກຜູ້ໃຊ້",
     ph_eta:"ຮອດໃນ 3 ນາທີ", ph_route:"ຕະຫຼາດເຊົ້າ → ທາດຫຼວງ · 6.4 ກມ.", ph_go:"ເອີ້ນລົດເລີຍ",
@@ -444,13 +518,21 @@ const I18N = {
     dl_h2:"ພ້ອມອອກເດີນທາງແລ້ວບໍ?",
     dl_p:'ດາວໂຫຼດ EasyGO ຟຣີ ແລ້ວຮັບສ່ວນຫຼຸດ 50% ສຳລັບ 3 ຖ້ຽວທຳອິດ ດ້ວຍລະຫັດ <b>GOFIRST</b>',
     store_on:"ດາວໂຫຼດຢູ່",
-    foot_l:"© 2026 EasyGO · ແອັບເອີ້ນລົດທີ່ທ່ານໄວ້ໃຈ",
-    foot_r:"ສູນຊ່ວຍເຫຼືອ 24 ຊມ. ໂທ 1499 · support@easygo.co.th"
+    foot_tag:"ແອັບເອີ້ນລົດທີ່ທ່ານໄວ້ໃຈ ໃຫ້ບໍລິການທົ່ວລາວ ແລະ ໄທ",
+    foot_co_h:"ບໍລິສັດ", foot_co:"ບໍລິສັດ ອິນໂນເທັກ ທີ່ປຶກສາການລົງທຶນ ແລະ ພັດທະນາ ຈຳກັດ",
+    foot_addr:"ບ້ານໂພນປ່າເປົ້າ ເມືອງສີສັດຕະນາກ ນະຄອນຫຼວງວຽງຈັນ ສປປ.ລາວ",
+    foot_map:"ເປີດແຜນທີ່ Google Maps",
+    foot_contact_h:"ຕິດຕໍ່ເຮົາ", foot_hours:"ສູນຊ່ວຍເຫຼືອເປີດຕະຫຼອດ 24 ຊົ່ວໂມງ",
+    foot_l:"© 2026 EasyGO · ສະຫງວນລິຂະສິດ"
   },
   en: {
-    nav_services:"Services", nav_how:"How it works", nav_why:"Why EasyGO", nav_driver:"Drive with us", nav_download:"Get the app",
+    nav_about:"About us", nav_services:"Services", nav_how:"How it works", nav_why:"Why EasyGO", nav_driver:"Drive with us", nav_download:"Get the app",
+    about_eyebrow:"About us", about_h2:"The ride-hailing platform of Thailand and Laos",
+    about_p1:"EasyGO was founded to make city travel simple, fairly priced, and safe for everyone. We started as a local team that truly knows the streets, the traffic, and how people in each city get around.",
+    about_p2:"Today we operate across Thailand and Laos — rides, delivery, and premium service — and we're preparing to expand to more countries across ASEAN soon.",
+    about_c1:"Serving all of Thailand", about_c2:"Serving all of Laos", about_c3:"Expanding across ASEAN",
     hero_h1:'Going anywhere<br>is <span class="under">easy</span> — just tap GO',
-    hero_lede:"Get a ride in 3 minutes. See the exact fare before you hop in — no rain surcharges, ever. Every driver is background-checked. Serving Bangkok and 12 more provinces.",
+    hero_lede:"Get a ride in 3 minutes. See the exact fare before you hop in — no rain surcharges, ever. Every driver is background-checked. Serving Thailand and Laos, with more countries coming soon.",
     hero_cta1:"Download free", hero_cta2:"See how it works",
     stat1_v:"3 min", stat1_l:"average pickup time", stat2_l:"background-checked drivers", stat3_l:"user rating",
     ph_eta:"Arriving in 3 min", ph_route:"Siam → Ari · 6.4 km", ph_go:"Book now",
@@ -478,8 +560,12 @@ const I18N = {
     dl_h2:"Ready to go?",
     dl_p:'Download EasyGO free and get 50% off your first 3 rides with code <b>GOFIRST</b>',
     store_on:"Download on",
-    foot_l:"© 2026 EasyGO Thailand · the ride-hailing app you can trust",
-    foot_r:"24-hr help center: call 1499 · support@easygo.co.th"
+    foot_tag:"The ride-hailing app you can trust, serving Thailand and Laos",
+    foot_co_h:"Company", foot_co:"Innotech Investment Consulting and Development Co., Ltd.",
+    foot_addr:"Phonpapao Village, Sisattanak District, Vientiane Capital, Lao PDR",
+    foot_map:"Open in Google Maps",
+    foot_contact_h:"Contact us", foot_hours:"Help center open 24 hours",
+    foot_l:"© 2026 EasyGO · All rights reserved"
   }
 };
 
