@@ -132,16 +132,8 @@ a{color:inherit}
 /* hero — ข้อความเดิมทับภาพพื้นหลังแบนเนอร์ (จอกว้าง) / ไล่เฉด+เส้นขอบฟ้า (มือถือ) */
 .hero{background:linear-gradient(135deg,#FFDB55 0%,#FEC200 55%,#F3A900 100%);color:var(--brand-ink);position:relative;overflow:hidden}
 @media (min-width:820px){
-  .hero{background:
-    linear-gradient(90deg,#FEC200 0%,rgba(254,194,0,.98) 36%,rgba(254,194,0,.55) 47%,rgba(254,194,0,0) 58%),
-    url("assets/hero-banner.jpg") right center/cover no-repeat #FEC200}
-  .phone{display:none}
-  .hero-in{padding-block:68px 60px;max-width:none;padding-inline:clamp(64px,16vw,310px)}
-  .hero-copy{flex:0 1 520px}
-  .hero h1{font-size:clamp(2rem,4vw,2.9rem)}
-  .hero p.lede{margin-top:12px;font-size:1rem}
-  .hero-cta{margin-top:20px}
-  .hero-stats{margin-top:24px;gap:24px}
+  .hero{background:url("assets/hero-banner.jpg") center/cover no-repeat #FEC200;aspect-ratio:2170/725}
+  .hero-in{display:none}
 }
 .hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:
   radial-gradient(circle at 86% 16%,rgba(255,255,255,.4),transparent 38%),
@@ -158,8 +150,11 @@ a{color:inherit}
 .hero .btn-dark{background:#1c1a12;color:#FEC200}
 .hero .btn-line{border-color:#1c1a12;color:#1c1a12;background:transparent}
 .hero-stats{margin-top:34px;display:flex;flex-wrap:wrap;gap:28px;font-family:var(--display)}
-.hero-stats div b{display:block;font-size:1.5rem;font-weight:800;font-variant-numeric:tabular-nums}
-.hero-stats div span{font-size:.85rem;font-weight:500;opacity:.75}
+.hero-stats > div{display:flex;align-items:flex-start;gap:9px}
+.hero-stats svg{width:21px;height:21px;flex:none;margin-top:5px;fill:#1c1a12;stroke:none}
+.hero-stats b{display:block;font-size:1.4rem;font-weight:800;font-variant-numeric:tabular-nums}
+.hero-stats span{font-size:.85rem;font-weight:500;opacity:.75}
+.btn-dark svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;vertical-align:-3px;margin-right:7px}
 
 /* phone mockup */
 .phone{flex:0 1 300px;margin-inline:auto;width:290px;max-width:100%;background:#1c1a12;border-radius:36px;padding:10px;box-shadow:0 24px 60px rgba(28,26,18,.35)}
@@ -346,16 +341,16 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
 <header class="hero" id="top">
   <div class="wrap hero-in">
     <div class="hero-copy">
-      <h1 data-i18n="hero_h1">จะไปไหน<br>ก็ <span class="under">easy</span> แค่กด EasyGO</h1>
-      <p class="lede" data-i18n="hero_lede">เรียกรถได้ใน 3 นาที รู้ราคาก่อนขึ้นทุกเที่ยว ไม่มีบวกเพิ่มตอนฝนตก คนขับผ่านการตรวจประวัติทุกคน</p>
+      <h1 data-i18n="hero_h1">จะไปไหน<br>ก็ <span class="under">Easy</span> แค่กด EasyGO</h1>
+      <p class="lede" data-i18n="hero_lede">เรียกรถได้ไวใน 3 นาที เดินทางสะดวก ปลอดภัย ครอบคลุมทั่วไทย ไม่ว่าจะไปทำงาน เที่ยว หรือธุระสำคัญ EasyGO พร้อมพาคุณไปถึงอย่างมั่นใจ</p>
       <div class="hero-cta">
-        <a class="btn btn-dark" href="#download" data-i18n="hero_cta1">ดาวน์โหลดฟรี</a>
+        <a class="btn btn-dark" href="#download"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span data-i18n="hero_cta1">ดาวน์โหลดแอป</span></a>
         <a class="btn btn-line" href="#how" data-i18n="hero_cta2">ดูวิธีใช้งาน</a>
       </div>
       <div class="hero-stats">
-        <div><b data-i18n="stat1_v">3 นาที</b><span data-i18n="stat1_l">เวลารอรถเฉลี่ย</span></div>
-        <div><b>50,000+</b><span data-i18n="stat2_l">คนขับที่ตรวจประวัติแล้ว</span></div>
-        <div><b>4.9/5</b><span data-i18n="stat3_l">คะแนนจากผู้ใช้</span></div>
+        <div><svg viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><div><b data-i18n="stat1_v">3 นาที</b><span data-i18n="stat1_l">เฉลี่ยรอรถเพียง</span></div></div>
+        <div><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.4"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0zM16 5.5a3 3 0 0 1 0 5.8M17.5 13.6A6.5 6.5 0 0 1 21.5 20h-3"/></svg><div><b>50,000+</b><span data-i18n="stat2_l">คนขับที่ได้รับการตรวจสอบ</span></div></div>
+        <div><svg viewBox="0 0 24 24"><path d="M12 2.8l2.6 5.6 6.1.7-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.1l6.1-.7z"/></svg><div><b>4.9/5</b><span data-i18n="stat3_l">คะแนนความพึงพอใจ</span></div></div>
       </div>
     </div>
     <div class="phone" aria-hidden="true">
@@ -583,10 +578,10 @@ const I18N = {
     help1_h:"โทรหาเรา", help1_p:"สายด่วนตลอด 24 ชั่วโมง ทุกวัน",
     help2_h:"อีเมลหาเรา", help2_p:"ตอบกลับภายใน 24 ชั่วโมง",
     help3_h:"แชทและปุ่ม SOS ในแอป", help3_big:'เมนู "ช่วยเหลือ" ในแอป', help3_p:"แชทกับทีมงาน หรือกด SOS ระหว่างเดินทางเพื่อขอความช่วยเหลือฉุกเฉิน",
-    hero_h1:'จะไปไหน<br>ก็ <span class="under">easy</span> แค่กด EasyGO',
-    hero_lede:"เรียกรถได้ใน 3 นาที รู้ราคาก่อนขึ้นทุกเที่ยว ไม่มีบวกเพิ่มตอนฝนตก คนขับผ่านการตรวจประวัติทุกคน",
-    hero_cta1:"ดาวน์โหลดฟรี", hero_cta2:"ดูวิธีใช้งาน",
-    stat1_v:"3 นาที", stat1_l:"เวลารอรถเฉลี่ย", stat2_l:"คนขับที่ตรวจประวัติแล้ว", stat3_l:"คะแนนจากผู้ใช้",
+    hero_h1:'จะไปไหน<br>ก็ <span class="under">Easy</span> แค่กด EasyGO',
+    hero_lede:"เรียกรถได้ไวใน 3 นาที เดินทางสะดวก ปลอดภัย ครอบคลุมทั่วไทย ไม่ว่าจะไปทำงาน เที่ยว หรือธุระสำคัญ EasyGO พร้อมพาคุณไปถึงอย่างมั่นใจ",
+    hero_cta1:"ดาวน์โหลดแอป", hero_cta2:"ดูวิธีใช้งาน",
+    stat1_v:"3 นาที", stat1_l:"เฉลี่ยรอรถเพียง", stat2_l:"คนขับที่ได้รับการตรวจสอบ", stat3_l:"คะแนนความพึงพอใจ",
     ph_eta:"ถึงใน 3 นาที", ph_route:"สยาม → อารีย์ · 6.4 กม.", ph_go:"เรียกรถเลย",
     svc_eyebrow:"บริการของเรา", svc_h2:"เลือกให้เหมาะกับทริปของคุณ",
     svc_p:"ทุกบริการแสดงราคาก่อนยืนยันเสมอ จ่ายได้ทั้งเงินสด บัตร และ EasyWallet",
@@ -636,10 +631,10 @@ const I18N = {
     help1_h:"ໂທຫາເຮົາ", help1_p:"ສາຍດ່ວນຕະຫຼອດ 24 ຊົ່ວໂມງ ທຸກວັນ",
     help2_h:"ອີເມວຫາເຮົາ", help2_p:"ຕອບກັບພາຍໃນ 24 ຊົ່ວໂມງ",
     help3_h:"ແຊັດ ແລະ ປຸ່ມ SOS ໃນແອັບ", help3_big:'ເມນູ "ຊ່ວຍເຫຼືອ" ໃນແອັບ', help3_p:"ແຊັດກັບທີມງານ ຫຼື ກົດ SOS ລະຫວ່າງເດີນທາງເພື່ອຂໍຄວາມຊ່ວຍເຫຼືອສຸກເສີນ",
-    hero_h1:'ຈະໄປໃສ<br>ກໍ<span class="under">ງ່າຍ</span> ພຽງກົດ GO',
-    hero_lede:"ເອີ້ນລົດໄດ້ພາຍໃນ 3 ນາທີ ຮູ້ລາຄາກ່ອນຂຶ້ນທຸກຖ້ຽວ ບໍ່ມີບວກເພີ່ມຕອນຝົນຕົກ ຄົນຂັບຜ່ານການກວດປະຫວັດທຸກຄົນ",
-    hero_cta1:"ດາວໂຫຼດຟຣີ", hero_cta2:"ເບິ່ງວິທີໃຊ້ງານ",
-    stat1_v:"3 ນາທີ", stat1_l:"ເວລາລໍຖ້າລົດສະເລ່ຍ", stat2_l:"ຄົນຂັບທີ່ກວດປະຫວັດແລ້ວ", stat3_l:"ຄະແນນຈາກຜູ້ໃຊ້",
+    hero_h1:'ຈະໄປໃສ<br>ກໍ <span class="under">Easy</span> ພຽງກົດ EasyGO',
+    hero_lede:"ເອີ້ນລົດໄດ້ໄວໃນ 3 ນາທີ ເດີນທາງສະດວກ ປອດໄພ ຄອບຄຸມທົ່ວລາວ ແລະ ໄທ ບໍ່ວ່າຈະໄປວຽກ ທ່ຽວ ຫຼື ທຸລະສຳຄັນ EasyGO ພ້ອມພາທ່ານໄປຮອດຢ່າງໝັ້ນໃຈ",
+    hero_cta1:"ດາວໂຫຼດແອັບ", hero_cta2:"ເບິ່ງວິທີໃຊ້ງານ",
+    stat1_v:"3 ນາທີ", stat1_l:"ສະເລ່ຍລໍຖ້າພຽງ", stat2_l:"ຄົນຂັບທີ່ຜ່ານການກວດສອບ", stat3_l:"ຄະແນນຄວາມພໍໃຈ",
     ph_eta:"ຮອດໃນ 3 ນາທີ", ph_route:"ຕະຫຼາດເຊົ້າ → ທາດຫຼວງ · 6.4 ກມ.", ph_go:"ເອີ້ນລົດເລີຍ",
     svc_eyebrow:"ບໍລິການຂອງເຮົາ", svc_h2:"ເລືອກໃຫ້ເໝາະກັບການເດີນທາງຂອງທ່ານ",
     svc_p:"ທຸກບໍລິການສະແດງລາຄາກ່ອນຢືນຢັນສະເໝີ ຈ່າຍໄດ້ທັງເງິນສົດ ບັດ ແລະ EasyWallet",
@@ -689,10 +684,10 @@ const I18N = {
     help1_h:"Call us", help1_p:"Hotline open 24 hours, every day",
     help2_h:"Email us", help2_p:"We reply within 24 hours",
     help3_h:"In-app chat & SOS", help3_big:'"Help" menu in the app', help3_p:"Chat with our team, or press SOS during a trip for emergency assistance.",
-    hero_h1:'Going anywhere<br>is <span class="under">easy</span> — just tap GO',
-    hero_lede:"Get a ride in 3 minutes. See the exact fare before you hop in — no rain surcharges, ever. Every driver is background-checked.",
-    hero_cta1:"Download free", hero_cta2:"See how it works",
-    stat1_v:"3 min", stat1_l:"average pickup time", stat2_l:"background-checked drivers", stat3_l:"user rating",
+    hero_h1:'Going anywhere<br>is <span class="under">Easy</span> — just tap EasyGO',
+    hero_lede:"Get a ride in 3 minutes — convenient, safe, and ready nationwide. Work, travel, or errands, EasyGO gets you there with confidence.",
+    hero_cta1:"Download the app", hero_cta2:"See how it works",
+    stat1_v:"3 min", stat1_l:"average wait only", stat2_l:"verified drivers", stat3_l:"satisfaction score",
     ph_eta:"Arriving in 3 min", ph_route:"Siam → Ari · 6.4 km", ph_go:"Book now",
     svc_eyebrow:"Our services", svc_h2:"Pick the ride that fits your trip",
     svc_p:"Every service shows the fare before you confirm. Pay with cash, card, or EasyWallet.",
