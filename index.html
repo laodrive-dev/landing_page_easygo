@@ -307,9 +307,8 @@ section{padding-block:72px}
 #services{padding-top:48px}
 .svc-headrow{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:flex-start;margin-bottom:40px}
 .svc-headrow .sec-head{margin-bottom:0}
-.svc-badges{display:flex;flex-wrap:wrap;align-items:center}
-.sbadge{display:flex;align-items:center;gap:10px;padding-inline:18px;border-left:1px solid var(--line)}
-.sbadge:first-child{border-left:0;padding-left:0}
+.svc-badges{display:grid;grid-template-columns:1fr 1fr;gap:16px 36px;align-content:center}
+.sbadge{display:flex;align-items:center;gap:10px}
 .sbadge .ic{width:40px;height:40px;border-radius:12px;background:var(--tint-yellow);display:grid;place-items:center;flex:none}
 .sbadge .ic svg{width:21px;height:21px;stroke:#c08a00;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .sbadge b{display:block;font-family:var(--display);font-weight:700;font-size:.88rem}
@@ -485,10 +484,7 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
 .foot-bottom{border-top:1px solid var(--line);margin-top:32px;padding-block:18px;font-size:.84rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
 
 /* responsive เก็บงาน */
-@media (max-width:900px){
-  .svc-badges{display:grid;grid-template-columns:1fr 1fr;gap:12px 20px}
-  .sbadge{border-left:0;padding-inline:0}
-}
+
 @media (max-width:640px){
   section{padding-block:48px}
   .band-badge{transform:none}
