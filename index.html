@@ -519,13 +519,13 @@ footer{border-top:1px solid var(--line);background:var(--surface);padding-block:
       <div class="lang" id="lang-dd">
         <button type="button" class="lang-btn" id="lang-btn" aria-haspopup="listbox" aria-expanded="false" aria-label="เลือกภาษา / Select language">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
-          <span id="lang-cur">English</span>
+          <span id="lang-cur">ລາວ</span>
           <svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div class="lang-menu" id="lang-menu" role="listbox" hidden>
+          <button type="button" data-lang="lo" role="option" aria-selected="true">ລາວ</button>
           <button type="button" data-lang="th" role="option" aria-selected="false">ไทย</button>
-          <button type="button" data-lang="lo" role="option" aria-selected="false">ລາວ</button>
-          <button type="button" data-lang="en" role="option" aria-selected="true">English</button>
+          <button type="button" data-lang="en" role="option" aria-selected="false">English</button>
         </div>
       </div>
       <a class="btn btn-brand" href="#download" data-i18n="nav_download">ดาวน์โหลดแอป</a>
@@ -1140,8 +1140,8 @@ if (menuBtn) {
   });
 }
 
-let saved = 'en';
-try { saved = localStorage.getItem('easygo-lang') || 'en'; } catch (e) {}
+let saved = 'lo';
+try { saved = localStorage.getItem('easygo-lang') || 'lo'; } catch (e) {}
 if (I18N[saved]) setLang(saved);
 
 /* ปุ่มกลับขึ้นด้านบน */
